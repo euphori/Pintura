@@ -1,0 +1,163 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/Character/g.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/light.png" type="Texture" id=3]
+[ext_resource path="res://Assets/burning_loop_3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/torch.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Torch.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Journal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Journal.gd" type="Script" id=8]
+[ext_resource path="res://Areas/Interaction.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 4 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 15, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 30, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 45, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 60, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 75, 0, 15, 24 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 13.0
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "walk"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 0, -12 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )
+
+[node name="Torch" type="Sprite" parent="."]
+visible = false
+position = Vector2( 5, 2 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Torch"]
+position = Vector2( 0, -6 )
+scale = Vector2( 2.97917, 2.97917 )
+z_index = -2
+texture = ExtResource( 3 )
+texture_scale = 0.3
+color = Color( 0.462745, 0.262745, 0.223529, 0.964706 )
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
+position = Vector2( 0, -22 )
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="Timer" type="Timer" parent="Torch"]
+wait_time = 5.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1, 2 )
+shape = SubResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 10 )
+anims/walk = SubResource( 11 )
+
+[node name="Journal" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -82, -48 )
+z_index = 5
+script = ExtResource( 8 )
+
+[node name="Interaction" parent="." instance=ExtResource( 9 )]
+position = Vector2( -2, -3 )
+collision_layer = 2
+collision_mask = 40
+
+[node name="CollisionShape2D" parent="Interaction" index="0"]
+modulate = Color( 1, 1, 1, 0.164706 )
+position = Vector2( 2, 4 )
+
+[connection signal="hide_torch" from="." to="Torch" method="_on_Player_hide_torch"]
+[connection signal="received_fuel" from="." to="Torch" method="_on_Player_received_fuel"]
+[connection signal="timeout" from="Torch/Timer" to="Torch" method="_on_Timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Interaction" to="." method="_on_Interaction_body_entered"]
+
+[editable path="Interaction"]
