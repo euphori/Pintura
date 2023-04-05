@@ -40,8 +40,14 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("light"):
 		emit_signal("hide_torch")
+	
 
-
+func _input(event):
+	if event.is_action_pressed("inventory"):
+		if $UserInterface/Inventory.visible == false:
+			$UserInterface/Inventory.visible = true
+		else:
+			$UserInterface/Inventory.visible = false
 
 func _on_Area2D_area_entered(area):
 	emit_signal("received_fuel")

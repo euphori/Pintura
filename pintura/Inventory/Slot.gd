@@ -1,7 +1,7 @@
 extends Panel
 
-var empty_slot = preload("res://Inventory/Textures/inv_empty_slot.png")
-var filled_slot = preload("res://Inventory/Textures/inv_slot_filled.png")
+var empty_slot = preload("res://Assets/UI/item_holder.png")
+var filled_slot = preload("res://Assets/UI/item_holder.png")
 
 var empty_style: StyleBoxTexture = null
 var filled_stlye: StyleBoxTexture = null
