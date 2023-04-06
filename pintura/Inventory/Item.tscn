@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Item.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Item.gd" type="Script" id=1]
 [ext_resource path="res://Items/Icons/Orange.png" type="Texture" id=2]
-[ext_resource path="res://UI/Fonts/PixBob-Lite Free.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/PIXELADE.TTF" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 8
 font_data = ExtResource( 3 )
 
 [node name="Item" type="Node2D"]
@@ -21,10 +20,10 @@ texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
-margin_left = 18.0
-margin_top = 22.0
-margin_right = 34.0
-margin_bottom = 36.0
+margin_left = 15.0
+margin_top = -1.0
+margin_right = 31.0
+margin_bottom = 16.0
 custom_fonts/font = SubResource( 1 )
 text = "4"
 align = 1

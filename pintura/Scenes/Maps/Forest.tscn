@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tilemap/Forest/ForestTiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Tambal.tscn" type="PackedScene" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Fuel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Forest.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Forest.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Garlic.tscn" type="PackedScene" id=11]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource( 10 )
@@ -61,6 +62,9 @@ tile_data = PoolIntArray( 131067, 0, 0, 131068, 0, 1, 131069, 0, 1, 131070, 0, 1
 [node name="Player" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 549, 412 )
 z_index = 1
+
+[node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
+frame = 3
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
@@ -627,7 +631,7 @@ z_index = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 468, 312 )
-color = Color( 0.176471, 0.192157, 0.219608, 1 )
+color = Color( 0.0941176, 0.101961, 0.117647, 1 )
 
 [node name="Fuel" parent="." instance=ExtResource( 8 )]
 position = Vector2( 334, 137 )
@@ -635,5 +639,16 @@ position = Vector2( 334, 137 )
 [node name="Fuel2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 369, 351 )
 
+[node name="Fuel3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 449, 381 )
+
 [node name="Tambal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 596, 458 )
+
+[node name="Garlic" parent="." instance=ExtResource( 11 )]
+
+[connection signal="toggle_torch" from="YSort/Player" to="Tambal" method="_on_Player_toggle_torch"]
+[connection signal="garlic_nearby" from="Garlic" to="Tambal" method="_on_Garlic_garlic_nearby"]
+
+[editable path="YSort/Player"]
+[editable path="YSort/Player/Interaction"]

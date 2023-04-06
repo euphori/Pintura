@@ -3,7 +3,7 @@ extends Sprite
 onready var light = $Light2D
 onready var timer = $Timer
 onready var player = get_parent()
-var light_source = 2
+var light_source = 2 setget ,light_source_get
 var light_deg = 5
 var fuel_strength = 4
 
@@ -19,7 +19,6 @@ func reduce_light():
 
 func add_light():
 	light_source += fuel_strength
-	print(light_source)
 	if light_source > 3:
 		light_source = 6
 	light.scale.x = light_source
@@ -37,14 +36,18 @@ func _on_Timer_timeout():
 		timer.stop()
 	
 
-func _on_Player_hide_torch():
-	if self.visible:
-		visible = false
-	else:
-		visible = true
-		timer.paused
-	
+func light_source_get():
 
+	return light_source
 
 func _on_Player_received_fuel():
 	add_light()
+
+
+func _on_Player_toggle_torch():
+	if self.visible:
+		visible = false
+		timer.paused = true
+	else:
+		visible = true
+		timer.paused = false

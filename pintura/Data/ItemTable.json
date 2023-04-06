@@ -14,16 +14,16 @@
     "ItemAttack": 50,
     "ItemDefense": 0,
     "StackSize": 1,
-    "Description": "wierd looking gun",
+    "Description": "weird looking gun",
     "Value": 100
   },
-  "Orange": {
+  "Garlic": {
     "ItemCategory": "Consumable",
     "WeaponCategory": null,
     "ItemAttack": null,
     "ItemDefense": null,
     "StackSize": 99,
-    "Description": "orange",
+    "Description": "used in cooking",
     "Value": 50
   }
 }

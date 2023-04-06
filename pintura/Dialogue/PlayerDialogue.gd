@@ -6,7 +6,9 @@ var dialogue = []
 var current_dialogue_id = 0
 var dialogue_active = false
 onready var message = $NinePatchRect/Message
-onready var player = get_tree().get_root().get_node("Museum").get_node("Player")
+#onready var player = get_tree().get_root().get_node("Museum").get_node("Player")
+signal dialogue_start
+signal dialogue_finish
 
 func _ready():
 	
@@ -15,12 +17,11 @@ func _ready():
 func start():
 	if dialogue_active:
 		return
-	player.can_move = false
 	$NinePatchRect.visible = true
 	dialogue_active = true
 	dialogue = load_dialogue()
 	current_dialogue_id -= 1
-	
+	emit_signal("dialogue_start")
 	next_line()
 	
 
@@ -42,8 +43,8 @@ func next_line():
 	if current_dialogue_id >= len(dialogue):
 		$Timer.start()
 		$NinePatchRect.visible = false
-		player.can_move = true
 		current_dialogue_id = 0
+		emit_signal("dialogue_finish")
 		return
 	else:
 		

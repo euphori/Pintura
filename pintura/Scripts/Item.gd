@@ -31,7 +31,7 @@ func set_item(nm , qt, ih):
 	item_name = nm
 	item_quantity = qt
 	item_holder = ih
-	texture_rect.texture = load("res://Items/Icons/" + item_name + ".png")
+	texture_rect.texture = load("res://Items/Icons/" + item_name + ".tres")
 	var stack_size = int(JsonData.item_data[item_name]["StackSize"])
 	if stack_size == 1: 
 		label.visible = false

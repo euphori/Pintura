@@ -7,23 +7,22 @@ var FRICTION = 500
 var ACCELERATION = 500
 var location
 var can_move = true
-signal hide_torch
+var MAX_ACCELERATION = 500
+signal toggle_torch
 
 onready var camera = $Camera2D
 onready var torch = $Torch
-signal received_fuel
+onready var agent := GSAISteeringAgent.new()
+onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 
-func _ready():
-	pass
+
 func _physics_process(delta):
-	
 	var input_vector = Vector2.ZERO
 	if can_move:
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		input_vector = input_vector.normalized()
-		
 	
 	if input_vector != Vector2.ZERO:
 		if input_vector.x < 0:
@@ -39,7 +38,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 	if Input.is_action_just_pressed("light"):
-		emit_signal("hide_torch")
+		emit_signal("toggle_torch")
+		
 	
 
 func _input(event):
@@ -48,10 +48,26 @@ func _input(event):
 			$UserInterface/Inventory.visible = true
 		else:
 			$UserInterface/Inventory.visible = false
-
-func _on_Area2D_area_entered(area):
-	emit_signal("received_fuel")
-
+	if event.is_action_pressed("throw"):
+		throw()
 	
 func _on_Interaction_body_entered(body):
 	pass # Replace with function body.
+
+
+func _on_Dialogue_dialogue_start():
+	can_move = false
+	$UserInterface.visible = false
+
+
+func _on_Dialogue_dialogue_finish():
+	can_move = true
+	$UserInterface.visible = true
+	
+func throw():
+	var garlic_path = garlic_scene
+	var garlic = garlic_path.instance()
+	var direction = (get_global_mouse_position() - $Position2D.global_position).normalized()
+	get_parent().add_child(garlic)
+	garlic.global_position = $Position2D.global_position
+	garlic.velocity = direction * 50

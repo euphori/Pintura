@@ -3,16 +3,14 @@ extends Node
 
 const NUM_INVENTORY_SLOTS = 20
 const SlotClass = preload("res://Inventory/Slot.gd")
-const ItemClass = preload("res://Item.gd")
+const ItemClass = preload("res://Scripts/Item.gd")
 
 var gold = 500
 
 var inventory = {
 	
-	0:["Orange", 98], # --> slot index: [item_name , item_quantity]
-	1:["Sabre" , 1],
-	2:["Flintlock Pistol", 1],
-	3:["Orange", 40]
+	0:["Garlic", 98], # --> slot index: [item_name , item_quantity]
+	
 }
 
 func add_item(item_name, item_quantity):
