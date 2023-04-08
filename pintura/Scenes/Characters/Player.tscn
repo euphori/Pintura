@@ -136,7 +136,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]
@@ -165,6 +165,7 @@ modulate = Color( 1, 1, 1, 0.164706 )
 position = Vector2( 2, 4 )
 
 [node name="UserInterface" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [node name="Static" type="Sprite" parent="UserInterface"]
 visible = false

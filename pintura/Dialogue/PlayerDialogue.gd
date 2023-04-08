@@ -5,6 +5,7 @@ export(String,FILE, "*.json") var dialogue_file
 var dialogue = []
 var current_dialogue_id = 0
 var dialogue_active = false
+var in_cutscene = false
 onready var message = $NinePatchRect/Message
 #onready var player = get_tree().get_root().get_node("Museum").get_node("Player")
 signal dialogue_start

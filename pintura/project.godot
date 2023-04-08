@@ -189,7 +189,7 @@ _global_script_class_icons={
 [application]
 
 config/name="THESIS NEW"
-run/main_scene="res://Scenes/Maps/Forest.tscn"
+run/main_scene="res://Scenes/Maps/Museum.tscn"
 config/icon="res://icon.png"
 
 [autoload]
