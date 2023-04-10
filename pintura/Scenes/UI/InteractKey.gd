@@ -1,7 +1,11 @@
 extends Sprite
 
 
+
+export (String, "Open", "Talk") var text
+
 func _ready():
+	$Label.text = text
 	$AnimationPlayer.play("bob")
 	
 
