@@ -64,7 +64,7 @@ position = Vector2( 549, 412 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 3
+frame = 2
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
