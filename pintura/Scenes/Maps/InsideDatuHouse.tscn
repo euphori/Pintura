@@ -7,7 +7,8 @@
 
 [node name="Datuinside" type="Sprite" parent="."]
 position = Vector2( 296, 149 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
-[node name="Player" parent="Datuinside" instance=ExtResource( 2 )]
-position = Vector2( 5, 172 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 301, 239 )

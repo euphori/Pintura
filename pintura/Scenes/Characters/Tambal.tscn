@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Character/tambal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Assets/light.png" type="Texture" id=3]
+[ext_resource path="res://light.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Characters/WanderController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Areas/PlayerDetection.tscn" type="PackedScene" id=6]
 
