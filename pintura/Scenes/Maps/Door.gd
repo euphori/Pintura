@@ -8,6 +8,7 @@ export(String, "MuseumKey") var key_id
 
 var player_near = false
 var switch_on = false
+var has_key = false
 
 func set_file_path(p_value):
 	if typeof(p_value) == TYPE_STRING and p_value.get_extension() in ["tscn", "scn"]:
@@ -16,14 +17,20 @@ func set_file_path(p_value):
 			return
 		next_scene = p_value
 
+
+func check_requirement():
+	for i in range(PlayerInventory.inventory.size()):
+		if PlayerInventory.inventory[i].has(key_id):
+			has_key = true
+	return has_key
+
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:
 		if need_key:
-			for i in range(PlayerInventory.inventory.size()):
-				if PlayerInventory.inventory[i].has(key_id):
-					get_tree().change_scene(next_scene) #change scene
-				else:
-					$Dialogue.start()
+			if check_requirement() == true:
+				get_tree().change_scene(next_scene) #change scene
+			else:
+				$Dialogue.start()
 		if need_switch and !switch_on:
 			return
 		else:
