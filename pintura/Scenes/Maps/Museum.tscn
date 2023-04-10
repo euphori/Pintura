@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/UI/24.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/paintingartifact.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/writingdeskartifact.png" type="Texture" id=11]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/vaseartifact.png" type="Texture" id=12]
 [ext_resource path="res://Tilemap/Museum/FurnitureA.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Museum.gd" type="Script" id=18]
 [ext_resource path="res://Tilemap/Museum/Tiles.tscn" type="PackedScene" id=19]
@@ -196,6 +197,10 @@ texture = ExtResource( 9 )
 [node name="Writingdeskartifact" type="Sprite" parent="."]
 position = Vector2( 1098, 909 )
 texture = ExtResource( 11 )
+
+[node name="Vaseartifact" type="Sprite" parent="."]
+position = Vector2( 1210, 1030 )
+texture = ExtResource( 12 )
 
 [connection signal="dialogue_finish" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_start" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_start"]

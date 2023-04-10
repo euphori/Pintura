@@ -7,6 +7,7 @@ onready var collision =  $CutsceneTrigger/CollisionShape2D
 
 export var path_to_player := NodePath()
 export var return_camera_after_dialogue = false
+export (bool) var can_move_after_dialogue
 onready var player = get_node(path_to_player)
 
 const PAN_SPEED = 3
@@ -29,10 +30,13 @@ func _ready():
 		creature.can_move = false
 		creature_involved = true
 	if is_instance_valid($Camera2D):
-		camera = $Camera2D
+		if creature_involved:
+			camera = $Navigation2D/Amomongo/Camera2D
+		else:
+			camera = $Camera2D
 		camera_involved = true
 		player_camera = player.get_node("Camera2D")
-		original_camera_position = $Camera2D.position
+		original_camera_position = camera.position
 		print($Camera2D.position)
 	if is_instance_valid($Dialogue):
 		print("DIA")
@@ -49,8 +53,8 @@ func _on_CutsceneTrigger_area_entered(area):
 	if creature_involved:
 		creature.can_move = true
 	if camera_involved:
-		$Camera2D.global_position = player_camera.global_position
-		$Camera2D.current = true
+		camera.global_position = player_camera.global_position
+		camera.current = true
 		on_scene = true
 	if dialogue_involved:
 		dialogue.in_cutscene = true
@@ -59,8 +63,9 @@ func _on_CutsceneTrigger_area_entered(area):
 
 
 func pan_camera():
-	if $Camera2D.position.y > original_camera_position.y:
-		$Camera2D.position.y -= PAN_SPEED
+	if !creature_involved:
+		if camera.position.y > original_camera_position.y:
+			camera.position.y -= PAN_SPEED
 	
 
 func return_camera():
@@ -69,10 +74,14 @@ func return_camera():
 
 
 func _on_Dialogue_dialogue_finish():
-	player.can_move = true
+	if can_move_after_dialogue:
+		player.can_move = true
 	collision.disabled = true
 	if return_camera_after_dialogue:
-		return_camera()
+		if !timer_set:
+			$Timer.start(2)
+			timer_set = true
+		
 	
 
 func _on_Amomongo_scene_over():
@@ -84,3 +93,4 @@ func _on_Amomongo_scene_over():
 
 func _on_Timer_timeout():
 	return_camera()
+	timer_set = false

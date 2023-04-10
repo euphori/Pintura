@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if distance >= Vector2(5,5) or distance <= Vector2(-5,-5):
 		if got_item:
 			direction = global_position.direction_to(agent.get_next_location())
-			if global_position - door.global_position >= Vector2(-50,-50):
+			if global_position - door.global_position >= Vector2(-5,-5):
 				queue_free()
 				emit_signal("scene_over")
 		else:
