@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/UI/24.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/carpet.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/podium.png" type="Texture" id=5]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=10]
@@ -104,6 +105,7 @@ tile_data = PoolIntArray( -2949047, 6, 0, -2621367, 12, 0, -2621360, 10, 0, -262
 [node name="Cutscene2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 887, 771 )
 path_to_player = NodePath("../Player")
+can_move_after_dialogue = true
 
 [node name="CutsceneTrigger" parent="Cutscene2" index="0"]
 position = Vector2( -43, -45 )
@@ -148,6 +150,10 @@ navpoly = SubResource( 3 )
 position = Vector2( 64.5471, -16.2961 )
 scale = Vector2( 0.728316, 0.728316 )
 
+[node name="Camera2D" type="Camera2D" parent="Cutscene/Navigation2D/Amomongo"]
+position = Vector2( -0.00012207, 6.10352e-05 )
+zoom = Vector2( 0.5, 0.5 )
+
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 4 )
 
@@ -167,10 +173,22 @@ position = Vector2( 1243, 704 )
 cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 21, 0 )
 
+[node name="Key" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1267, 728 )
+
 [node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1237, 638 )
 z_index = 1
 next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
+need_key = true
+key_id = "MuseumKey"
+
+[node name="InteractKey" parent="Door" index="1"]
+text = "Open"
+
+[node name="Dialogue" parent="Door" instance=ExtResource( 27 )]
+visible = true
+dialogue_file = "res://Dialogue/Json/need_key.json"
 
 [connection signal="dialogue_finish" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_start" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_start"]
@@ -185,3 +203,4 @@ next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
 [editable path="Cutscene2/CutsceneTrigger"]
 [editable path="Cutscene"]
 [editable path="Cutscene/CutsceneTrigger"]
+[editable path="Door"]

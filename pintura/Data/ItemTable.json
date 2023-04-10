@@ -1,29 +1,21 @@
 {
   "Sabre": {
     "ItemCategory": "Weapon",
-    "WeaponCategory": "Sword",
-    "ItemAttack": 90,
-    "ItemDefense": 0,
     "StackSize": 1,
     "Description": "a normal looking pirate sword",
     "Value": 200
   },
-  "Flintlock Pistol": {
-    "ItemCategory": "Weapon",
-    "WeaponCategory": "Pistol",
-    "ItemAttack": 50,
-    "ItemDefense": 0,
+  "MuseumKey": {
+    "ItemCategory": "Key",
     "StackSize": 1,
     "Description": "weird looking gun",
     "Value": 100
   },
   "Garlic": {
     "ItemCategory": "Consumable",
-    "WeaponCategory": null,
-    "ItemAttack": null,
-    "ItemDefense": null,
     "StackSize": 99,
     "Description": "used in cooking",
     "Value": 50
   }
+
 }

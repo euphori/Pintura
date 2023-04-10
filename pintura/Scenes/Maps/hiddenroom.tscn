@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/paintin1.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=2]
@@ -11,12 +11,49 @@
 [ext_resource path="res://light.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/UI/InteractKey.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Objects/MovableObject.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Cutscene.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Dialogue/Dialogue.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 10 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 46.0
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -26 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "bob"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -26 ), Vector2( -3, -28 ), Vector2( -3, -26 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 75.326
 
 [node name="HiddenRoom" type="Node2D"]
 position = Vector2( -703, -508 )
@@ -41,6 +78,7 @@ tile_data = PoolIntArray( -851971, 6, 65536, -917498, 6, 65536, -786435, 6, 6553
 [node name="FurnitureB" parent="." instance=ExtResource( 5 )]
 position = Vector2( 823, 622 )
 scale = Vector2( 0.546729, 0.546729 )
+z_index = 2
 cell_size = Vector2( 8, 8 )
 tile_data = PoolIntArray( -983049, 9, 0, -786441, 1, 0, -851951, 1, 0, -393223, 24, 0 )
 
@@ -49,7 +87,7 @@ position = Vector2( 468, 312 )
 color = Color( 0.247059, 0.258824, 0.282353, 1 )
 
 [node name="Lamp" type="StaticBody2D" parent="."]
-position = Vector2( 823, 600 )
+position = Vector2( 815, 616 )
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 6 )
 is_switch = true
@@ -74,6 +112,35 @@ text = "Toggle"
 [node name="CollisionShape2D" parent="Lamp/InteractKey/Area2D" index="0"]
 shape = SubResource( 2 )
 
+[node name="Lamp2" type="StaticBody2D" parent="."]
+position = Vector2( 894, 616 )
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Lamp2"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lamp2"]
+position = Vector2( 0.666656, 9.33334 )
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="Lamp2"]
+visible = false
+position = Vector2( 5.41666, -18.4678 )
+scale = Vector2( 0.530599, 0.541918 )
+texture = ExtResource( 9 )
+shadow_enabled = true
+
+[node name="InteractKey" parent="Lamp2" instance=ExtResource( 10 )]
+text = "Toggle"
+
+[node name="CollisionShape2D" parent="Lamp2/InteractKey/Area2D" index="0"]
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" parent="Lamp2/InteractKey" index="2"]
+anims/RESET = SubResource( 3 )
+anims/bob = SubResource( 4 )
+
 [node name="MovableShelf" parent="." instance=ExtResource( 11 )]
 position = Vector2( 854, 561 )
 scale = Vector2( 0.5, 0.5 )
@@ -83,9 +150,37 @@ texture = ExtResource( 1 )
 texture = ExtResource( 1 )
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
-next_scene = "res://Scenes/Maps/Datushouse.tscn"
+next_scene = "res://Scenes/Maps/Tunnel.tscn"
+need_switch = true
+
+[node name="InteractKey" parent="Door" index="1"]
+text = "Open"
+
+[node name="Cutscene" parent="." instance=ExtResource( 12 )]
+position = Vector2( 850, 689 )
+path_to_player = NodePath("../Player")
+return_camera_after_dialogue = true
+can_move_after_dialogue = true
+
+[node name="CollisionShape2D" parent="Cutscene/CutsceneTrigger" index="0"]
+shape = SubResource( 5 )
+
+[node name="Dialogue" parent="Cutscene" instance=ExtResource( 13 )]
+visible = true
+dialogue_file = "res://Dialogue/Json/monologue3.json"
+
+[node name="Camera2D" type="Camera2D" parent="Cutscene"]
+position = Vector2( 7, -91 )
+zoom = Vector2( 0.5, 0.5 )
 
 [connection signal="trigger_switch" from="Lamp" to="MovableShelf" method="_on_Lamp_trigger_switch"]
+[connection signal="trigger_switch" from="Lamp" to="Door" method="_on_Lamp_trigger_switch"]
+[connection signal="trigger_switch" from="Lamp2" to="MovableShelf" method="_on_Lamp_trigger_switch"]
+[connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="Lamp/InteractKey"]
+[editable path="Lamp2/InteractKey"]
 [editable path="MovableShelf"]
+[editable path="Door"]
+[editable path="Cutscene"]
+[editable path="Cutscene/CutsceneTrigger"]

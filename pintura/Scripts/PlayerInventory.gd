@@ -47,7 +47,7 @@ func add_item_quantity(slot:SlotClass , quantity_to_add):
 	inventory[slot.slot_index][1] += quantity_to_add
 
 func update_slot_visual(slot_index, item_name, new_quantity):
-	var slot = get_tree().root.get_node("/root/World/Player/UserInterface/Inventory/ScrollContainer/GridContainer/Slot" + str(slot_index + 1))
+	var slot = get_tree().root.get_node("/root/Museum/Player/UserInterface/Inventory/ScrollContainer/GridContainer/Slot" + str(slot_index + 1))
 	if slot.item != null:
 		slot.item.set_item(item_name, new_quantity, "player")
 	else:

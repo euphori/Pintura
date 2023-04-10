@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tilemap/Forest/ForestTiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Tambal.tscn" type="PackedScene" id=2]
@@ -11,8 +11,36 @@
 [ext_resource path="res://Assets/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Forest.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Garlic.tscn" type="PackedScene" id=11]
+[ext_resource path="res://light.png" type="Texture" id=12]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 1
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.0142857, 0.371429, 0.678571, 0.978571 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.932617, 0.914381, 0.892544, 1, 0.963867, 0.917561, 0.862209, 0.62963, 0.87793, 0.738893, 0.572712, 0.311111, 0.968627, 0.647059, 0.262745, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 1.0
+emission_shape = 5
+emission_ring_radius = 60.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 3 )
 
 [node name="Forest" type="Node2D"]
+position = Vector2( 0, 1 )
 script = ExtResource( 10 )
 
 [node name="Dirt" parent="." instance=ExtResource( 1 )]
@@ -33,6 +61,54 @@ z_index = 1
 cell_size = Vector2( 16, 16 )
 show_collision = true
 tile_data = PoolIntArray( -917496, 7, 0 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 4 )
+position = Vector2( 640, 342 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Particles2D"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 12 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+material = SubResource( 4 )
+position = Vector2( 385, 401 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Particles2D2"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 12 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+material = SubResource( 4 )
+position = Vector2( 129, 273 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Particles2D3"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 12 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -630,7 +706,6 @@ position = Vector2( 72, -12 )
 z_index = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2( 468, 312 )
 color = Color( 0.0941176, 0.101961, 0.117647, 1 )
 
@@ -653,3 +728,4 @@ position = Vector2( 596, 458 )
 
 [editable path="YSort/Player"]
 [editable path="YSort/Player/Interaction"]
+[editable path="YSort/Player/UserInterface"]
