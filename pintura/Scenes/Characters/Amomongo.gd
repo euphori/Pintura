@@ -1,10 +1,7 @@
 extends KinematicBody2D
 
-export var JUMP_HEIGHT = 940
 export var ACCELERATION = 250
 export var MAX_SPEED = 70
-export var GRAVITY = 700
-export var AIR_RESISTANCE = 0.02
 export var FRICTION = .25
 export var MAX_HEALTH = 100
 export var ARMOR = 50
