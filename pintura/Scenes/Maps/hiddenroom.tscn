@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/paintin1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Cutscene.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Dialogue/Dialogue.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -32,24 +30,3 @@ texture = ExtResource( 1 )
 position = Vector2( 812, 799 )
 cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( -851971, 6, 65536, -917498, 6, 65536, -786435, 6, 65536, -851962, 6, 65536, -720899, 6, 65536, -786426, 6, 65536, -655363, 6, 65536, -720890, 6, 65536, -589827, 6, 65536, -655354, 6, 65536, -524291, 6, 65536, -589818, 6, 65536, -458755, 6, 65536, -524282, 6, 65536, -393219, 6, 65536, -458746, 6, 65536, -327683, 6, 65536, -393210, 6, 65536, -262147, 6, 65536, -327674, 6, 65536, -196611, 6, 65536, -262138, 6, 65536, -131075, 6, 65536, -196602, 6, 65536, -65539, 6, 65536, -131066, 6, 65536, -3, 6, 65536, -65530, 6, 65536, 65533, 6, 65536, 6, 6, 65536, 131069, 6, 65536, 65542, 6, 65536, 786424, 4, 0 )
-
-[node name="Cutscene" parent="." instance=ExtResource( 5 )]
-position = Vector2( 864, 656 )
-path_to_player = NodePath("../Player")
-return_camera_after_dialogue = true
-
-[node name="CutsceneTrigger" parent="Cutscene" index="0"]
-position = Vector2( -25, -17 )
-
-[node name="Dialogue" parent="Cutscene" instance=ExtResource( 6 )]
-visible = true
-dialogue_file = "res://Dialogue/Json/monologue3.json"
-
-[node name="Camera2D" type="Camera2D" parent="Cutscene"]
-position = Vector2( -17, -113 )
-zoom = Vector2( 0.5, 0.5 )
-
-[connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
-
-[editable path="Cutscene"]
-[editable path="Cutscene/CutsceneTrigger"]
