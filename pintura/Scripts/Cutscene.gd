@@ -21,13 +21,15 @@ var timer_set = false
 var original_camera_position
 
 func _ready():
-	if is_instance_valid($Amomongo):
-		creature = $Amomongo
+	if is_instance_valid($Navigation2D/Amomongo):
+		creature = $Navigation2D/Amomongo
 		creature.can_move = false
 		creature_involved = true
 	if is_instance_valid($Camera2D):
 		camera = $Camera2D
 		camera_involved = true
+		original_camera_position = $Camera2D.position
+		print($Camera2D.position)
 	if is_instance_valid($Dialogue):
 		dialogue = $Dialogue
 		dialogue_involved = true
@@ -43,7 +45,7 @@ func _on_CutsceneTrigger_area_entered(area):
 		creature.can_move = true
 	if camera_involved:
 		$Camera2D.global_position = player_camera.global_position
-		original_camera_position = $Camera2D.global_position
+		print(original_camera_position.y)
 		$Camera2D.current = true
 		on_scene = true
 	if dialogue_involved:
@@ -53,7 +55,7 @@ func _on_CutsceneTrigger_area_entered(area):
 
 
 func pan_camera():
-	if $Camera2D.position.y > -140:
+	if $Camera2D.position.y > original_camera_position.y:
 		$Camera2D.position.y -= PAN_SPEED
 
 func return_camera():
