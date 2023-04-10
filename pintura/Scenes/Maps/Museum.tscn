@@ -1,11 +1,16 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/UI/24.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/carpet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/paintsss.png" type="Texture" id=4]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/podium.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/coconutartifact.png" type="Texture" id=6]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/cabinetartifact.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/paintingartifact.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/MUSEUM ASSETTSS/writingdeskartifact.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap/Museum/FurnitureA.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Museum.gd" type="Script" id=18]
 [ext_resource path="res://Tilemap/Museum/Tiles.tscn" type="PackedScene" id=19]
@@ -28,7 +33,7 @@ radius = 174.0
 [sub_resource type="NavigationPolygon" id=3]
 vertices = PoolVector2Array( 336.209, -14.1111, 337.666, 56.5356, 129.367, 56.5356, 153.402, -13.3828, 374.963, 173.555, 444.728, 173.794, 446.185, 268.476, 232.788, 269.932, 231.331, 214.58, 327.469, 174.523, 130.824, 82.7549, 481.144, 82.0266, 481.144, 148.303, 456.404, 148.798, 232.788, 150.488, -23.5792, -95.6825, 152.673, -94.2259, 327.469, 150.488, 362.428, 149.76, 232.788, 173.066, -19.2094, 216.037, -22.8509, -131.37 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13, 14 ), PoolIntArray( 15, 16, 3, 2 ), PoolIntArray( 9, 17, 18, 4 ), PoolIntArray( 19, 9, 8, 20 ), PoolIntArray( 14, 19, 20, 10 ), PoolIntArray( 10, 20, 21, 2 ), PoolIntArray( 21, 15, 2 ) ]
-outlines = [ PoolVector2Array( -22.8509, -131.37, -19.2094, 216.037, 231.331, 214.58, 232.788, 269.932, 446.185, 268.476, 444.728, 173.794, 363.157, 174.523, 362.428, 149.032, 327.469, 150.488, 327.469, 174.523, 232.788, 173.066, 232.788, 150.488, 363.724, 149.498, 456.404, 148.798, 481.144, 148.303, 481.144, 82.0266, 130.824, 82.7549, 129.367, 56.5356, 337.666, 56.5356, 336.209, -14.1111, 246.882, -13.4908, 231.331, -13.3828, 153.402, -13.3828, 152.673, -94.2259, -23.5792, -95.6825 ) ]
+outlines = [ PoolVector2Array( -22.8509, -131.37, -19.2094, 216.037, 231.331, 214.58, 232.788, 269.932, 446.185, 268.476, 444.728, 173.794, 363.157, 174.523, 362.428, 149.032, 327.469, 150.488, 327.469, 174.523, 255.025, 173.408, 232.788, 173.066, 232.788, 150.488, 363.724, 149.498, 456.404, 148.798, 481.144, 148.303, 481.144, 82.0266, 130.824, 82.7549, 129.367, 56.5356, 337.666, 56.5356, 336.209, -14.1111, 246.882, -13.4908, 231.331, -13.3828, 153.402, -13.3828, 152.673, -94.2259, -23.5792, -95.6825 ) ]
 
 [sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( 336.937, 55.8072, 336.937, 45.6108, 339.122, 46.3391, 339.122, 53.6223, 394.474, 22.3047, 396.659, 22.3047, 397.388, 53.6223, 339.122, -13.3828, 339.122, -26.4925, 394.474, -26.4925, 394.474, -13.3828, 339.122, 55.8072 )
@@ -144,6 +149,10 @@ scale = Vector2( 2.74606, 2.74606 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 3 )
 
+[node name="Cabinetartifact" type="Sprite" parent="Cutscene/Navigation2D/NavigationPolygonInstance"]
+position = Vector2( 413.411, 169.425 )
+texture = ExtResource( 8 )
+
 [node name="Amomongo" parent="Cutscene/Navigation2D" instance=ExtResource( 26 )]
 position = Vector2( 64.5471, -16.2961 )
 scale = Vector2( 0.728316, 0.728316 )
@@ -171,6 +180,22 @@ tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 2
 position = Vector2( 1237, 638 )
 z_index = 1
 next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
+
+[node name="Paintsss" type="Sprite" parent="."]
+position = Vector2( 811, 516 )
+texture = ExtResource( 4 )
+
+[node name="Coconutartifact" type="Sprite" parent="."]
+position = Vector2( 1032, 931 )
+texture = ExtResource( 6 )
+
+[node name="Paintingartifact" type="Sprite" parent="."]
+position = Vector2( 1073, 894 )
+texture = ExtResource( 9 )
+
+[node name="Writingdeskartifact" type="Sprite" parent="."]
+position = Vector2( 1098, 909 )
+texture = ExtResource( 11 )
 
 [connection signal="dialogue_finish" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_start" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_start"]
