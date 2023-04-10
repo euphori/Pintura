@@ -26,6 +26,7 @@ func _input(event):
 	if event.is_action_pressed("interact") and player_near:
 		if need_key:
 			for i in range(PlayerInventory.inventory.size()):
+				print(PlayerInventory.inventory[i])
 				if PlayerInventory.inventory[i].has(key_id):
 					get_tree().change_scene(next_scene) #change scene
 				else:

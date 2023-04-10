@@ -4,7 +4,6 @@ extends Node2D
 
 
 onready var collision =  $CutsceneTrigger/CollisionShape2D
-
 export var path_to_player := NodePath()
 export var return_camera_after_dialogue = false
 export (bool) var can_move_after_dialogue
@@ -59,6 +58,7 @@ func _on_CutsceneTrigger_area_entered(area):
 	if dialogue_involved:
 		dialogue.in_cutscene = true
 		dialogue.start()
+	collision.disabled = true
 	player.can_move = false
 
 

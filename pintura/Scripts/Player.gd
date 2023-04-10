@@ -50,8 +50,11 @@ func _input(event):
 			$UserInterface/Inventory.visible = false
 	if event.is_action_pressed("throw"):
 		throw()
+		
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == BUTTON_RIGHT:
+			self.global_position = get_global_mouse_position()
 	
-
 
 func throw():
 	var garlic_path = garlic_scene

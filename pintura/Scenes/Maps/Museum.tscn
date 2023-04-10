@@ -196,7 +196,7 @@ position = Vector2( 1267, 728 )
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1237, 638 )
-z_index = 1
+z_index = 2
 next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
 need_key = true
 key_id = "MuseumKey"
@@ -209,12 +209,11 @@ visible = true
 dialogue_file = "res://Dialogue/Json/need_key.json"
 path_to_player = NodePath("../../Player")
 
-[connection signal="dialogue_finish" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
-[connection signal="dialogue_start" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_start"]
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]
 [connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="CSCheckJournal" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="NPC"]
 [editable path="NPC/PlayerDetection"]
