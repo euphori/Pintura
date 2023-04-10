@@ -19,12 +19,10 @@ func use_dialogue():
  
 func _on_PlayerDetection_area_entered(area):
 
-	interact_label.visible = true
 	player_nearby = true
 
 
 
 
 func _on_PlayerDetection_area_exited(area):
-	interact_label.visible = false
 	player_nearby = false
