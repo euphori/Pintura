@@ -9,7 +9,7 @@
 [ext_resource path="res://Tilemap/Forest/Rocks.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sugarcane Village Assets/aaafarmer.png" type="Texture" id=8]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( -18, 57 )
 
 [node name="Dirt" parent="." instance=ExtResource( 2 )]
