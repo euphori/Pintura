@@ -64,7 +64,7 @@ position = Vector2( 549, 412 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 2
+frame = 3
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
@@ -630,6 +630,7 @@ position = Vector2( 72, -12 )
 z_index = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2( 468, 312 )
 color = Color( 0.0941176, 0.101961, 0.117647, 1 )
 
