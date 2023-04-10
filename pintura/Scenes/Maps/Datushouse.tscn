@@ -38,7 +38,7 @@ tile_data = PoolIntArray( 1638429, 0, 0, 1638430, 0, 1, 1638431, 0, 1, 1638432, 
 [node name="Datuhouse" type="StaticBody2D" parent="."]
 position = Vector2( 394, -91 )
 script = ExtResource( 9 )
-file_path = "res://Scenes/Maps/InsideDatuHouse.tscn"
+next_scene = "res://Scenes/Maps/InsideDatuHouse.tscn"
 path_to_player = NodePath("../Player")
 
 [node name="InteractKey" parent="Datuhouse" instance=ExtResource( 8 )]

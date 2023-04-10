@@ -10,7 +10,7 @@ export var MAX_DISTANCE = 100
 
 
 onready var podium = get_node("/root/Museum/Podium")
-onready var door = get_node("/root/Museum/DoorMuseum1")
+onready var door = get_node("/root/Museum/Door")
 onready var agent = $NavigationAgent2D
 
 var motion = Vector2()

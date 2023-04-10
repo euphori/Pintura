@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export(String, FILE, "*.tscn,*.scn") var file_path setget set_file_path
+export(String, FILE, "*.tscn,*.scn") var next_scene setget set_file_path
 export(NodePath) var spawn_from
 export(NodePath) var path_to_player
 
@@ -12,8 +12,8 @@ func set_file_path(p_value):
 		var d = Directory.new()
 		if not d.file_exists(p_value):
 			return
-		file_path = p_value
+		next_scene = p_value
 
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:
-		get_tree().change_scene(file_path) #change scene
+		get_tree().change_scene(next_scene) #change scene

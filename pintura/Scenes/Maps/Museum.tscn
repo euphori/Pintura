@@ -1,13 +1,11 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Scenes/Maps/Door.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/UI/24.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/carpet.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/UI/InteractKey.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/MUSEUM ASSETTSS/podium.png" type="Texture" id=5]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/MUSEUM ASSETTSS/door museum1.png" type="Texture" id=11]
 [ext_resource path="res://Tilemap/Museum/FurnitureA.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Museum.gd" type="Script" id=18]
 [ext_resource path="res://Tilemap/Museum/Tiles.tscn" type="PackedScene" id=19]
@@ -81,16 +79,6 @@ modulate = Color( 1, 1, 1, 0.145098 )
 position = Vector2( 730.375, 672.375 )
 scale = Vector2( 1.37303, 1.37303 )
 texture = ExtResource( 23 )
-
-[node name="DoorMuseum1" type="Sprite" parent="."]
-position = Vector2( 1235, 640 )
-z_index = 1
-texture = ExtResource( 11 )
-script = ExtResource( 1 )
-file_path = "res://Scenes/Maps/HiddenRoom.tscn"
-
-[node name="InteractKey" parent="DoorMuseum1" instance=ExtResource( 4 )]
-text = "Open"
 
 [node name="Walls" parent="." instance=ExtResource( 10 )]
 position = Vector2( 812, 799 )
@@ -178,6 +166,11 @@ tile_data = PoolIntArray( -1114117, 1, 65538, -1114116, 1, 65538, -1114115, 1, 6
 position = Vector2( 1243, 704 )
 cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 21, 0 )
+
+[node name="Door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1237, 638 )
+z_index = 1
+next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
 
 [connection signal="dialogue_finish" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_start" from="NPC/Dialogue" to="Player" method="_on_Dialogue_dialogue_start"]
