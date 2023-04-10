@@ -35,7 +35,7 @@ cell_size = Vector2( 16, 16 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 468, 312 )
-color = Color( 0.937255, 0.890196, 0.827451, 1 )
+color = Color( 0.760784, 0.572549, 0.317647, 1 )
 
 [node name="Tree" parent="." instance=ExtResource( 6 )]
 position = Vector2( 88, 221 )
@@ -567,6 +567,78 @@ z_index = 1
 
 [node name="Tree107" parent="Tree" instance=ExtResource( 6 )]
 position = Vector2( -43, -116 )
+z_index = 1
+
+[node name="Tree108" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 498, 126 )
+z_index = 1
+
+[node name="Tree109" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 521, 124 )
+z_index = 1
+
+[node name="Tree110" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 541, 127 )
+z_index = 1
+
+[node name="Tree111" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 565, 129 )
+z_index = 1
+
+[node name="Tree112" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 588, 127 )
+z_index = 1
+
+[node name="Tree113" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 608, 130 )
+z_index = 1
+
+[node name="Tree114" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 619, 126 )
+z_index = 1
+
+[node name="Tree115" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 642, 124 )
+z_index = 1
+
+[node name="Tree116" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 662, 127 )
+z_index = 1
+
+[node name="Tree117" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 311, 125 )
+z_index = 1
+
+[node name="Tree118" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 334, 123 )
+z_index = 1
+
+[node name="Tree119" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 354, 126 )
+z_index = 1
+
+[node name="Tree120" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 378, 128 )
+z_index = 1
+
+[node name="Tree121" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 401, 126 )
+z_index = 1
+
+[node name="Tree122" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 421, 129 )
+z_index = 1
+
+[node name="Tree123" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 432, 125 )
+z_index = 1
+
+[node name="Tree124" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 455, 123 )
+z_index = 1
+
+[node name="Tree125" parent="Tree" instance=ExtResource( 6 )]
+position = Vector2( 475, 126 )
 z_index = 1
 
 [node name="Aaafarmer" type="Sprite" parent="."]
