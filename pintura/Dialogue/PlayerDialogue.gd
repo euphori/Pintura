@@ -1,23 +1,29 @@
 extends CanvasLayer
 
 export(String,FILE, "*.json") var dialogue_file
+export (bool) var can_move_during_dialogue
+export (bool) var can_move_after_dialogue = true
+export (NodePath) var path_to_player
 
 var dialogue = []
 var current_dialogue_id = 0
 var dialogue_active = false
 var in_cutscene = false
 onready var message = $NinePatchRect/Message
-#onready var player = get_tree().get_root().get_node("Museum").get_node("Player")
+var player 
 signal dialogue_start
 signal dialogue_finish
 
 func _ready():
-	
+	player = get_node(path_to_player)
 	$NinePatchRect.visible = false
 	
 func start():
 	if dialogue_active:
 		return
+	if !can_move_during_dialogue:
+		player.can_move = false
+	player.get_node("UserInterface").visible = false
 	$NinePatchRect.visible = true
 	dialogue_active = true
 	dialogue = load_dialogue()
@@ -45,6 +51,9 @@ func next_line():
 		$Timer.start()
 		$NinePatchRect.visible = false
 		current_dialogue_id = 0
+		if can_move_after_dialogue:
+			player.can_move = true
+		player.get_node("UserInterface").visible = true
 		emit_signal("dialogue_finish")
 		return
 	else:

@@ -51,19 +51,8 @@ func _input(event):
 	if event.is_action_pressed("throw"):
 		throw()
 	
-func _on_Interaction_body_entered(body):
-	pass # Replace with function body.
 
 
-func _on_Dialogue_dialogue_start():
-	can_move = false
-	$UserInterface.visible = false
-
-
-func _on_Dialogue_dialogue_finish():
-	can_move = true
-	$UserInterface.visible = true
-	
 func throw():
 	var garlic_path = garlic_scene
 	var garlic = garlic_path.instance()
@@ -71,3 +60,7 @@ func throw():
 	get_parent().add_child(garlic)
 	garlic.global_position = $Position2D.global_position
 	garlic.velocity = direction * 50
+
+
+func _on_Dialogue_dialogue_finish():
+	$UserInterface/JournalIcon.get_player_attention()

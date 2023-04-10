@@ -168,6 +168,7 @@ shape = SubResource( 5 )
 [node name="Dialogue" parent="Cutscene" instance=ExtResource( 13 )]
 visible = true
 dialogue_file = "res://Dialogue/Json/monologue3.json"
+path_to_player = NodePath("../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="Cutscene"]
 position = Vector2( 7, -91 )

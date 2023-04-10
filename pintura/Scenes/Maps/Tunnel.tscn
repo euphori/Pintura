@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tilemap/Forest/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Tunnel/background_0.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Tunnel/hanging_lights3.tres" type="Texture" id=9]
 [ext_resource path="res://Assets/Tunnel/hanging_lights1.tres" type="Texture" id=10]
+[ext_resource path="res://download (3).png" type="Texture" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
@@ -70,8 +71,220 @@ next_scene = "res://Scenes/Maps/Datushouse.tscn"
 position = Vector2( 468, 312 )
 color = Color( 0.247059, 0.258824, 0.282353, 1 )
 
-[node name="Background0" type="Sprite" parent="."]
-position = Vector2( 418, 205 )
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 482, 102 )
+
+[node name="BackGround" type="Node2D" parent="Node2D"]
+position = Vector2( -164, -20 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Download(3)" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -329, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)2" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -185, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)3" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -187, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)5" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -187, -574 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)4" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -329, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)6" type="Sprite" parent="Node2D/BackGround"]
+position = Vector2( -329, -573 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Background0" type="Sprite" parent="Node2D/BackGround"]
+visible = false
+position = Vector2( -50, -107 )
+scale = Vector2( 4.80139, 4.80139 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="BackGround2" type="Node2D" parent="Node2D"]
+position = Vector2( -21, -20 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Download(3)" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -329, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)2" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -185, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)3" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -187, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)5" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -187, -574 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)4" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -329, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)6" type="Sprite" parent="Node2D/BackGround2"]
+position = Vector2( -329, -573 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Background0" type="Sprite" parent="Node2D/BackGround2"]
+visible = false
+position = Vector2( -50, -107 )
+scale = Vector2( 4.80139, 4.80139 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2( 482, 538 )
+
+[node name="BackGround" type="Node2D" parent="Node2D2"]
+position = Vector2( -164, -20 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Download(3)" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -329, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)2" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -185, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)3" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -187, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)5" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -187, -574 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)4" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -329, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)6" type="Sprite" parent="Node2D2/BackGround"]
+position = Vector2( -329, -573 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Background0" type="Sprite" parent="Node2D2/BackGround"]
+visible = false
+position = Vector2( -50, -107 )
+scale = Vector2( 4.80139, 4.80139 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="BackGround2" type="Node2D" parent="Node2D2"]
+position = Vector2( -21, -20 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Download(3)" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -329, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)2" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -185, 152 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)3" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -187, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)5" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -187, -574 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)4" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -329, -210 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Download(3)6" type="Sprite" parent="Node2D2/BackGround2"]
+position = Vector2( -329, -573 )
+scale = Vector2( 1.01521, 1.01521 )
+z_index = -1
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 256, 384 )
+
+[node name="Background0" type="Sprite" parent="Node2D2/BackGround2"]
+visible = false
+position = Vector2( -50, -107 )
 scale = Vector2( 4.80139, 4.80139 )
 z_index = -1
 texture = ExtResource( 8 )
@@ -278,6 +491,7 @@ cell_size = Vector2( 8, 8 )
 tile_data = PoolIntArray( -786404, 2, 0, -524245, 11, 0, -458731, 11, 0, -458718, 7, 0, -262105, 11, 0, -196577, 11, 0, -65515, 11, 0, -65494, 11, 0, 22, 11, 0, 196631, 11, 0, 524319, 2, 0, 524320, 2, 0, 786457, 2, 0 )
 
 [node name="TunnelProps" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 265, 434 )
 z_index = -1
 cell_size = Vector2( 16, 16 )

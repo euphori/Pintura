@@ -5,12 +5,15 @@ onready var max_page = $PageContainer.get_child_count() - 1
 onready var page_slots = $PageContainer.get_children()
 onready var inventory = get_parent().get_node("Inventory")
 
+signal toggle_journal
+
 func _ready():
 	page_slots[0].visible = true
 
 
 func _input(event):
 	if event.is_action_pressed("journal"):
+		emit_signal("toggle_journal")
 		if visible == false:
 			inventory.visible = false
 			visible = true

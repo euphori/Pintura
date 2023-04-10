@@ -7,11 +7,12 @@ export var MAX_HEALTH = 100
 export var ARMOR = 50
 export var MAX_DISTANCE = 100
 
-
+export(NodePath) var path_to_player
 
 onready var podium = get_node("/root/Museum/Podium")
 onready var door = get_node("/root/Museum/Door")
 onready var agent = $NavigationAgent2D
+onready var player = get_node(path_to_player)
 
 var motion = Vector2()
 var direction
@@ -37,6 +38,7 @@ func _physics_process(delta):
 			if global_position - door.global_position >= Vector2(-5,-5):
 				queue_free()
 				emit_signal("scene_over")
+				
 		else:
 			direction = (podium.global_position - global_position).normalized()
 			
