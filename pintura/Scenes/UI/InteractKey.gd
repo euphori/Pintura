@@ -2,7 +2,7 @@ extends Sprite
 
 
 
-export (String, "Open", "Talk") var text
+export (String, "Open", "Talk", "Toggle") var text
 
 func _ready():
 	$Label.text = text
@@ -16,5 +16,6 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Area2D_area_exited(area):
+	visible = false
 	get_parent().player_near = false
 

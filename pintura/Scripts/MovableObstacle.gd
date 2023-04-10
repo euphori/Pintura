@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var ACCELERATION = 250
 export var MAX_SPEED = 70
+export (Texture) var texture
 
 var velocity = Vector2(100,0)
 var move_distance = 30
@@ -10,6 +11,8 @@ var closing = false
 var opening = false
 onready var original_position = position.x
 
+func _ready():
+	$Sprite.texture = texture
 
 
 func _physics_process(delta):
@@ -30,7 +33,9 @@ func close(delta):
 	else:
 		closing = false
 
-func _on_Switch_trigger_switch():
+
+
+func _on_Lamp_trigger_switch():
 	if !closing and !opening:
 		print('X')
 		opening = true
