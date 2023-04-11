@@ -11,8 +11,8 @@ func _ready():
 		cloud_png[i] = load("res://Assets/Environment/Clouds/Cloud " + str(i+1) + ".png")
 		
 	$Sprite.set_texture(cloud_png[round(rand_range(0,19))]) 
-	self.scale.x = rand_range(0.3,1.5)
-	self.scale.y = rand_range(0.3,1.5)
+	self.scale.x = rand_range(1,3)
+	self.scale.y = scale.x
 	speed = rand_range(20,40)
 	accel = rand_range(50,200)
 func _physics_process(delta):

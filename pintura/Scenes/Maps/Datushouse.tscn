@@ -525,59 +525,57 @@ z_index = 1
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Clouds" type="Node2D" parent="."]
-position = Vector2( 541, 175 )
+position = Vector2( 108, 272 )
 z_index = 3
 script = ExtResource( 14 )
 
 [node name="Cloud" parent="Clouds" instance=ExtResource( 12 )]
+modulate = Color( 0.0235294, 0.0235294, 0.0235294, 0.368627 )
 position = Vector2( -584, 137 )
 
 [node name="Position2D" type="Position2D" parent="Clouds" groups=["spawn"]]
@@ -587,13 +585,13 @@ position = Vector2( -831, -145 )
 position = Vector2( -831, -63 )
 
 [node name="Position2D3" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -791, 9 )
+position = Vector2( -765, 40 )
 
 [node name="Position2D4" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -831, 102 )
+position = Vector2( -831, 123 )
 
 [node name="Position2D5" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -765, 211 )
+position = Vector2( -728, 240 )
 
 [node name="Position2D6" type="Position2D" parent="Clouds" groups=["spawn"]]
 position = Vector2( -831, 287 )
@@ -602,13 +600,13 @@ position = Vector2( -831, 287 )
 position = Vector2( -765, 405 )
 
 [node name="Position2D8" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -728, -510 )
+position = Vector2( -765, -497 )
 
 [node name="Position2D9" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -728, -428 )
+position = Vector2( -868, -366 )
 
 [node name="Position2D10" type="Position2D" parent="Clouds" groups=["spawn"]]
-position = Vector2( -688, -356 )
+position = Vector2( -584, -428 )
 
 [node name="Position2D11" type="Position2D" parent="Clouds" groups=["spawn"]]
 position = Vector2( -728, -263 )
@@ -623,7 +621,7 @@ position = Vector2( -728, -78 )
 position = Vector2( -662, 40 )
 
 [node name="SpawnLocation" type="Position2D" parent="Clouds"]
-position = Vector2( -254, -9 )
+position = Vector2( -646, -42 )
 
 [node name="Timer" type="Timer" parent="Clouds"]
 wait_time = 2.0
