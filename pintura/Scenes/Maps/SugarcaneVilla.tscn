@@ -4,10 +4,10 @@
 [ext_resource path="res://Tilemap/Forest/ForestTiles.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemap/Forest/Water.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Sugarcane Village Assets/bambooo.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/Sugarcane Village Assets/bambooo.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemap/Forest/Rocks.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Sugarcane Village Assets/aaafarmer.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Sugarcane Village Assets/aaafarmer.png" type="Texture" id=8]
 
 [node name="Node2D2" type="Node2D"]
 position = Vector2( -18, 57 )

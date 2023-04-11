@@ -5,12 +5,12 @@
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemap/Forest/Water.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tilemap/Bailes De Luces/BailesTilemap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemap/Forest/Rocks.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Bailes de Luces Assets/Dancer 2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Bailes de Luces Assets/dancer.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Bailes de Luces Assets/Dancer 4.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Bailes de Luces Assets/Dancer 3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Bailes de Luces Assets/Dancer 2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Bailes de Luces Assets/dancer.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Bailes de Luces Assets/Dancer 4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/Bailes de Luces Assets/Dancer 3.png" type="Texture" id=11]
 
 [node name="Node2D2" type="Node2D"]
 position = Vector2( -18, 57 )

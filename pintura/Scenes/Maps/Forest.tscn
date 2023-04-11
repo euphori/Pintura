@@ -8,7 +8,7 @@
 [ext_resource path="res://Tilemap/Forest/Cliff.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Fuel.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Textures/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Forest.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Garlic.tscn" type="PackedScene" id=11]
 [ext_resource path="res://light.png" type="Texture" id=12]
@@ -140,17 +140,10 @@ position = Vector2( 549, 412 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-<<<<<<< HEAD
-frame = 4
-
-[node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 3
-=======
 frame = 2
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 2
->>>>>>> 10042dad73533896b7489f506e6084bfd094b1b7
+frame = 0
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
@@ -734,6 +727,7 @@ position = Vector2( 596, 458 )
 [node name="Garlic" parent="." instance=ExtResource( 11 )]
 
 [connection signal="toggle_torch" from="YSort/Player" to="Tambal" method="_on_Player_toggle_torch"]
+[connection signal="toggle_journal" from="YSort/Player/UserInterface/Journal" to="YSort/Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="garlic_nearby" from="Garlic" to="Tambal" method="_on_Garlic_garlic_nearby"]
 
 [editable path="YSort/Player"]

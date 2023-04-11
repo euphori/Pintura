@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grass Running.wav-b84254d9acf1fd982b457ab405c95b12.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundFX/Footsteps/Grass Running.wav"
+dest_files=[ "res://.import/Grass Running.wav-b84254d9acf1fd982b457ab405c95b12.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

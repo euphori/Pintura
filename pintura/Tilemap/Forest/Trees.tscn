@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Environment/Forest/Trees.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Environment/Forest/Trees.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 40, 88, 24, 88, 24, 56, 40, 56 )

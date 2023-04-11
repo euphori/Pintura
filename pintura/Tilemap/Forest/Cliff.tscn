@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Environment/Forest/Forest Cliff.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Environment/Forest/Forest Cliff.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 4, 44, 8, 40, 8, 36, 12, 28, 12, 24, 20, 20, 40, 20, 64, 24, 68, 36, 76, 48, 64, 60, 60, 60, 52, 56, 48, 52, 52, 48, 52, 44, 56, 40, 52, 32, 28, 32, 28, 36, 28, 44, 32, 48, 16, 60, 8, 60, 0, 52 )
