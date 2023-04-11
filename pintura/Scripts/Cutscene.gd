@@ -107,5 +107,6 @@ func _on_Amomongo_scene_over():
 
 
 func _on_Timer_timeout():
-	return_camera()
+	if camera_used == "player_camera":
+		return_camera()
 	timer_set = false
