@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/datuhouse.png-0c33c44535b3b36cc9787673ee526fa9.stex"
+path="res://.import/datuhouse.png-a53890b6ce2701324b2929b409b2dcca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Datu village/datuhouse.png"
-dest_files=[ "res://.import/datuhouse.png-0c33c44535b3b36cc9787673ee526fa9.stex" ]
+source_file="res://Assets/Datu village Assets/datuhouse.png"
+dest_files=[ "res://.import/datuhouse.png-a53890b6ce2701324b2929b409b2dcca.stex" ]
 
 [params]
 
