@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var ACCELERATION = 250
-export var MAX_SPEED = 140
-export var FRICTION = .25
+export var ACCELERATION = 500
+export var MAX_SPEED = 100
+export var FRICTION = 500
 export var MAX_HEALTH = 100
 export var ARMOR = 50
 export var MAX_DISTANCE = 100
@@ -44,17 +44,16 @@ func _physics_process(delta):
 	if can_move == true:
 		motion = motion.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	else:
-		motion = Vector2.ZERO
+		motion = motion.move_toward(Vector2.ZERO, FRICTION * delta)
 	motion = move_and_slide(motion)
 
 
 func play_musuem_cutscene():
-	distance = global_position - destination[0].global_position
-	
-	if distance >= Vector2(5,5) or distance <= Vector2(-5,-5):
+
+	if global_position.distance_to(destination[0].global_position) >=5 :
 		if got_item:
 			direction = global_position.direction_to(agent.get_next_location())
-			if global_position - destination[1].global_position >= Vector2(-5,-5):
+			if global_position.distance_to(destination[1].global_position) <= 15:
 				disappear()
 				emit_signal("scene_over")
 				

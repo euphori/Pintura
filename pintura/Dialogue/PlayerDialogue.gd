@@ -27,6 +27,7 @@ func start():
 	$NinePatchRect.visible = true
 	dialogue_active = true
 	dialogue = load_dialogue()
+	
 	current_dialogue_id -= 1
 	emit_signal("dialogue_start")
 	next_line()
@@ -57,7 +58,8 @@ func next_line():
 		emit_signal("dialogue_finish")
 		return
 	else:
-		
+		var speaker = dialogue[current_dialogue_id]['name']
+		$NinePatchRect/Sprite.texture = load("res://Assets/Textures/Portrait/"+ speaker + ".png")
 		$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
 		$NinePatchRect/Message.text = dialogue[current_dialogue_id]['text']
 		message.animate_text()

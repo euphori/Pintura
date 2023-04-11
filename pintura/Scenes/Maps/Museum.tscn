@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/UI/24.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/podium.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Textures/Character/aaamom.png" type="Texture" id=8]
 [ext_resource path="res://Tilemap/Museum/Walls.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Tilemap/Museum/FurnitureA.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Museum.gd" type="Script" id=18]
@@ -114,8 +115,12 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="NPC" parent="." instance=ExtResource( 21 )]
-position = Vector2( 780, 845 )
+position = Vector2( 777, 846 )
 z_index = 1
+
+[node name="Sprite" parent="NPC" index="0"]
+texture = ExtResource( 8 )
+hframes = 1
 
 [node name="Dialogue" parent="NPC" index="3"]
 path_to_player = NodePath("../../Player")
@@ -209,14 +214,14 @@ position = Vector2( -263.25, 24.75 )
 scale = Vector2( 2.74606, 2.74606 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
-visible = false
 navpoly = SubResource( 3 )
 
 [node name="Amomongo" parent="Cutscene/Navigation2D" instance=ExtResource( 26 )]
 position = Vector2( 64.5471, -16.2961 )
 scale = Vector2( 0.728316, 0.728316 )
+MAX_SPEED = 150
 path_to_player = NodePath("../../../Player")
-destination_path = [ NodePath("../../../Podium"), NodePath("../../../Door") ]
+destination_path = [ NodePath("../../../Podium"), NodePath("../../../Door/Position2D") ]
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 4 )
@@ -265,6 +270,9 @@ text = "Open"
 [node name="Dialogue" parent="Door" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/need_key.json"
 path_to_player = NodePath("../../Player")
+
+[node name="Position2D" type="Position2D" parent="Door"]
+position = Vector2( 0, 26 )
 
 [node name="Icon" type="Sprite" parent="."]
 modulate = Color( 0.992157, 0.992157, 0.992157, 1 )
