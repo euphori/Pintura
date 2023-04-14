@@ -139,8 +139,11 @@ tile_data = PoolIntArray( 131067, 0, 0, 131068, 0, 1, 131069, 0, 1, 131070, 0, 1
 position = Vector2( 549, 412 )
 z_index = 1
 
+[node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
+frame = 0
+
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 4
+frame = 5
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
