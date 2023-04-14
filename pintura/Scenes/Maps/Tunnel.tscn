@@ -532,3 +532,11 @@ lifetime = 10.0
 preprocess = 0.1
 explosiveness = 0.4
 process_material = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 256, 560, 256, 448, 272, 448, 272, 408, 256, 408, 256, 96, 264, 80, 264, 8, 280, 8, 280, -88, 280, -120, 264, -120, 296, -128, 280, 552 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 256, 560, 240, 560, 248, -8, 264, -8, 264, -112, 256, -112, 224, 8, 192, 440, 176, 584, 240, 592 )

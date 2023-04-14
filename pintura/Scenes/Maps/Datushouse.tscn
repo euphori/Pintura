@@ -16245,86 +16245,82 @@ position = Vector2( 30, -10 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken10" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 948, -931 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 520, -20 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken12" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1079, -1253 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken13" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1015, -1453 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Clouds" type="Node2D" parent="."]
