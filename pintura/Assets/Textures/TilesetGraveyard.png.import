@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/graveyard_tileset_32x32.png-07d700d8e58e62550ea22f6fcf2d54c6.stex"
+path="res://.import/TilesetGraveyard.png-ec4328630db9b43ea3dd361b413c7257.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/graveyard_tileset_32x32.png"
-dest_files=[ "res://.import/graveyard_tileset_32x32.png-07d700d8e58e62550ea22f6fcf2d54c6.stex" ]
+source_file="res://Assets/Textures/TilesetGraveyard.png"
+dest_files=[ "res://.import/TilesetGraveyard.png-ec4328630db9b43ea3dd361b413c7257.stex" ]
 
 [params]
 
