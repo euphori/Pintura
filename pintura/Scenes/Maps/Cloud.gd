@@ -8,7 +8,7 @@ var cloud_png = [null,null,null,null,null,null,null,null,null,null,null,null,nul
 
 func _ready():
 	for i in 19:
-		cloud_png[i] = load("res://Assets/Environment/Clouds/Cloud " + str(i+1) + ".png")
+		cloud_png[i] = load("res://Assets/Textures/Environment/Clouds/Cloud " + str(i+1) + ".png")
 		
 	$Sprite.set_texture(cloud_png[round(rand_range(0,19))]) 
 	self.scale.x = rand_range(1,3)
