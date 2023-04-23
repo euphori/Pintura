@@ -169,11 +169,10 @@ zoom = Vector2( 0.5, 0.5 )
 
 [node name="Dialogue" parent="Cutscene" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/monologue2.json"
-path_to_player = NodePath("../../Player")
 can_move_after_dialogue = false
+path_to_player = NodePath("../../Player")
 
 [node name="Navigation2D" type="Navigation2D" parent="Cutscene"]
-visible = false
 position = Vector2( -263.25, 24.75 )
 scale = Vector2( 2.74606, 2.74606 )
 
@@ -230,11 +229,7 @@ position = Vector2( 1237, 638 )
 z_index = 2
 next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
 need_key = true
-need_switch = null
 key_id = "MuseumKey"
-
-[node name="InteractKey" parent="Door" index="1"]
-text = "Open"
 
 [node name="Dialogue" parent="Door" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/need_key.json"
@@ -304,6 +299,7 @@ texture = ExtResource( 33 )
 [editable path="NPC"]
 [editable path="NPC/PlayerDetection"]
 [editable path="NPC/Dialogue"]
+[editable path="NPC/Dialogue/DialogueOptions"]
 [editable path="Cutscene2"]
 [editable path="Cutscene2/CutsceneTrigger"]
 [editable path="Cutscene"]
@@ -311,3 +307,4 @@ texture = ExtResource( 33 )
 [editable path="CSCheckJournal"]
 [editable path="CSCheckJournal/CutsceneTrigger"]
 [editable path="Door"]
+[editable path="Door/InteractKey"]

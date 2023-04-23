@@ -178,7 +178,7 @@ texture = ExtResource( 1 )
 position = Vector2( 303, 224 )
 
 [node name="Datu" parent="." instance=ExtResource( 4 )]
-position = Vector2( 271, 116 )
+position = Vector2( 275, 243 )
 
 [node name="Sprite" parent="Datu" index="0"]
 position = Vector2( 28, -50 )
@@ -191,6 +191,7 @@ position = Vector2( 27, -46 )
 position = Vector2( 26, -46 )
 
 [node name="Dialogue" parent="Datu" index="3"]
+layer = 3
 dialogue_file = "res://Dialogue/Json/datu_intro.json"
 path_to_player = NodePath("../../Player")
 
@@ -200,32 +201,32 @@ position = Vector2( 28, -46 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 241, 124 )
 frames = SubResource( 122 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 372, 170 )
 frames = SubResource( 122 )
-frame = 6
+frame = 7
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 349, 108 )
 frames = SubResource( 123 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 259, 161 )
 frames = SubResource( 124 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 341, 153 )
 frames = SubResource( 125 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
@@ -256,10 +257,15 @@ path_to_player = NodePath("../../Player")
 [node name="InteractKey" parent="Hiraya" index="4"]
 position = Vector2( 0, -10 )
 
+[connection signal="pressed" from="Datu/Dialogue/DialogueOptions/Option1/Button" to="Datu/Dialogue" method="_on_Button_pressed"]
+[connection signal="pressed" from="Datu/Dialogue/DialogueOptions/Option2/Button" to="Datu/Dialogue" method="_on_Button_pressed"]
+[connection signal="pressed" from="Datu/Dialogue/DialogueOptions/Option3/Button" to="Datu/Dialogue" method="_on_Button_pressed"]
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="Datu"]
 [editable path="Datu/PlayerDetection"]
+[editable path="Datu/Dialogue"]
+[editable path="Datu/Dialogue/DialogueOptions"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
 [editable path="Hiraya"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/PixelFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Textures/UI/dialogue_box.png" type="Texture" id=2]
 [ext_resource path="res://Dialogue/PlayerDialogue.gd" type="Script" id=3]
 [ext_resource path="res://Dialogue/Message.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Textures/Portrait/Flora.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI/DialogueOptions.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 23
@@ -17,7 +18,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [node name="Dialogue" type="CanvasLayer"]
-visible = false
 script = ExtResource( 3 )
 dialogue_file = "res://Dialogue/Json/mother_line.json"
 
@@ -60,4 +60,14 @@ texture = ExtResource( 5 )
 wait_time = 0.4
 one_shot = true
 
+[node name="DialogueOptions" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_left = 137.0
+margin_top = 60.0
+margin_right = 137.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.8, 0.8 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="DialogueOptions"]

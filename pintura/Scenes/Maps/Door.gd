@@ -19,7 +19,7 @@ func set_file_path(p_value):
 
 
 func _change_scene():
-	Load.load_scene(get_parent(),next_scene)
+	Load.load_scene(get_owner(),next_scene)
 
 func _input(event):
 	

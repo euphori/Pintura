@@ -59,5 +59,4 @@ margin_bottom = 347.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 307, 307 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
