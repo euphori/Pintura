@@ -139,11 +139,8 @@ tile_data = PoolIntArray( 131067, 0, 0, 131068, 0, 1, 131069, 0, 1, 131070, 0, 1
 position = Vector2( 549, 412 )
 z_index = 1
 
-[node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 3
-
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 3
+frame = 1
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
@@ -727,7 +724,6 @@ position = Vector2( 596, 458 )
 [node name="Garlic" parent="." instance=ExtResource( 11 )]
 
 [connection signal="toggle_torch" from="YSort/Player" to="Tambal" method="_on_Player_toggle_torch"]
-[connection signal="toggle_journal" from="YSort/Player/UserInterface/Journal" to="YSort/Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="garlic_nearby" from="Garlic" to="Tambal" method="_on_Garlic_garlic_nearby"]
 
 [editable path="YSort/Player"]

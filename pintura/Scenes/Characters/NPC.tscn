@@ -31,7 +31,6 @@ script = ExtResource( 4 )
 position = Vector2( 2, -2 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 3 )]
-visible = true
 
 [node name="InteractKey" parent="." instance=ExtResource( 5 )]
 
