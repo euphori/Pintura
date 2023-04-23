@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/paintin1.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=2]
@@ -17,9 +17,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 10 )
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 46.0
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -72,8 +69,8 @@ tile_data = PoolIntArray( -1114112, 0, 2, -1114111, 0, 2, -1114110, 0, 2, -11141
 position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
-[node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 4
+[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
+frame = 1
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )
@@ -114,9 +111,6 @@ shadow_enabled = true
 [node name="InteractKey" parent="Lamp" instance=ExtResource( 10 )]
 text = "Toggle"
 
-[node name="CollisionShape2D" parent="Lamp/InteractKey/Area2D" index="0"]
-shape = SubResource( 2 )
-
 [node name="Lamp2" type="StaticBody2D" parent="."]
 position = Vector2( 894, 616 )
 scale = Vector2( 0.75, 0.75 )
@@ -139,10 +133,7 @@ shadow_enabled = true
 [node name="InteractKey" parent="Lamp2" instance=ExtResource( 10 )]
 text = "Toggle"
 
-[node name="CollisionShape2D" parent="Lamp2/InteractKey/Area2D" index="0"]
-shape = SubResource( 2 )
-
-[node name="AnimationPlayer" parent="Lamp2/InteractKey" index="2"]
+[node name="AnimationPlayer" parent="Lamp2/InteractKey" index="3"]
 anims/RESET = SubResource( 3 )
 anims/bob = SubResource( 4 )
 
@@ -190,7 +181,6 @@ position = Vector2( 5, 95 )
 path_to_player = NodePath("../../../Player")
 destination_path = [ NodePath("../../../Door") ]
 
-[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="trigger_switch" from="Lamp" to="MovableShelf" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp" to="Door" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp2" to="MovableShelf" method="_on_Lamp_trigger_switch"]

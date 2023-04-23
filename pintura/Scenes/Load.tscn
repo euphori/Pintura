@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Load" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 213.0
+margin_top = 266.0
+margin_right = 424.0
+margin_bottom = 298.0

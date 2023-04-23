@@ -19,7 +19,7 @@ func set_file_path(p_value):
 
 
 func _change_scene():
-	get_tree().change_scene(next_scene)
+	Load.load_scene(self,"res://Scenes/Maps/Datushouse.tscn")
 
 func _input(event):
 	
