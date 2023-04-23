@@ -1,0 +1,79 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 24
+syntax_version = 2
+raw_text = "~ amom_first_encounter
+
+Flora: What was that? 
+do creature_can_move = true
+
+~ amom_second_encounter
+
+Flora: There it is again!
+Flora: Hey! What are you doing?!
+
+"
+errors = [  ]
+titles = {
+"amom_first_encounter": "2",
+"amom_second_encounter": "7"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "amom_first_encounter",
+"type": "title"
+},
+"2": {
+"character": "Flora",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "What was that?",
+"translation_key": "What was that?",
+"type": "dialogue"
+},
+"3": {
+"mutation": {
+"expression": [ {
+"type": "variable",
+"value": "creature_can_move"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "bool",
+"value": true
+} ]
+},
+"next_id": "",
+"type": "mutation"
+},
+"5": {
+"next_id": "7",
+"text": "amom_second_encounter",
+"type": "title"
+},
+"7": {
+"character": "Flora",
+"character_replacements": [  ],
+"next_id": "8",
+"replacements": [  ],
+"text": "There it is again!",
+"translation_key": "There it is again!",
+"type": "dialogue"
+},
+"8": {
+"character": "Flora",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Hey! What are you doing?!",
+"translation_key": "Hey! What are you doing?!",
+"type": "dialogue"
+}
+}

@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/PixelFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Textures/UI/interact_key.tres" type="Texture" id=2]
 [ext_resource path="res://Scenes/UI/InteractKey.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 46.0
+[sub_resource type="DynamicFont" id=5]
+size = 27
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -39,6 +41,7 @@ tracks/0/keys = {
 "values": [ Vector2( -3, -26 ), Vector2( -3, -28 ), Vector2( -3, -26 ) ]
 }
 
+<<<<<<< Updated upstream
 [node name="InteractKey" type="Area2D"]
 collision_layer = 24
 collision_mask = 2
@@ -60,10 +63,28 @@ margin_top = -33.0
 margin_right = 33.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 1 )
+=======
+[sub_resource type="CircleShape2D" id=4]
+radius = 46.0
+
+[node name="InteractKey" type="Area2D"]
+collision_layer = 24
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -3.0
+margin_top = -29.0
+margin_right = 33.0
+margin_bottom = 30.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 5 )
+>>>>>>> Stashed changes
 text = "talk
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+<<<<<<< Updated upstream
 root_node = NodePath("../InteractKey")
 anims/RESET = SubResource( 2 )
 anims/bob = SubResource( 3 )
@@ -72,3 +93,19 @@ anims/bob = SubResource( 3 )
 [connection signal="area_entered" from="." to="InteractKey" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_InteractKey_area_exited"]
 [connection signal="area_exited" from="." to="InteractKey" method="_on_Area2D_area_exited"]
+=======
+root_node = NodePath("../Sprite")
+anims/RESET = SubResource( 2 )
+anims/bob = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -10, -22 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[connection signal="area_entered" from="." to="." method="_on_InteractKey_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_InteractKey_area_exited"]
+>>>>>>> Stashed changes

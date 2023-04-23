@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=74 format=2]
+=======
+[gd_scene load_steps=22 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Assets/Textures/Datu village Assets/datuhouse.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Textures/Environment/Forest/Trees/Tree.tscn" type="PackedScene" id=2]
@@ -10,6 +14,7 @@
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Textures/Datu village Assets/CluckingChickenIdleSide.png" type="Texture" id=9]
 [ext_resource path="res://Tilemap/Datu/Fences.tscn" type="PackedScene" id=10]
+<<<<<<< Updated upstream
 [ext_resource path="res://Assets/Textures/Traders Market Assets/aaasugarcane miller.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Objects/Cloud.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Textures/Traders Market Assets/aaastall2.png" type="Texture" id=13]
@@ -560,6 +565,13 @@ points = PoolVector2Array( 32, 0, 32, 0, 0, 32, 0, 0 )
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+=======
+[ext_resource path="res://Scenes/Characters/NPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Objects/Cloud.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Textures/Character/aaahiraya.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Maps/Clouds.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Characters/NPC.gd" type="Script" id=15]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.5, 20.5 )
@@ -751,6 +763,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, -8 )
 next_scene = "res://Scenes/Maps/InsideDatuHouse.tscn"
 
+<<<<<<< Updated upstream
 [node name="Stalls" type="YSort" parent="Datuhouse"]
 position = Vector2( 1321, -21 )
 z_index = 1
@@ -770,6 +783,10 @@ texture = ExtResource( 11 )
 [node name="Aaasugarcanestall" type="Sprite" parent="Datuhouse/Stalls"]
 position = Vector2( 365, -98 )
 texture = ExtResource( 16 )
+=======
+[node name="Position2D" type="Position2D" parent="Datuhouse"]
+position = Vector2( 0, 33 )
+>>>>>>> Stashed changes
 
 [node name="YSort2" type="YSort" parent="."]
 position = Vector2( 292, 22 )
@@ -27609,52 +27626,50 @@ position = Vector2( 30, -10 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
@@ -27919,5 +27934,21 @@ texture = ExtResource( 38 )
 position = Vector2( 3250, 1493 )
 texture = ExtResource( 37 )
 
+[node name="Hiraya" parent="." instance=ExtResource( 11 )]
+position = Vector2( 253, 455 )
+script = ExtResource( 15 )
+MAX_SPEED = 70
+destination_path = [ NodePath("../Datuhouse/Position2D") ]
+
+[node name="Sprite" parent="Hiraya" index="0"]
+texture = ExtResource( 13 )
+hframes = 1
+
 [connection signal="timeout" from="Clouds/Timer" to="Clouds" method="_on_Timer_timeout"]
+<<<<<<< Updated upstream
 [connection signal="timeout" from="Clouds2/Timer" to="Clouds2" method="_on_Timer_timeout"]
+=======
+[connection signal="timeout" from="Hiraya/Timer" to="Hiraya" method="_on_Timer_timeout"]
+
+[editable path="Hiraya"]
+>>>>>>> Stashed changes

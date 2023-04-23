@@ -1,0 +1,11 @@
+[
+
+	{"name": "Hiraya", "text": "My pearl tiara! The amomonggo stole my pearl tiara!"},
+	{"name": "Flora", "text": "That creature?"},
+	{"name": "Hiraya", "text": "That amomongo from before. It’s a horrid horrid creature that steals anything valuable it can find!"},
+	{"name": "Hiraya", "text": "Has it stolen something from you as well? Oh you poor thing. Let me take you back to our village,","has_options": true,"num_of_options": 2},
+	{"id:": "option_a", "name": "Flora", "text": "OK"},
+	{"id:": "option_b", "name": "Flora", "text": "Fine"}
+	
+	
+]

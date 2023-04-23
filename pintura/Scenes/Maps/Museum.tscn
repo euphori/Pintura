@@ -47,8 +47,16 @@ tile_data = PoolIntArray( -393228, 0, 0, -393227, 0, 1, -393226, 0, 1, -393225, 
 position = Vector2( 748, 950 )
 location = "Museum"
 
+<<<<<<< Updated upstream
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
 frame = 2
+=======
+[node name="AnimatedSprite" parent="Player/Torch" index="1"]
+frame = 1
+
+[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
+frame = 5
+>>>>>>> Stashed changes
 
 [node name="24" type="Sprite" parent="."]
 position = Vector2( 334, 147 )
@@ -59,19 +67,28 @@ texture = ExtResource( 2 )
 position = Vector2( 777, 846 )
 z_index = 1
 script = ExtResource( 9 )
+<<<<<<< Updated upstream
 path_to_player = NodePath("../Player")
+=======
+>>>>>>> Stashed changes
 stationary = true
 
 [node name="Sprite" parent="Mother" index="0"]
 texture = ExtResource( 8 )
 hframes = 1
 
+<<<<<<< Updated upstream
 [node name="Dialogue" parent="Mother" index="3"]
 path_to_player = NodePath("../../Player")
 
 [node name="Dialogue" parent="Mother" instance=ExtResource( 27 )]
 path_to_player = NodePath("../../Player")
 
+=======
+[node name="Dialogue" parent="Mother" instance=ExtResource( 27 )]
+path_to_player = NodePath("../../Player")
+
+>>>>>>> Stashed changes
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
 margin_left = 40.0
@@ -217,7 +234,10 @@ color = Color( 0.811765, 0.780392, 0.729412, 0.666667 )
 position = Vector2( 875, 729 )
 color = Color( 0.470588, 0.435294, 0.435294, 1 )
 
+<<<<<<< Updated upstream
 [connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
+=======
+>>>>>>> Stashed changes
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="Player" method="_on_Dialogue_dialogue_finish"]
@@ -228,7 +248,10 @@ color = Color( 0.470588, 0.435294, 0.435294, 1 )
 [editable path="Player/UserInterface"]
 [editable path="Player/UserInterface/Journal"]
 [editable path="Mother"]
+<<<<<<< Updated upstream
 [editable path="Mother/PlayerDetection"]
+=======
+>>>>>>> Stashed changes
 [editable path="Cutscene"]
 [editable path="Cutscene/CutsceneTrigger"]
 [editable path="CSCheckJournal"]

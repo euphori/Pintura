@@ -140,7 +140,11 @@ position = Vector2( 549, 412 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
+<<<<<<< Updated upstream
 frame = 2
+=======
+frame = 4
+>>>>>>> Stashed changes
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
 frame = 0
@@ -732,3 +736,4 @@ position = Vector2( 596, 458 )
 [editable path="YSort/Player"]
 [editable path="YSort/Player/Interaction"]
 [editable path="YSort/Player/UserInterface"]
+[editable path="YSort/Player/UserInterface/Journal"]

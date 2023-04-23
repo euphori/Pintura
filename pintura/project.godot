@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "DialogueResource",
+"language": "GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
 "base": "Reference",
 "class": "GSAIAgentLocation",
 "language": "GDScript",
@@ -155,6 +160,7 @@ _global_script_classes=[ {
 "path": "res://Libraries/Addons/com.gdquest.godot-steering-ai-framework/GSAIUtils.gd"
 } ]
 _global_script_class_icons={
+"DialogueResource": "",
 "GSAIAgentLocation": "",
 "GSAIArrive": "",
 "GSAIAvoidCollisions": "",

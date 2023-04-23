@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/PixelFont.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Textures/UI/dialogue_box.png" type="Texture" id=2]
 [ext_resource path="res://Dialogue/PlayerDialogue.gd" type="Script" id=3]
 [ext_resource path="res://Dialogue/Message.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Textures/Portrait/Flora.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/UI/OptionHighlight.tres" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 23
@@ -13,6 +14,11 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -43,9 +49,9 @@ text = "Sample name"
 
 [node name="Message" type="RichTextLabel" parent="Control/NinePatchRect"]
 margin_left = 45.0
-margin_top = 52.0
+margin_top = 49.0
 margin_right = 435.0
-margin_bottom = 129.0
+margin_bottom = 126.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "Hello world how are you im under the water"
@@ -63,4 +69,45 @@ texture = ExtResource( 5 )
 wait_time = 0.4
 one_shot = true
 
+<<<<<<< Updated upstream
 [connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]
+=======
+[node name="OptionA" type="TextureButton" parent="Control"]
+visible = false
+margin_left = 117.0
+margin_top = 282.0
+margin_right = 531.0
+margin_bottom = 302.0
+texture_hover = ExtResource( 6 )
+
+[node name="Text" type="RichTextLabel" parent="Control/OptionA"]
+margin_left = 15.0
+margin_top = -2.0
+margin_right = 239.0
+margin_bottom = 13.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Sample name"
+
+[node name="OptionB" type="TextureButton" parent="Control"]
+visible = false
+margin_left = 115.0
+margin_top = 304.0
+margin_right = 527.0
+margin_bottom = 324.0
+texture_hover = ExtResource( 6 )
+
+[node name="Text" type="RichTextLabel" parent="Control/OptionB"]
+margin_left = 17.0
+margin_top = -2.0
+margin_right = 241.0
+margin_bottom = 13.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Sample name"
+
+[connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Control/OptionA" to="." method="_on_OptionA_pressed"]
+>>>>>>> Stashed changes

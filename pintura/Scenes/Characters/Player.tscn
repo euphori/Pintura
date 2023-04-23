@@ -157,6 +157,10 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
+<<<<<<< Updated upstream
+=======
+frame = 3
+>>>>>>> Stashed changes
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]
@@ -230,3 +234,4 @@ position = Vector2( 0, 3 )
 
 [editable path="Interaction"]
 [editable path="UserInterface"]
+[editable path="UserInterface/Journal"]

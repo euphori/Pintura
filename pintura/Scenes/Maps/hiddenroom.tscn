@@ -73,7 +73,7 @@ position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 4
+frame = 0
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )
@@ -200,6 +200,7 @@ destination_path = [ NodePath("../../../Door") ]
 [editable path="Player"]
 [editable path="Player/Interaction"]
 [editable path="Player/UserInterface"]
+[editable path="Player/UserInterface/Journal"]
 [editable path="Lamp/InteractKey"]
 [editable path="Lamp2/InteractKey"]
 [editable path="MovableShelf"]

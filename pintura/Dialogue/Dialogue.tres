@@ -1,0 +1,53 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 7
+syntax_version = 2
+raw_text = "~ mother
+
+Mother: Flora I’ll be working late today so behave yourself ok? 
+Mother: You may explore the museum but be careful with what you touch. 
+Mother: Some areas are still under renovation, so be mindful of where you run off.
+
+"
+errors = [  ]
+titles = {
+"mother": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "mother",
+"type": "title"
+},
+"2": {
+"character": "Mother",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Flora I’ll be working late today so behave yourself ok?",
+"translation_key": "Flora I’ll be working late today so behave yourself ok?",
+"type": "dialogue"
+},
+"3": {
+"character": "Mother",
+"character_replacements": [  ],
+"next_id": "4",
+"replacements": [  ],
+"text": "You may explore the museum but be careful with what you touch.",
+"translation_key": "You may explore the museum but be careful with what you touch.",
+"type": "dialogue"
+},
+"4": {
+"character": "Mother",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Some areas are still under renovation, so be mindful of where you run off.",
+"translation_key": "Some areas are still under renovation, so be mindful of where you run off.",
+"type": "dialogue"
+}
+}
