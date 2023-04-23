@@ -39,33 +39,36 @@ tracks/0/keys = {
 "values": [ Vector2( -3, -26 ), Vector2( -3, -28 ), Vector2( -3, -26 ) ]
 }
 
-[node name="InteractKey" type="Sprite"]
-visible = false
+[node name="InteractKey" type="Area2D"]
+collision_layer = 24
+collision_mask = 2
+monitorable = false
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -13 )
+shape = SubResource( 4 )
+
+[node name="InteractKey" type="Sprite" parent="."]
 position = Vector2( -7, -26 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-script = ExtResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 24
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 14, 28 )
-shape = SubResource( 4 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 8.0
-margin_top = -14.0
-margin_right = 44.0
-margin_bottom = 39.0
+margin_left = -3.0
+margin_top = -33.0
+margin_right = 33.0
+margin_bottom = 20.0
 custom_fonts/font = ExtResource( 1 )
 text = "talk
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../InteractKey")
 anims/RESET = SubResource( 2 )
 anims/bob = SubResource( 3 )
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="." to="." method="_on_InteractKey_area_entered"]
+[connection signal="area_entered" from="." to="InteractKey" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_InteractKey_area_exited"]
+[connection signal="area_exited" from="." to="InteractKey" method="_on_Area2D_area_exited"]

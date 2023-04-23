@@ -20,14 +20,18 @@ font_data = ExtResource( 1 )
 script = ExtResource( 3 )
 dialogue_file = "res://Dialogue/Json/mother_line.json"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
 margin_left = 71.0
 margin_top = 214.0
 margin_right = 561.0
 margin_bottom = 387.0
 texture = ExtResource( 2 )
 
-[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+[node name="Name" type="RichTextLabel" parent="Control/NinePatchRect"]
 margin_left = 116.0
 margin_top = 7.0
 margin_right = 255.0
@@ -37,7 +41,7 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 text = "Sample name"
 
-[node name="Message" type="RichTextLabel" parent="NinePatchRect"]
+[node name="Message" type="RichTextLabel" parent="Control/NinePatchRect"]
 margin_left = 45.0
 margin_top = 52.0
 margin_right = 435.0
@@ -47,16 +51,16 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "Hello world how are you im under the water"
 script = ExtResource( 4 )
 
-[node name="Tween" type="Tween" parent="NinePatchRect/Message"]
+[node name="Tween" type="Tween" parent="Control/NinePatchRect/Message"]
 
-[node name="Sprite" type="Sprite" parent="NinePatchRect"]
+[node name="Sprite" type="Sprite" parent="Control/NinePatchRect"]
 position = Vector2( 79.5, -4.5 )
 scale = Vector2( 0.378906, 0.378906 )
 z_index = -1
 texture = ExtResource( 5 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Control"]
 wait_time = 0.4
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]
