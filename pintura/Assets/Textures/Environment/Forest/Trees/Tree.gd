@@ -3,7 +3,6 @@ extends StaticBody2D
 var green = preload("res://Assets/Textures/Environment/Forest/Trees/green_birch.tres")
 var yellow = preload("res://Assets/Textures/Environment/Forest/Trees/yellow_birch.tres")
 var rng = RandomNumberGenerator.new()
-onready var agent := GSAISteeringAgent.new()
 func _ready():
 	rng.randomize()
 	var color = rng.randi_range(0,2)

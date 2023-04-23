@@ -12,7 +12,6 @@ signal toggle_torch
 
 onready var camera = $Camera2D
 onready var torch = $Torch
-onready var agent := GSAISteeringAgent.new()
 onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 

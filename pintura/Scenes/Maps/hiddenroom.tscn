@@ -69,6 +69,9 @@ tile_data = PoolIntArray( -1114112, 0, 2, -1114111, 0, 2, -1114110, 0, 2, -11141
 position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
+[node name="AnimatedSprite" parent="Player/Torch" index="1"]
+frame = 5
+
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
 frame = 1
 
@@ -150,9 +153,6 @@ position = Vector2( 879, 558 )
 next_scene = "res://Scenes/Maps/Tunnel.tscn"
 need_switch = true
 
-[node name="InteractKey" parent="Door" index="1"]
-text = "Open"
-
 [node name="Cutscene" parent="." instance=ExtResource( 12 )]
 position = Vector2( 847, 655 )
 path_to_player = NodePath("../Player")
@@ -181,6 +181,7 @@ position = Vector2( 5, 95 )
 path_to_player = NodePath("../../../Player")
 destination_path = [ NodePath("../../../Door") ]
 
+[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="trigger_switch" from="Lamp" to="MovableShelf" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp" to="Door" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp2" to="MovableShelf" method="_on_Lamp_trigger_switch"]
@@ -194,5 +195,6 @@ destination_path = [ NodePath("../../../Door") ]
 [editable path="Lamp2/InteractKey"]
 [editable path="MovableShelf"]
 [editable path="Door"]
+[editable path="Door/InteractKey"]
 [editable path="Cutscene"]
 [editable path="Cutscene/CutsceneTrigger"]

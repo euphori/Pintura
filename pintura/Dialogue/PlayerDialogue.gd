@@ -15,6 +15,7 @@ signal dialogue_start
 signal dialogue_finish
 
 func _ready():
+	visible = true
 	player = get_node(path_to_player)
 	$NinePatchRect.visible = false
 	

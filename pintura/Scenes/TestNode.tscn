@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/Character/idle_Characters/walk_hiraya.png" type="Texture" id=3]
+
+[node name="TestNode" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 322, 311 )
+
+[node name="Hiraya" parent="." instance=ExtResource( 2 )]
+position = Vector2( 314, 158 )
+path_to_player = NodePath("../Player")
+destination_path = [ NodePath("../Player"), NodePath("../Position2D") ]
+stationary = false
+can_move = true
+
+[node name="Sprite" parent="Hiraya" index="0"]
+texture = ExtResource( 3 )
+
+[node name="Dialogue" parent="Hiraya" index="3"]
+dialogue_file = "res://Dialogue/Json/hiraya_intro.json"
+path_to_player = NodePath("../../Player")
+
+[node name="InteractKey" parent="Hiraya" index="4"]
+position = Vector2( 0, -10 )
+text = "Talk"
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 303, 44 )
+
+[connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
+
+[editable path="Hiraya"]
+[editable path="Hiraya/PlayerDetection"]

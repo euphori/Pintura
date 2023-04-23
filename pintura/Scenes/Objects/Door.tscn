@@ -76,6 +76,14 @@ z_index = -1
 texture = ExtResource( 5 )
 
 [node name="InteractKey" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 5 )
+text = "Open"
+
+[node name="Label" parent="InteractKey" index="2"]
+margin_left = -3.0
+margin_top = -26.0
+margin_right = 33.0
+margin_bottom = 27.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 11.5 )
@@ -94,3 +102,5 @@ anims/fade_to_black = SubResource( 5 )
 anims/fade_to_normal = SubResource( 6 )
 
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="InteractKey"]

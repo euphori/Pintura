@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/UI/InteractKey.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 46.0
+radius = 23.0868
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -21,10 +21,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -7, -26 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -26 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "bob"
-length = 0.8
+length = 1.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -33,10 +45,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -3, -26 ), Vector2( -3, -28 ), Vector2( -3, -26 ) ]
+"values": [ Vector2( -7, -19 ), Vector2( -7, -22 ), Vector2( -7, -26 ), Vector2( -7, -22 ), Vector2( -7, -19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -23 ), Vector2( -3, -26 ), Vector2( -3, -30 ), Vector2( -3, -26 ), Vector2( -3, -23 ) ]
 }
 
 [node name="InteractKey" type="Area2D"]
@@ -45,7 +69,6 @@ collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 14, 28 )
 shape = SubResource( 4 )
 
 [node name="InteractKey" type="Sprite" parent="."]
@@ -55,9 +78,10 @@ texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -3.0
-margin_top = -33.0
+margin_top = -26.0
 margin_right = 33.0
-margin_bottom = 20.0
+margin_bottom = 27.0
+rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 1 )
 text = "talk
 "

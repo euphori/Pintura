@@ -10,14 +10,13 @@ func load_scene(current_scene, next_scene):
 	get_tree().get_root().call_deferred("add_child",loading_scene_instance)
 	
 	var loader = ResourceLoader.load_interactive(next_scene)
-	
+	print(current_scene)
+	current_scene.queue_free()
 	if loader == null:
 		print("no loading scene")
 		return
-	
-	current_scene.queue_free()
+
 	yield(get_tree().create_timer(0.5),"timeout")
-	
 	while true:
 		var error = loader.poll()
 		
@@ -33,3 +32,4 @@ func load_scene(current_scene, next_scene):
 		else:
 			print("ERROR LOADING")
 			return
+			

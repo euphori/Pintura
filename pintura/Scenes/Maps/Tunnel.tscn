@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tilemap/Forest/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Textures/Tunnel/hanging_lights3.tres" type="Texture" id=9]
 [ext_resource path="res://Assets/Textures/Tunnel/hanging_lights1.tres" type="Texture" id=10]
 [ext_resource path="res://download (3).png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Tunnel/doorportal.png" type="Texture" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 1
@@ -64,8 +65,12 @@ texture = ExtResource( 4 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 272, -108 )
-z_index = 1
-next_scene = "res://Scenes/Maps/Datushouse.tscn"
+z_index = 2
+next_scene = "res://Scenes/Maps/WorldMap.tscn"
+
+[node name="DoorMuseum1" parent="Door" index="0"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 12 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 468, 312 )
@@ -540,3 +545,5 @@ polygon = PoolVector2Array( 256, 560, 256, 448, 272, 448, 272, 408, 256, 408, 25
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 256, 560, 240, 560, 248, -8, 264, -8, 264, -112, 256, -112, 224, 8, 192, 440, 176, 584, 240, 592 )
+
+[editable path="Door"]
