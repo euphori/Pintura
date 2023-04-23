@@ -185,6 +185,8 @@ scale = Vector2( 0.728316, 0.728316 )
 MAX_SPEED = 150
 path_to_player = NodePath("../../../Player")
 destination_path = [ NodePath("../../../Podium"), NodePath("../../../Door/Position2D") ]
+stationary = false
+can_move = true
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 4 )
