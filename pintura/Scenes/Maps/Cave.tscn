@@ -310,7 +310,7 @@ position = Vector2( 270, 286 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 3
+frame = 2
 
 [node name="AnimationPlayer" parent="Player" index="4"]
 anims/RESET = SubResource( 2 )
@@ -318,6 +318,9 @@ anims/walk = SubResource( 3 )
 
 [node name="Inventory" parent="Player/UserInterface" index="0"]
 position = Vector2( 148, 184 )
+
+[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
+frame = 2
 
 [node name="Bailes Tilemap" parent="." instance=ExtResource( 5 )]
 cell_size = Vector2( 16, 16 )
