@@ -3071,7 +3071,7 @@ position = Vector2( 1189, 506 )
 z_index = 1
 
 [node name="WaterFlora" type="Sprite" parent="Trees/Tree2296"]
-position = Vector2( -30, -1485 )
+position = Vector2( -60, -1425 )
 texture = ExtResource( 39 )
 
 [node name="Tree2297" parent="Trees" instance=ExtResource( 2 )]
@@ -27824,7 +27824,7 @@ tile_data = PoolIntArray( 327687, 0, 0 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 1769, -91 )
 frames = SubResource( 62 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="VillageHouses" type="YSort" parent="."]
