@@ -197,6 +197,7 @@ config/icon="res://icon.png"
 
 PlayerInventory="*res://Scripts/PlayerInventory.gd"
 JsonData="*res://Scripts/JSONData.gd"
+Load="*res://Scripts/Load.gd"
 
 [display]
 
