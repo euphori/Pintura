@@ -157,7 +157,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]
@@ -189,6 +189,7 @@ position = Vector2( 2, 4 )
 layer = 2
 
 [node name="Inventory" parent="UserInterface" index="0"]
+visible = false
 position = Vector2( 143, 169 )
 scale = Vector2( 0.5, 0.5 )
 
@@ -215,7 +216,7 @@ visible = false
 position = Vector2( -0.666748, -4 )
 scale = Vector2( 1.38095, 1.38095 )
 frames = SubResource( 18 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
