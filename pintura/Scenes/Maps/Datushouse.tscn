@@ -1021,19 +1021,18 @@ z_index = 1
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 7
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
@@ -1045,18 +1044,19 @@ playing = true
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
+frame = 1
 playing = true
 
 [node name="Hiraya NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -1512, 783 )
 frames = SubResource( 140 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Datuhouse" type="StaticBody2D" parent="."]
@@ -28074,73 +28074,73 @@ position = Vector2( 30, -10 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 520, -20 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken12" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1079, -1253 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Clouds" type="Node2D" parent="."]

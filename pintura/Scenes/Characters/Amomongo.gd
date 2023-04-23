@@ -1,10 +1,34 @@
-extends "res://Scripts/EventCharacters.gd"
+extends KinematicBody2D
 
+export var ACCELERATION = 500
+export var MAX_SPEED = 100
+export var FRICTION = 500
+export var MAX_HEALTH = 100
+export var ARMOR = 50
+export var MAX_DISTANCE = 100
 
+export(NodePath) var path_to_player
+export(Array, NodePath)var destination_path = []
 
 onready var agent = $NavigationAgent2D
+onready var player = get_node(path_to_player)
+
+var motion = Vector2()
+var direction
+var timer_set = false
+var can_move = false
+var got_item = false
+var destination = []
+var distance
+
+signal scene_over
+
+
 func _ready():
 	$Sprite.frame = 74
+	for i in range(destination_path.size()):
+		destination.append("")
+		destination[i] = get_node((destination_path[i]))
 	if player.location == "Museum":
 		agent.set_target_location(destination[1].global_position)
 
@@ -16,7 +40,12 @@ func _physics_process(delta):
 			play_musuem_cutscene()
 		"HiddenRoom":
 			play_hiddenroom_cutscene()
-
+	
+	if can_move == true:
+		motion = motion.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+	else:
+		motion = motion.move_toward(Vector2.ZERO, FRICTION * delta)
+	motion = move_and_slide(motion)
 
 
 func play_musuem_cutscene():

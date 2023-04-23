@@ -67,5 +67,7 @@ root_node = NodePath("../InteractKey")
 anims/RESET = SubResource( 2 )
 anims/bob = SubResource( 3 )
 
+[connection signal="area_entered" from="." to="." method="_on_InteractKey_area_entered"]
 [connection signal="area_entered" from="." to="InteractKey" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_InteractKey_area_exited"]
 [connection signal="area_exited" from="." to="InteractKey" method="_on_Area2D_area_exited"]
