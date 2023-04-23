@@ -40,6 +40,7 @@ func _ready():
 				if creature_involved:
 					camera = $Navigation2D/Amomongo/Camera2D
 			"scene_camera":
+				original_camera_position = $Camera2D.position
 				camera = $Camera2D
 			"default":
 				camera = $Camera2D

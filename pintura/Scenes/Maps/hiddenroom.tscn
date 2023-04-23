@@ -70,7 +70,7 @@ position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 2
+frame = 5
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
 frame = 4
@@ -112,6 +112,7 @@ texture = ExtResource( 9 )
 shadow_enabled = true
 
 [node name="InteractKey" parent="Lamp" instance=ExtResource( 10 )]
+visible = false
 text = "Toggle"
 
 [node name="Lamp2" type="StaticBody2D" parent="."]
@@ -134,6 +135,7 @@ texture = ExtResource( 9 )
 shadow_enabled = true
 
 [node name="InteractKey" parent="Lamp2" instance=ExtResource( 10 )]
+visible = false
 text = "Toggle"
 
 [node name="AnimationPlayer" parent="Lamp2/InteractKey" index="3"]
@@ -152,6 +154,9 @@ texture = ExtResource( 1 )
 position = Vector2( 879, 558 )
 next_scene = "res://Scenes/Maps/Tunnel.tscn"
 need_switch = true
+
+[node name="InteractKey" parent="Door" index="1"]
+visible = false
 
 [node name="Cutscene" parent="." instance=ExtResource( 12 )]
 position = Vector2( 847, 655 )
