@@ -218,6 +218,7 @@ visible = false
 position = Vector2( -0.666748, -4 )
 scale = Vector2( 1.38095, 1.38095 )
 frames = SubResource( 18 )
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

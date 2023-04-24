@@ -170,3 +170,4 @@ text = "- Explore Museum"
 [connection signal="pressed" from="Quest" to="." method="_on_Quest_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="PageContainer/SettingsPage/VBoxContainer/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="PageContainer/SettingsPage/VBoxContainer/Exit Game" to="." method="_on_Exit_Game_pressed"]

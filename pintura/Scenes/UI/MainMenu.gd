@@ -26,3 +26,7 @@ func _on_Continue_pressed():
 	Load.load_scene(self,save_file.last_scene)
 	print("LAST SCENE")
 	print(save_file.last_scene)
+
+
+func _on_Exit_pressed():
+	get_tree().quit()

@@ -32,5 +32,9 @@ func load_data():
 			file.close()
 
 func reset_data():
+	game_data.world_player_position = Vector2.ZERO
+	game_data.met_hiraya = false
+	game_data.last_scene = String()
+	game_data.last_location = String()
 	var dir = Directory.new()
 	dir.remove("user://save_file.save")

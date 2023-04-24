@@ -29,13 +29,13 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 position = Vector2( 2, -2 )
 
-[node name="Dialogue" parent="." instance=ExtResource( 3 )]
-visible = false
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 [node name="InteractKey" parent="." instance=ExtResource( 5 )]
 text = "Talk"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Dialogue" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [connection signal="area_entered" from="PlayerDetection" to="PlayerDetection" method="_on_PlayerDetection_area_entered"]
 [connection signal="area_exited" from="PlayerDetection" to="PlayerDetection" method="_on_PlayerDetection_area_exited"]

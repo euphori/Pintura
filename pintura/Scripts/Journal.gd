@@ -51,7 +51,6 @@ func _on_Settings_pressed():
 
 
 func _on_Save_pressed():
-	
 	Globals.world_player_position = player.global_position
 	save_file.world_player_position = Globals.world_player_position
 	save_file.met_hiraya = Globals.met_hiraya
@@ -59,3 +58,7 @@ func _on_Save_pressed():
 	save_file.last_location = player.location
 	print(save_file.last_scene )
 	SaveFile.save_data()
+
+
+func _on_Exit_Game_pressed():
+	get_tree().quit()

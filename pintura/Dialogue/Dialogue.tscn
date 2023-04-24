@@ -61,12 +61,21 @@ wait_time = 0.4
 one_shot = true
 
 [node name="DialogueOptions" parent="." instance=ExtResource( 6 )]
-visible = false
 margin_left = 137.0
 margin_top = 60.0
 margin_right = 137.0
 margin_bottom = 60.0
 rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 2
+
+[node name="Option1" parent="DialogueOptions" index="0"]
+visible = false
+
+[node name="Option2" parent="DialogueOptions" index="1"]
+visible = false
+
+[node name="Option3" parent="DialogueOptions" index="2"]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

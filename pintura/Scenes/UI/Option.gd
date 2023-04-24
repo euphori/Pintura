@@ -4,6 +4,7 @@ export (int) var index
 
 
 func _on_Button_mouse_entered():
+	print("entered")
 	get_parent().index_set(index)
 	$Sprite.visible = true
 	

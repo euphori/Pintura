@@ -100,7 +100,6 @@ func _on_Door_after_enter():
 
 func _on_Door_before_enter():
 	Globals.last_location = location
-	save_file.last_location = location
 	print(save_file.last_location)
 	if location == "WorldMap":
 		Globals.world_player_position = self.global_position

@@ -127,3 +127,4 @@ text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/Exit" to="." method="_on_Exit_pressed"]

@@ -35,6 +35,6 @@ func play_music():
 	$Music.play()
 
 func play_menu_sound():
-	$Music.stream = MenuSound
+	$Music.stream = Menu_Sound
 	$Music.play()
 
