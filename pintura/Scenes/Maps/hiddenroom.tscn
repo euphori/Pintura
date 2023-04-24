@@ -70,7 +70,10 @@ position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 0
+frame = 4
+
+[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
+frame = 3
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )

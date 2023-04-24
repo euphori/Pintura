@@ -98,6 +98,7 @@ func _on_Dialogue_dialogue_finish():
 	
 
 func _on_Amomongo_scene_over():
+	print("SCENE OVER")
 	if !start_dialogue_on_entry and dialogue_involved:
 		dialogue.in_cutscene = true
 		dialogue.start()

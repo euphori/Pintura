@@ -176,6 +176,7 @@ texture = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 303, 224 )
+location = "DatuHouse"
 
 [node name="Datu" parent="." instance=ExtResource( 4 )]
 position = Vector2( 275, 243 )
@@ -201,30 +202,30 @@ position = Vector2( 28, -46 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 241, 124 )
 frames = SubResource( 122 )
-frame = 2
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 372, 170 )
 frames = SubResource( 122 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 349, 108 )
 frames = SubResource( 123 )
+frame = 6
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 259, 161 )
 frames = SubResource( 124 )
+frame = 5
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 341, 153 )
 frames = SubResource( 125 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
