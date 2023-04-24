@@ -5,16 +5,31 @@ var SPEED = 100
 var MAX_SPEED = 100
 var FRICTION = 500
 var ACCELERATION = 500
-export(String,"Museum", "HiddenRoom", "DatuHouse") var location
+export(String,"Museum", "HiddenRoom", "DatuHouse", "WorldMap") var location
 var can_move = true
 var MAX_ACCELERATION = 500
+
+
+
 signal toggle_torch
 
+
+onready var save_file = SaveFile.game_data
 onready var camera = $Camera2D
 onready var torch = $Torch
 onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 
+func _ready():
+	if location == "WorldMap" and Globals.world_player_position != Vector2.ZERO:
+		update_position()
+	if location == save_file.last_location:
+		goto_last_position()
+	
+
+func goto_last_position():
+	if save_file.world_player_position != Vector2.ZERO:
+		global_position = save_file.world_player_position
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -67,5 +82,19 @@ func throw():
 	garlic.velocity = direction * 50
 
 
+
 func _on_Dialogue_dialogue_finish():
 	$UserInterface/JournalIcon.get_player_attention()
+
+func update_position():
+	global_position = Globals.world_player_position
+
+
+func _on_Door_after_enter():
+	pass
+
+
+func _on_Door_before_enter():
+	Globals.last_location = location
+	if location == "WorldMap":
+		Globals.world_player_position = self.global_position

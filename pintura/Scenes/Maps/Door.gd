@@ -5,7 +5,8 @@ export (bool) var need_key
 export (bool) var need_switch
 export(String, "MuseumKey") var key_id
 
-
+signal before_enter
+signal after_enter
 var player_near = false
 var switch_on = false
 var has_key = false
@@ -31,10 +32,14 @@ func _input(event):
 			if !has_key:
 				$Dialogue.start()
 			else:
+				emit_signal("before_enter")
 				get_tree().change_scene(next_scene) #change scene
+				emit_signal("after_enter")
 				has_key = false
 		else:
+			emit_signal("before_enter")
 			$CanvasLayer/AnimationPlayer.play("fade_to_black")
+			emit_signal("after_enter")
 		if need_switch and !switch_on:
 			return
 		

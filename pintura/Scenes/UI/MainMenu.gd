@@ -1,20 +1,26 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var save_file = SaveFile.game_data
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+
+	print(save_file.last_scene)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
-func _on_Button_pressed():
+func _on_NewGame_pressed():
+	SaveFile.reset_data()
+	SaveFile.save_data()
 	Load.load_scene(self,"res://Scenes/Maps/Museum.tscn")
+
+
+func _on_Continue_pressed():
+	SaveFile.load_data()
+	if save_file.last_scene == null:
+		print("NO SAVED GAME")
+	Load.load_scene(self,save_file.last_scene)
+	print(save_file.last_scene)

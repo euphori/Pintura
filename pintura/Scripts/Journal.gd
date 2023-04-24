@@ -1,9 +1,12 @@
 extends Control
 
 var page 
+
+onready var player = get_owner().get_owner()
 onready var page_slots = $PageContainer.get_children()
 onready var page_count = $PageContainer.get_child_count()
 onready var inventory = get_parent().get_node("Inventory")
+onready var save_file = SaveFile.game_data
 
 signal toggle_journal
 
@@ -45,3 +48,14 @@ func _on_Quest_pressed():
 func _on_Settings_pressed():
 	page = 0
 	update_page()
+
+
+func _on_Save_pressed():
+	
+	Globals.world_player_position = player.global_position
+	save_file.world_player_position = Globals.world_player_position
+	save_file.met_hiraya = Globals.met_hiraya
+	save_file.last_scene = player.get_owner().filename
+	save_file.last_location = player.location
+	print(save_file.last_scene )
+	SaveFile.save_data()

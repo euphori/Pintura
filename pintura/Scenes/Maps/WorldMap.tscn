@@ -963,6 +963,7 @@ path_to_player = NodePath("../Player")
 destination_path = [ NodePath("../Player"), NodePath("../Position2D") ]
 stationary = false
 can_move = true
+location = "WorldMap"
 
 [node name="Sprite" parent="Hiraya" index="0"]
 texture = ExtResource( 31 )
@@ -977,40 +978,44 @@ position = Vector2( 0, -10 )
 [node name="Player" parent="." instance=ExtResource( 24 )]
 position = Vector2( 239, 576 )
 z_index = 1
+location = "WorldMap"
+
+[node name="AnimatedSprite" parent="Player/Torch" index="1"]
+frame = 0
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 2
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
+frame = 6
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Position2D" type="Position2D" parent="."]
@@ -28207,8 +28212,14 @@ position = Vector2( 3250, 1493 )
 texture = ExtResource( 17 )
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
+[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
+[connection signal="after_enter" from="Datuhouse/Door" to="Player" method="_on_Door_after_enter"]
+[connection signal="before_enter" from="Datuhouse/Door" to="Player" method="_on_Door_before_enter"]
 
 [editable path="Hiraya"]
 [editable path="Hiraya/PlayerDetection"]
+[editable path="Player"]
+[editable path="Player/Interaction"]
+[editable path="Player/UserInterface"]
 [editable path="Datuhouse/Door"]
 [editable path="Datuhouse/Door/InteractKey"]

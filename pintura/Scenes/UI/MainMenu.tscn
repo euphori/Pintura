@@ -71,7 +71,7 @@ size_flags_vertical = 3
 custom_constants/margin_right = 200
 custom_constants/margin_left = 200
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 margin_left = 200.0
 margin_right = 440.0
 margin_bottom = 20.0
@@ -86,7 +86,7 @@ size_flags_vertical = 3
 custom_constants/margin_right = 200
 custom_constants/margin_left = 200
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 margin_left = 200.0
 margin_right = 440.0
 margin_bottom = 20.0
@@ -101,7 +101,7 @@ size_flags_vertical = 3
 custom_constants/margin_right = 200
 custom_constants/margin_left = 200
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 margin_left = 200.0
 margin_right = 440.0
 margin_bottom = 20.0
@@ -116,10 +116,11 @@ size_flags_vertical = 3
 custom_constants/margin_right = 200
 custom_constants/margin_left = 200
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
 margin_left = 200.0
 margin_right = 440.0
 margin_bottom = 20.0
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Continue" to="." method="_on_Continue_pressed"]
