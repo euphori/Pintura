@@ -39,7 +39,6 @@ func _physics_process(delta):
 
 func goto_destination(desti_index,remove:bool):
 	distance = global_position.distance_to(destination[desti_index].global_position)
-	print(distance)
 	if distance >= 10:
 		direction = (destination[desti_index].global_position - global_position).normalized()
 	else:

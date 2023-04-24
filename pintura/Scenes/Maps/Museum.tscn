@@ -106,6 +106,15 @@ position = Vector2( 730.375, 672.375 )
 scale = Vector2( 1.37303, 1.37303 )
 texture = ExtResource( 23 )
 
+[node name="Statue" type="Sprite" parent="."]
+position = Vector2( 1086, 685 )
+scale = Vector2( 1.37303, 1.37303 )
+texture = ExtResource( 29 )
+
+[node name="Statue2" type="Sprite" parent="."]
+position = Vector2( 1069, 691 )
+texture = ExtResource( 29 )
+
 [node name="Walls" parent="." instance=ExtResource( 10 )]
 position = Vector2( 812, 799 )
 cell_size = Vector2( 16, 16 )
@@ -128,14 +137,14 @@ position = Vector2( -34.6666, -480 )
 texture = ExtResource( 6 )
 
 [node name="Cutscene2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 875, 729 )
+position = Vector2( 879, 742 )
 path_to_player = NodePath("../Player")
 return_camera_after_dialogue = true
 can_move_after_dialogue = true
 camera_used = "scene_camera"
 
 [node name="CutsceneTrigger" parent="Cutscene2" index="0"]
-position = Vector2( -43, -45 )
+position = Vector2( -63, -64 )
 
 [node name="CollisionShape2D" parent="Cutscene2/CutsceneTrigger" index="0"]
 position = Vector2( 12, -86 )
@@ -146,7 +155,7 @@ dialogue_file = "res://Dialogue/Json/monologue1.json"
 path_to_player = NodePath("../../Player")
 
 [node name="Camera2D" type="Camera2D" parent="Cutscene2"]
-position = Vector2( -43, -79 )
+position = Vector2( -67, -159 )
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Cutscene" parent="." instance=ExtResource( 25 )]
@@ -169,11 +178,10 @@ zoom = Vector2( 0.5, 0.5 )
 
 [node name="Dialogue" parent="Cutscene" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/monologue2.json"
-path_to_player = NodePath("../../Player")
 can_move_after_dialogue = false
+path_to_player = NodePath("../../Player")
 
 [node name="Navigation2D" type="Navigation2D" parent="Cutscene"]
-visible = false
 position = Vector2( -263.25, 24.75 )
 scale = Vector2( 2.74606, 2.74606 )
 
@@ -186,13 +194,11 @@ scale = Vector2( 0.728316, 0.728316 )
 MAX_SPEED = 150
 path_to_player = NodePath("../../../Player")
 destination_path = [ NodePath("../../../Podium"), NodePath("../../../Door/Position2D") ]
+stationary = false
+can_move = true
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 4 )
-
-[node name="Statue" type="Sprite" parent="Cutscene/Navigation2D/NavigationPolygonInstance2"]
-position = Vector2( 259.007, 9.19501 )
-texture = ExtResource( 29 )
 
 [node name="CSCheckJournal" parent="." instance=ExtResource( 25 )]
 position = Vector2( 939, 851 )
@@ -230,11 +236,7 @@ position = Vector2( 1237, 638 )
 z_index = 2
 next_scene = "res://Scenes/Maps/HiddenRoom.tscn"
 need_key = true
-need_switch = null
 key_id = "MuseumKey"
-
-[node name="InteractKey" parent="Door" index="1"]
-text = "Open"
 
 [node name="Dialogue" parent="Door" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/need_key.json"
@@ -242,10 +244,6 @@ path_to_player = NodePath("../../Player")
 
 [node name="Position2D" type="Position2D" parent="Door"]
 position = Vector2( 0, 26 )
-
-[node name="Statue" type="Sprite" parent="Door"]
-position = Vector2( -168, 53 )
-texture = ExtResource( 29 )
 
 [node name="Artifact5" type="Sprite" parent="Door"]
 position = Vector2( -890, 120 )
@@ -304,6 +302,7 @@ texture = ExtResource( 33 )
 [editable path="NPC"]
 [editable path="NPC/PlayerDetection"]
 [editable path="NPC/Dialogue"]
+[editable path="NPC/Dialogue/DialogueOptions"]
 [editable path="Cutscene2"]
 [editable path="Cutscene2/CutsceneTrigger"]
 [editable path="Cutscene"]
@@ -311,3 +310,4 @@ texture = ExtResource( 33 )
 [editable path="CSCheckJournal"]
 [editable path="CSCheckJournal/CutsceneTrigger"]
 [editable path="Door"]
+[editable path="Door/InteractKey"]

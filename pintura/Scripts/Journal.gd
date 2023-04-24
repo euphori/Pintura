@@ -1,14 +1,22 @@
-extends Node2D
+extends Control
 
-var page = 0
-onready var max_page = $PageContainer.get_child_count() - 1
+var page 
+
+onready var player = get_owner().get_owner()
 onready var page_slots = $PageContainer.get_children()
+onready var page_count = $PageContainer.get_child_count()
 onready var inventory = get_parent().get_node("Inventory")
+onready var save_file = SaveFile.game_data
 
 signal toggle_journal
 
 func _ready():
 	page_slots[0].visible = true
+	var grp = ButtonGroup.new()
+	$Quest.group = grp
+	$Ency.group = grp
+	$Inventory.group = grp
+	$Settings.group = grp
 
 
 func _input(event):
@@ -26,20 +34,28 @@ func _input(event):
 func update_page():
 	
 	page_slots[page].visible = true
-	for i in max_page + 1:
+	for i in page_count:
 		if i != page:
 			page_slots[i].visible = false
+
+
+
+
+func _on_Quest_pressed():
+	page = 1
+	update_page()
+
+func _on_Settings_pressed():
+	page = 0
+	update_page()
+
+
+func _on_Save_pressed():
 	
-	
-
-
-func _on_ButtonLeft_pressed():
-	if page > 0:
-		page -= 1
-		update_page()
-
-
-func _on_ButtonRight_pressed():
-	if page < max_page:
-		page += 1
-		update_page()
+	Globals.world_player_position = player.global_position
+	save_file.world_player_position = Globals.world_player_position
+	save_file.met_hiraya = Globals.met_hiraya
+	save_file.last_scene = player.get_owner().filename
+	save_file.last_location = player.location
+	print(save_file.last_scene )
+	SaveFile.save_data()

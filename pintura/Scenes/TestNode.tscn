@@ -25,7 +25,6 @@ path_to_player = NodePath("../../Player")
 
 [node name="InteractKey" parent="Hiraya" index="4"]
 position = Vector2( 0, -10 )
-text = "Talk"
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 303, 44 )

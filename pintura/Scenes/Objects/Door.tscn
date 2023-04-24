@@ -79,12 +79,6 @@ texture = ExtResource( 5 )
 position = Vector2( 0, 5 )
 text = "Open"
 
-[node name="Label" parent="InteractKey" index="2"]
-margin_left = -3.0
-margin_top = -26.0
-margin_right = 33.0
-margin_bottom = 27.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 11.5 )
 shape = SubResource( 3 )

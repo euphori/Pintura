@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="THESIS NEW"
-run/main_scene="res://Scenes/Maps/Museum.tscn"
+run/main_scene="res://Scenes/UI/MainMenu.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
@@ -20,6 +20,8 @@ config/icon="res://icon.png"
 PlayerInventory="*res://Scripts/PlayerInventory.gd"
 JsonData="*res://Scripts/JSONData.gd"
 Load="*res://Scripts/Load.gd"
+Globals="*res://Scripts/Globals.gd"
+SaveFile="*res://Scripts/SaveFile.gd"
 
 [display]
 
