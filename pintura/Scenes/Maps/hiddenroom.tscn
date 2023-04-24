@@ -73,7 +73,7 @@ location = "HiddenRoom"
 frame = 4
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 3
+frame = 4
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )

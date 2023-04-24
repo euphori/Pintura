@@ -5,7 +5,7 @@ var SPEED = 100
 var MAX_SPEED = 100
 var FRICTION = 500
 var ACCELERATION = 500
-export(String,"Museum", "HiddenRoom", "DatuHouse", "WorldMap") var location
+export(String,"Museum", "HiddenRoom", "DatuHouse", "WorldMap", "Tunnel") var location
 var can_move = true
 var MAX_ACCELERATION = 500
 
@@ -21,6 +21,7 @@ onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 
 func _ready():
+	$MusicController.play_music()
 	if location == "WorldMap" and Globals.world_player_position != Vector2.ZERO:
 		update_position()
 	if location == save_file.last_location:

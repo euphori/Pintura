@@ -231,6 +231,18 @@ tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 2
 [node name="Key" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1267, 728 )
 
+[node name="MuseumArtifact1" type="Sprite" parent="."]
+position = Vector2( 674, 755 )
+texture = ExtResource( 30 )
+
+[node name="Coconutartifact" type="Sprite" parent="MuseumArtifact1"]
+position = Vector2( -339, 281 )
+texture = ExtResource( 32 )
+
+[node name="Writingdeskartifact" type="Sprite" parent="."]
+position = Vector2( 1365, 784 )
+texture = ExtResource( 33 )
+
 [node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1237, 638 )
 z_index = 2
@@ -280,18 +292,6 @@ texture = ExtResource( 13 )
 [node name="Paintingartifact" type="Sprite" parent="Door"]
 position = Vector2( -651, 95 )
 texture = ExtResource( 31 )
-
-[node name="MuseumArtifact1" type="Sprite" parent="."]
-position = Vector2( 674, 755 )
-texture = ExtResource( 30 )
-
-[node name="Coconutartifact" type="Sprite" parent="MuseumArtifact1"]
-position = Vector2( -339, 281 )
-texture = ExtResource( 32 )
-
-[node name="Writingdeskartifact" type="Sprite" parent="."]
-position = Vector2( 1365, 784 )
-texture = ExtResource( 33 )
 
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
