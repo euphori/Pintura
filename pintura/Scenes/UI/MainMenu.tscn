@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Textures/short and blue  0.png" type="Texture" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/5Tgx2YZJ_4x.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/MusicController.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Fonts/Coraline's Cat.ttf"
@@ -121,6 +122,8 @@ margin_left = 200.0
 margin_right = 440.0
 margin_bottom = 20.0
 text = "Exit"
+
+[node name="MusicController" parent="." instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Continue" to="." method="_on_Continue_pressed"]

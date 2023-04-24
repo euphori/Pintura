@@ -26,6 +26,7 @@ func _ready():
 		update_position()
 	if location == save_file.last_location:
 		goto_last_position()
+	print(save_file.last_location)
 	print(location)
 	
 	
@@ -99,5 +100,7 @@ func _on_Door_after_enter():
 
 func _on_Door_before_enter():
 	Globals.last_location = location
+	save_file.last_location = location
+	print(save_file.last_location)
 	if location == "WorldMap":
 		Globals.world_player_position = self.global_position
