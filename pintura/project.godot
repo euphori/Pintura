@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "SfxrGenerator",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrGenerator.gd"
+}, {
+"base": "Object",
+"class": "SfxrGlobals",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrGlobals.gd"
+}, {
+"base": "Object",
+"class": "SfxrStreamPlayerInterface",
+"language": "GDScript",
+"path": "res://addons/godot_sfxr/SfxrStreamPlayerInterface.gd"
+} ]
+_global_script_class_icons={
+"SfxrGenerator": "",
+"SfxrGlobals": "",
+"SfxrStreamPlayerInterface": ""
+}
+
 [application]
 
 config/name="THESIS NEW"
@@ -20,6 +42,7 @@ config/icon="res://icon.png"
 PlayerInventory="*res://Scripts/PlayerInventory.gd"
 JsonData="*res://Scripts/JSONData.gd"
 Load="*res://Scripts/Load.gd"
+MusicController="*res://Scenes/MusicController.tscn"
 Globals="*res://Scripts/Globals.gd"
 SaveFile="*res://Scripts/SaveFile.gd"
 

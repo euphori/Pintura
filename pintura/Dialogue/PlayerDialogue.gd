@@ -95,5 +95,6 @@ func _on_Button_pressed():
 		next_line()
 		choosing = false
 		$DialogueOptions.visible = false
+		
 	else:
 		respond(index)
