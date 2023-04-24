@@ -8,13 +8,13 @@ const SAVE_FILE = "user://save_file.save"
 var game_data = {
 	"world_player_position": Vector2.ZERO,
 	"met_hiraya": false,
-	"last_scene": "res://Scenes/Maps/Museum.tscn",
+	"last_scene": String(),
 	"last_location": String()
 }
 
 
 func _ready():
-	pass
+	SaveFile.load_data()
 	
 func save_data():
 	var file = File.new()

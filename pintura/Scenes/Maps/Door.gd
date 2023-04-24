@@ -11,6 +11,8 @@ var player_near = false
 var switch_on = false
 var has_key = false
 
+
+
 func set_file_path(p_value):
 	if typeof(p_value) == TYPE_STRING and p_value.get_extension() in ["tscn", "scn"]:
 		var d = Directory.new()
@@ -20,7 +22,8 @@ func set_file_path(p_value):
 
 
 func _change_scene():
-	Load.load_scene(get_owner(),next_scene)
+	Load.load_scene(get_parent(),next_scene)
+
 
 func _input(event):
 	
@@ -33,11 +36,12 @@ func _input(event):
 				$Dialogue.start()
 			else:
 				emit_signal("before_enter")
-				get_tree().change_scene(next_scene) #change scene
+				Load.load_scene(get_parent(),next_scene)
 				emit_signal("after_enter")
 				has_key = false
 		else:
 			emit_signal("before_enter")
+			
 			$CanvasLayer/AnimationPlayer.play("fade_to_black")
 			emit_signal("after_enter")
 		if need_switch and !switch_on:
