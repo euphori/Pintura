@@ -19,4 +19,7 @@ func play_music():
 			$Music.stream = bg_world_start 
 	$Music.play()
 
+func play_menu_sound():
+	$Music.stream = MenuSound
+	$Music.play()
 
