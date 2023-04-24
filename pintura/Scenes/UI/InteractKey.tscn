@@ -64,6 +64,7 @@ tracks/1/keys = {
 }
 
 [node name="InteractKey" type="Area2D"]
+visible = false
 collision_layer = 24
 collision_mask = 2
 script = ExtResource( 3 )

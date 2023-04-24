@@ -106,6 +106,15 @@ position = Vector2( 730.375, 672.375 )
 scale = Vector2( 1.37303, 1.37303 )
 texture = ExtResource( 23 )
 
+[node name="Statue" type="Sprite" parent="."]
+position = Vector2( 1086, 685 )
+scale = Vector2( 1.37303, 1.37303 )
+texture = ExtResource( 29 )
+
+[node name="Statue2" type="Sprite" parent="."]
+position = Vector2( 1069, 691 )
+texture = ExtResource( 29 )
+
 [node name="Walls" parent="." instance=ExtResource( 10 )]
 position = Vector2( 812, 799 )
 cell_size = Vector2( 16, 16 )
@@ -191,10 +200,6 @@ can_move = true
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Cutscene/Navigation2D"]
 navpoly = SubResource( 4 )
 
-[node name="Statue" type="Sprite" parent="Cutscene/Navigation2D/NavigationPolygonInstance2"]
-position = Vector2( 259.007, 9.19501 )
-texture = ExtResource( 29 )
-
 [node name="CSCheckJournal" parent="." instance=ExtResource( 25 )]
 position = Vector2( 939, 851 )
 path_to_player = NodePath("../Player")
@@ -239,10 +244,6 @@ path_to_player = NodePath("../../Player")
 
 [node name="Position2D" type="Position2D" parent="Door"]
 position = Vector2( 0, 26 )
-
-[node name="Statue" type="Sprite" parent="Door"]
-position = Vector2( -168, 53 )
-texture = ExtResource( 29 )
 
 [node name="Artifact5" type="Sprite" parent="Door"]
 position = Vector2( -890, 120 )
