@@ -23,7 +23,6 @@ func _physics_process(delta):
 			play_hiddenroom_cutscene()
 
 func play_musuem_cutscene():
-
 	if global_position.distance_to(destination[0].global_position) >=5 :
 		if got_item:
 			direction = global_position.direction_to(agent.get_next_location())
@@ -46,7 +45,6 @@ func play_hiddenroom_cutscene():
 	if distance >= Vector2(5,5) or distance <= Vector2(-5,-5):
 		if global_position - destination[0].global_position >= Vector2(-5,-5):
 				disappear()
-				emit_signal("scene_over")
 		direction = (destination[0].global_position - global_position).normalized()
 
 

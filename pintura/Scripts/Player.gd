@@ -25,6 +25,8 @@ func _ready():
 		update_position()
 	if location == save_file.last_location:
 		goto_last_position()
+	print(location)
+	
 	
 
 func goto_last_position():

@@ -39,13 +39,13 @@ func _input(event):
 				Load.load_scene(get_parent(),next_scene)
 				emit_signal("after_enter")
 				has_key = false
+	
+		elif need_switch and !switch_on:
+			return
 		else:
 			emit_signal("before_enter")
-			
 			$CanvasLayer/AnimationPlayer.play("fade_to_black")
 			emit_signal("after_enter")
-		if need_switch and !switch_on:
-			return
 		
 
 

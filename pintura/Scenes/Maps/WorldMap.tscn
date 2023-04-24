@@ -969,6 +969,7 @@ location = "WorldMap"
 texture = ExtResource( 31 )
 
 [node name="Dialogue" parent="Hiraya" index="3"]
+visible = false
 dialogue_file = "res://Dialogue/Json/hiraya_intro.json"
 path_to_player = NodePath("../../Player")
 
@@ -981,6 +982,9 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
+frame = 2
+
+[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
 frame = 0
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
@@ -1003,7 +1007,7 @@ playing = true
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
@@ -1021,6 +1025,10 @@ playing = true
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 394, -63 )
 
+[node name="Door" parent="." instance=ExtResource( 27 )]
+position = Vector2( 394, -96 )
+next_scene = "res://Scenes/Maps/InsideDatuHouse.tscn"
+
 [node name="Datuhouse" type="StaticBody2D" parent="."]
 position = Vector2( 394, -91 )
 z_index = 1
@@ -1032,10 +1040,6 @@ texture = ExtResource( 43 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Datuhouse"]
 position = Vector2( 0, -11.5 )
 shape = SubResource( 1 )
-
-[node name="Door" parent="Datuhouse" instance=ExtResource( 27 )]
-position = Vector2( 0, -5 )
-next_scene = "res://Scenes/Maps/InsideDatuHouse.tscn"
 
 [node name="Stalls" type="YSort" parent="Datuhouse"]
 position = Vector2( 1321, -21 )
@@ -28028,73 +28032,73 @@ position = Vector2( 30, -10 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 520, -20 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken12" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1079, -1253 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -28212,14 +28216,13 @@ position = Vector2( 3250, 1493 )
 texture = ExtResource( 17 )
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
-[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
-[connection signal="after_enter" from="Datuhouse/Door" to="Player" method="_on_Door_after_enter"]
-[connection signal="before_enter" from="Datuhouse/Door" to="Player" method="_on_Door_before_enter"]
+[connection signal="after_enter" from="Door" to="Player" method="_on_Door_after_enter"]
+[connection signal="before_enter" from="Door" to="Player" method="_on_Door_before_enter"]
 
 [editable path="Hiraya"]
 [editable path="Hiraya/PlayerDetection"]
 [editable path="Player"]
 [editable path="Player/Interaction"]
 [editable path="Player/UserInterface"]
-[editable path="Datuhouse/Door"]
-[editable path="Datuhouse/Door/InteractKey"]
+[editable path="Door"]
+[editable path="Door/InteractKey"]

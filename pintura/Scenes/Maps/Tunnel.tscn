@@ -547,3 +547,4 @@ polygon = PoolVector2Array( 256, 560, 256, 448, 272, 448, 272, 408, 256, 408, 25
 polygon = PoolVector2Array( 256, 560, 240, 560, 248, -8, 264, -8, 264, -112, 256, -112, 224, 8, 192, 440, 176, 584, 240, 592 )
 
 [editable path="Door"]
+[editable path="Door/InteractKey"]

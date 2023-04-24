@@ -24,6 +24,7 @@ func despawn():
 
 func _on_Dialogue_dialogue_finish():
 	Globals.met_hiraya = true
+	save_file.met_hiraya = true
 	can_move = true
 	current_desti = 1
 	remove = true
