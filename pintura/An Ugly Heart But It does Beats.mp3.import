@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/An Ugly Heart But It does Beats.mp3-74343135e32dff7a62a5643feab3ea7e.mp3str"
+
+[deps]
+
+source_file="res://An Ugly Heart But It does Beats.mp3"
+dest_files=[ "res://.import/An Ugly Heart But It does Beats.mp3-74343135e32dff7a62a5643feab3ea7e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
