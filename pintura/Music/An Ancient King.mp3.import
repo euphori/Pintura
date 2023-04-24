@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/An Ancient King.mp3-e5431d1e42c9f65a22ca208362418f2f.mp3str"
+
+[deps]
+
+source_file="res://Music/An Ancient King.mp3"
+dest_files=[ "res://.import/An Ancient King.mp3-e5431d1e42c9f65a22ca208362418f2f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
