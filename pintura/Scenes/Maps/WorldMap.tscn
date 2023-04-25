@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=158 format=2]
 
 [ext_resource path="res://Tilemap/fountain.tres" type="Texture" id=1]
 [ext_resource path="res://Tilemap/waterrightC.tres" type="Texture" id=2]
@@ -47,7 +47,7 @@
 [ext_resource path="res://Assets/Textures/Traders Market Assets/aaapanakotstand.png" type="Texture" id=45]
 [ext_resource path="res://Scenes/Maps/WorldMap.gd" type="Script" id=46]
 [ext_resource path="res://Tilemap/Port.tscn" type="PackedScene" id=47]
-[ext_resource path="res://Assets/Textures/Character/idle_Characters/idle_datu.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Textures/Character/aaadatu.png" type="Texture" id=48]
 
 [sub_resource type="TileSet" id=17]
 0/name = "Tileset-Terrain2.png 0"
@@ -798,76 +798,116 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=159]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 0, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=160]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 16, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=161]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 32, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=162]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 48, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=163]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 64, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=164]
-atlas = ExtResource( 48 )
+atlas = ExtResource( 30 )
 region = Rect2( 80, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=132]
-atlas = ExtResource( 48 )
+[sub_resource type="AtlasTexture" id=165]
+atlas = ExtResource( 30 )
 region = Rect2( 96, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=133]
-atlas = ExtResource( 48 )
+[sub_resource type="AtlasTexture" id=166]
+atlas = ExtResource( 30 )
 region = Rect2( 112, 0, 16, 17 )
 
-[sub_resource type="SpriteFrames" id=165]
+[sub_resource type="SpriteFrames" id=167]
 animations = [ {
-"frames": [ SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 132 ), SubResource( 133 ) ],
+"frames": [ SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 165 ), SubResource( 166 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=152]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=168]
+atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=153]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=169]
+atlas = ExtResource( 32 )
 region = Rect2( 16, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=154]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=170]
+atlas = ExtResource( 32 )
 region = Rect2( 32, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=155]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=171]
+atlas = ExtResource( 32 )
 region = Rect2( 48, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=156]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=172]
+atlas = ExtResource( 32 )
 region = Rect2( 64, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=157]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=173]
+atlas = ExtResource( 32 )
 region = Rect2( 80, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=158]
-atlas = ExtResource( 29 )
+[sub_resource type="AtlasTexture" id=174]
+atlas = ExtResource( 32 )
 region = Rect2( 96, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=175]
+atlas = ExtResource( 32 )
+region = Rect2( 112, 0, 16, 17 )
 
 [sub_resource type="SpriteFrames" id=151]
 animations = [ {
-"frames": [ SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ) ],
+"frames": [ SubResource( 168 ), SubResource( 169 ), SubResource( 170 ), SubResource( 171 ), SubResource( 172 ), SubResource( 173 ), SubResource( 174 ), SubResource( 175 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=176]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=177]
+atlas = ExtResource( 29 )
+region = Rect2( 16, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=178]
+atlas = ExtResource( 29 )
+region = Rect2( 32, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=179]
+atlas = ExtResource( 29 )
+region = Rect2( 48, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=180]
+atlas = ExtResource( 29 )
+region = Rect2( 64, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=181]
+atlas = ExtResource( 29 )
+region = Rect2( 80, 0, 16, 17 )
+
+[sub_resource type="AtlasTexture" id=182]
+atlas = ExtResource( 29 )
+region = Rect2( 96, 0, 16, 17 )
+
+[sub_resource type="SpriteFrames" id=183]
+animations = [ {
+"frames": [ SubResource( 176 ), SubResource( 177 ), SubResource( 178 ), SubResource( 179 ), SubResource( 180 ), SubResource( 181 ), SubResource( 182 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -875,6 +915,32 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.5, 20.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=142]
+points = PoolVector2Array( 0, 48, 0, 48, 48, 0, 80, 48, 80, 96, 64, 96, 48, 80, 32, 80, 16, 96, 0, 96 )
+
+[sub_resource type="TileSet" id=141]
+0/name = "villagehouse.png 0"
+0/texture = ExtResource( 15 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 142 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 142 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 38 )
@@ -922,32 +988,6 @@ points = PoolVector2Array( 48.9495, 8.08862, 53.6332, 8.08862, 79.1511, 8.25012,
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 15 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="ConvexPolygonShape2D" id=142]
-points = PoolVector2Array( 0, 48, 0, 48, 48, 0, 80, 48, 80, 96, 64, 96, 48, 80, 32, 80, 16, 96, 0, 96 )
-
-[sub_resource type="TileSet" id=141]
-0/name = "villagehouse.png 0"
-0/texture = ExtResource( 15 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 96, 128 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 142 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 142 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -1059,68 +1099,71 @@ z_index = 1
 location = "WorldMap"
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 2
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
-frame = 6
+frame = 4
 playing = true
 
-[node name="Datu" parent="." instance=ExtResource( 18 )]
+[node name="GarlicGuy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1949, -107 )
+path_to_player = NodePath("../Player")
 
-[node name="Sprite" parent="Datu" index="0"]
+[node name="Sprite" parent="GarlicGuy" index="0"]
 visible = false
-position = Vector2( 28, -50 )
 texture = ExtResource( 48 )
-hframes = 8
 
-[node name="CollisionShape2D" parent="Datu" index="1"]
-position = Vector2( 27, -46 )
+[node name="AnimatedSprite" parent="GarlicGuy" index="3"]
+position = Vector2( 1, -10 )
+frames = SubResource( 167 )
 
-[node name="PlayerDetection" parent="Datu" index="2"]
-position = Vector2( 26, -46 )
+[node name="Dialogue" parent="GarlicGuy" index="5"]
+dialogue_file = "res://Dialogue/Json/garlicguy.json"
+path_to_player = NodePath("../../Player")
 
-[node name="AnimatedSprite" parent="Datu" index="3"]
-position = Vector2( 28, -50 )
-frames = SubResource( 165 )
-frame = 2
-playing = true
+[node name="BoatGuy" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2508, -23 )
+path_to_player = NodePath("../Player")
 
-[node name="InteractKey" parent="Datu" index="4"]
-position = Vector2( 28, -46 )
+[node name="Sprite" parent="BoatGuy" index="0"]
+visible = false
+texture = ExtResource( 48 )
 
-[node name="Dialogue" parent="Datu" index="5"]
-layer = 3
-dialogue_file = "res://Dialogue/Json/datu_intro.json"
+[node name="AnimatedSprite" parent="BoatGuy" index="3"]
+position = Vector2( 1, -10 )
+frames = SubResource( 167 )
+
+[node name="Dialogue" parent="BoatGuy" index="5"]
+dialogue_file = "res://Dialogue/Json/garlicguy.json"
 path_to_player = NodePath("../../Player")
 
 [node name="YlangYlang" parent="." instance=ExtResource( 18 )]
@@ -1135,7 +1178,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YlangYlang" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Dialogue" parent="YlangYlang" index="5"]
@@ -1154,13 +1197,35 @@ texture = ExtResource( 28 )
 
 [node name="AnimatedSprite" parent="SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
-frames = SubResource( 151 )
-frame = 4
+frames = SubResource( 183 )
+frame = 2
 playing = true
 
 [node name="Dialogue" parent="SugarcaneVendor" index="5"]
 dialogue_file = "res://Dialogue/Json/sugarcane_intro.json"
 path_to_player = NodePath("../../Player")
+
+[node name="Florist" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1860, -130 )
+z_index = 1
+path_to_player = NodePath("../Player")
+location = "WorldMap"
+
+[node name="Sprite" parent="Florist" index="0"]
+visible = false
+texture = ExtResource( 28 )
+
+[node name="AnimatedSprite" parent="Florist" index="3"]
+position = Vector2( 2, -12 )
+frames = SubResource( 151 )
+playing = true
+
+[node name="Dialogue" parent="Florist" index="5"]
+dialogue_file = "res://Dialogue/Json/florist.json"
+path_to_player = NodePath("../../Player")
+
+[node name="FarmLocation" type="Position2D" parent="."]
+position = Vector2( 394, -63 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 394, -63 )
@@ -1210,6 +1275,20 @@ texture = ExtResource( 42 )
 [node name="Aaasugarcanestall" type="Sprite" parent="Datuhouse/Stalls"]
 position = Vector2( 365, -98 )
 texture = ExtResource( 39 )
+
+[node name="VillageHouses" type="YSort" parent="."]
+visible = false
+position = Vector2( 91, 267 )
+z_index = 1
+
+[node name="Villagehouse" type="Sprite" parent="VillageHouses"]
+position = Vector2( 1738, -223 )
+texture = ExtResource( 15 )
+
+[node name="Houses" type="TileMap" parent="VillageHouses/Villagehouse"]
+tile_set = SubResource( 141 )
+format = 1
+tile_data = PoolIntArray( -458755, 0, 0, -524287, 0, 0, -524284, 0, 0, -393208, 0, 0, -131068, 0, 0 )
 
 [node name="Graveyard" type="YSort" parent="."]
 position = Vector2( 1671, 477 )
@@ -28264,19 +28343,6 @@ cell_size = Vector2( 128, 128 )
 format = 1
 tile_data = PoolIntArray( 327687, 0, 0 )
 
-[node name="VillageHouses" type="YSort" parent="."]
-position = Vector2( 91, 267 )
-z_index = 1
-
-[node name="Villagehouse" type="Sprite" parent="VillageHouses"]
-position = Vector2( 1738, -223 )
-texture = ExtResource( 15 )
-
-[node name="Houses" type="TileMap" parent="VillageHouses/Villagehouse"]
-tile_set = SubResource( 141 )
-format = 1
-tile_data = PoolIntArray( -458755, 0, 0, -524287, 0, 0, -524284, 0, 0, -393208, 0, 0, -131068, 0, 0 )
-
 [node name="Sugarcane" type="TileMap" parent="."]
 tile_set = SubResource( 68 )
 format = 1
@@ -28374,13 +28440,15 @@ texture = ExtResource( 17 )
 
 [editable path="Hiraya"]
 [editable path="Hiraya/PlayerDetection"]
-[editable path="Datu"]
-[editable path="Datu/PlayerDetection"]
+[editable path="GarlicGuy"]
+[editable path="GarlicGuy/PlayerDetection"]
+[editable path="BoatGuy"]
+[editable path="BoatGuy/PlayerDetection"]
 [editable path="YlangYlang"]
 [editable path="YlangYlang/PlayerDetection"]
 [editable path="SugarcaneVendor"]
 [editable path="SugarcaneVendor/PlayerDetection"]
-[editable path="SugarcaneVendor/Dialogue"]
-[editable path="SugarcaneVendor/Dialogue/DialogueOptions"]
+[editable path="Florist"]
+[editable path="Florist/PlayerDetection"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]

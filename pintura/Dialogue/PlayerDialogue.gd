@@ -24,6 +24,7 @@ func _ready():
 	$NinePatchRect.visible = false
 	
 func start():
+	print(current_dialogue_id)
 	if dialogue_active:
 		return
 	if !can_move_during_dialogue:
@@ -56,13 +57,7 @@ func next_line():
 	current_dialogue_id += 1
 	
 	if current_dialogue_id >= len(dialogue):
-		$Timer.start()
-		$NinePatchRect.visible = false
-		current_dialogue_id = 0
-		if can_move_after_dialogue:
-			player.can_move = true
-		player.get_node("UserInterface").visible = true
-		emit_signal("dialogue_finish")
+		finish_dialogue()
 		return
 	else:
 		if dialogue[current_dialogue_id].has('options'):
@@ -75,7 +70,15 @@ func next_line():
 		$NinePatchRect/Message.text = dialogue[current_dialogue_id]['text']
 		message.animate_text()
 		
-	
+
+func finish_dialogue():
+	$Timer.start()
+	$NinePatchRect.visible = false
+	current_dialogue_id = 0
+	if can_move_after_dialogue:
+		player.can_move = true
+	player.get_node("UserInterface").visible = true
+	emit_signal("dialogue_finish")
 
 func show_options():
 	for i in dialogue[current_dialogue_id]['options']:
@@ -84,6 +87,8 @@ func show_options():
 	
 func respond(ind):
 	$NinePatchRect/Message.text = dialogue[current_dialogue_id+1]['opt_' + String(ind+1)]
+	message.animate_text()
+
 
 func _on_Timer_timeout():
 	dialogue_active = false
@@ -95,6 +100,11 @@ func _on_Button_pressed():
 		next_line()
 		choosing = false
 		$DialogueOptions.visible = false
-		
 	else:
 		respond(index)
+		choosing = false
+		$DialogueOptions.visible = false
+		
+
+
+

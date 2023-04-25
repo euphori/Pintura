@@ -18,6 +18,8 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [node name="Dialogue" type="CanvasLayer"]
+layer = 3
+visible = false
 script = ExtResource( 3 )
 dialogue_file = "res://Dialogue/Json/mother_line.json"
 
@@ -78,5 +80,8 @@ visible = false
 visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="DialogueOptions/Option1/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogueOptions/Option2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogueOptions/Option3/Button" to="." method="_on_Button_pressed"]
 
 [editable path="DialogueOptions"]

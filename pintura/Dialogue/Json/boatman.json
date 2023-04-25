@@ -1,0 +1,8 @@
+[
+
+	{"name": "Datu", "text": "Where do you want to go?","options": 3, "opt_1": "Farm", "opt_2": "Bailles", "opt_3": "Nevermind"},
+	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "No problem", "opt_2": "I am no one", "opt_3": "Exit"}
+
+	
+	
+]
