@@ -12,6 +12,8 @@ var current_dialogue_id = 0
 var dialogue_active = false
 var in_cutscene = false
 var dia_options = []
+var has_options = false
+export var end_after_choosing = true
 
 onready var message = $NinePatchRect/Message
 var player 
@@ -24,6 +26,7 @@ func _ready():
 	$NinePatchRect.visible = false
 	
 func start():
+	print(current_dialogue_id)
 	if dialogue_active:
 		return
 	if !can_move_during_dialogue:
@@ -56,17 +59,12 @@ func next_line():
 	current_dialogue_id += 1
 	
 	if current_dialogue_id >= len(dialogue):
-		$Timer.start()
-		$NinePatchRect.visible = false
-		current_dialogue_id = 0
-		if can_move_after_dialogue:
-			player.can_move = true
-		player.get_node("UserInterface").visible = true
-		emit_signal("dialogue_finish")
+		finish_dialogue()
 		return
 	else:
 		if dialogue[current_dialogue_id].has('options'):
 			$DialogueOptions.visible = true
+			has_options = true
 			show_options()
 			choosing = true
 		var speaker = dialogue[current_dialogue_id]['name']
@@ -75,15 +73,25 @@ func next_line():
 		$NinePatchRect/Message.text = dialogue[current_dialogue_id]['text']
 		message.animate_text()
 		
-	
+
+func finish_dialogue():
+	$Timer.start()
+	$NinePatchRect.visible = false
+	current_dialogue_id = 0
+	if can_move_after_dialogue:
+		player.can_move = true
+	player.get_node("UserInterface").visible = true
+	emit_signal("dialogue_finish")
 
 func show_options():
 	for i in dialogue[current_dialogue_id]['options']:
-				$DialogueOptions.get_child(i).visible = true
-				$DialogueOptions.get_child(i).get_node("Label").text = dialogue[current_dialogue_id]['opt_' + String(i+1)]
+		$DialogueOptions.get_child(i).visible = true
+		$DialogueOptions.get_child(i).get_node("Label").text = dialogue[current_dialogue_id]['opt_' + String(i+1)]
 	
 func respond(ind):
 	$NinePatchRect/Message.text = dialogue[current_dialogue_id+1]['opt_' + String(ind+1)]
+	message.animate_text()
+
 
 func _on_Timer_timeout():
 	dialogue_active = false
@@ -91,10 +99,15 @@ func _on_Timer_timeout():
 
 func _on_Button_pressed():
 	var index = $DialogueOptions.index_get()
-	if index == 2:
+	if index == 2 and end_after_choosing:
 		next_line()
 		choosing = false
 		$DialogueOptions.visible = false
-		
 	else:
 		respond(index)
+		choosing = false
+		$DialogueOptions.visible = false
+		
+
+
+

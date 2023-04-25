@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/tit.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Textures/UI/Loading Screen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/UI/nK6Fd9fB_4x.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/kJCYtHVF_4x.jpg" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -39,10 +40,17 @@ animations = [ {
 [node name="Load" type="CanvasLayer"]
 
 [node name="NK6Fd9fB4x" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.517647, 0.47451, 0.47451, 1 )
 position = Vector2( 320, 145 )
 scale = Vector2( 0.157915, 0.157915 )
 texture = ExtResource( 3 )
+
+[node name="KJcytHvf4x" type="Sprite" parent="."]
+modulate = Color( 0.662745, 0.647059, 0.647059, 1 )
+position = Vector2( 319, 154 )
+scale = Vector2( 0.157715, 0.157715 )
+texture = ExtResource( 4 )
 
 [node name="Tit" type="Sprite" parent="."]
 visible = false
@@ -67,5 +75,5 @@ margin_bottom = 347.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 307, 307 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true

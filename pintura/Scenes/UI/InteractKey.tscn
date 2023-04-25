@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/UI/InteractKey.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 23.0868
+radius = 28.1603
 
 [sub_resource type="Animation" id=2]
 length = 0.001
