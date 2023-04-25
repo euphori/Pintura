@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/UI books & more.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/UI/DialogueOptions.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/Option.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Textures/UI/stain2.tres" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/UI/stamp.tres" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/UI/stain.tres" type="Texture" id=5]
 [ext_resource path="res://Scenes/UI/TravelOptions.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Textures/UI/Selection.tscn" type="PackedScene" id=7]
+[ext_resource path="res://DialogueOptions.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Fonts/PIXELADE.TTF" type="DynamicFontData" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "UI books & more.png 0"
@@ -31,6 +34,10 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="DynamicFont" id=7]
+size = 26
+font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFontData" id=2]
 antialiased = false
@@ -59,6 +66,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "fade_to_black"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -66,10 +74,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("..")
@@ -105,7 +113,7 @@ tracks/0/keys = {
 [node name="TravelOptions" type="CanvasLayer"]
 script = ExtResource( 6 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["ui_asset"]]
 position = Vector2( -194, -34 )
 scale = Vector2( 1, 1 )
 z_index = -1
@@ -114,98 +122,152 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 327704, 0, 0, 327705, 0, 1, 327706, 0, 1, 327707, 0, 1, 327708, 0, 1, 327709, 0, 1, 327710, 0, 1, 327711, 0, 1, 327712, 0, 1, 327713, 0, 1, 327714, 0, 1, 327715, 0, 1, 327716, 0, 1, 327717, 0, 1, 327718, 0, 2, 393240, 0, 65536, 393241, 0, 65537, 393242, 0, 65537, 393243, 0, 65537, 393244, 0, 65537, 393245, 0, 65537, 393246, 0, 65537, 393247, 0, 65537, 393248, 0, 65537, 393249, 0, 65537, 393250, 0, 65537, 393251, 0, 65537, 393252, 0, 65537, 393253, 0, 65537, 393254, 0, 65538, 458776, 0, 65536, 458777, 0, 65537, 458778, 0, 65537, 458779, 0, 65537, 458780, 0, 65537, 458781, 0, 65537, 458782, 0, 65537, 458783, 0, 65537, 458784, 0, 65537, 458785, 0, 65537, 458786, 0, 65537, 458787, 0, 65537, 458788, 0, 65537, 458789, 0, 65537, 458790, 0, 65538, 524312, 0, 65536, 524313, 0, 65537, 524314, 0, 65537, 524315, 0, 65537, 524316, 0, 65537, 524317, 0, 65537, 524318, 0, 65537, 524319, 0, 65537, 524320, 0, 65537, 524321, 0, 65537, 524322, 0, 65537, 524323, 0, 65537, 524324, 0, 65537, 524325, 0, 65537, 524326, 0, 65538, 589848, 0, 65536, 589849, 0, 65537, 589850, 0, 65537, 589851, 0, 65537, 589852, 0, 65537, 589853, 0, 65537, 589854, 0, 65537, 589855, 0, 65537, 589856, 0, 65537, 589857, 0, 65537, 589858, 0, 65537, 589859, 0, 65537, 589860, 0, 65537, 589861, 0, 65537, 589862, 0, 65538, 655384, 0, 65536, 655385, 0, 65537, 655386, 0, 65537, 655387, 0, 65537, 655388, 0, 65537, 655389, 0, 65537, 655390, 0, 65537, 655391, 0, 65537, 655392, 0, 65537, 655393, 0, 65537, 655394, 0, 65537, 655395, 0, 65537, 655396, 0, 65537, 655397, 0, 65537, 655398, 0, 65538, 720920, 0, 65536, 720921, 0, 65537, 720922, 0, 65537, 720923, 0, 65537, 720924, 0, 65537, 720925, 0, 65537, 720926, 0, 65537, 720927, 0, 65537, 720928, 0, 65537, 720929, 0, 65537, 720930, 0, 65537, 720931, 0, 65537, 720932, 0, 65537, 720933, 0, 65537, 720934, 0, 65538, 786456, 0, 65536, 786457, 0, 65537, 786458, 0, 65537, 786459, 0, 65537, 786460, 0, 65537, 786461, 0, 65537, 786462, 0, 65537, 786463, 0, 65537, 786464, 0, 65537, 786465, 0, 65537, 786466, 0, 65537, 786467, 0, 65537, 786468, 0, 65537, 786469, 0, 65537, 786470, 0, 65538, 851992, 0, 65536, 851993, 0, 65537, 851994, 0, 65537, 851995, 0, 65537, 851996, 0, 65537, 851997, 0, 65537, 851998, 0, 65537, 851999, 0, 65537, 852000, 0, 65537, 852001, 0, 65537, 852002, 0, 65537, 852003, 0, 65537, 852004, 0, 65537, 852005, 0, 65537, 852006, 0, 65538, 917528, 0, 65536, 917529, 0, 65537, 917530, 0, 65537, 917531, 0, 65537, 917532, 0, 65537, 917533, 0, 65537, 917534, 0, 65537, 917535, 0, 65537, 917536, 0, 65537, 917537, 0, 65537, 917538, 0, 65537, 917539, 0, 65537, 917540, 0, 65537, 917541, 0, 65537, 917542, 0, 65538, 983064, 0, 65536, 983065, 0, 65537, 983066, 0, 65537, 983067, 0, 65537, 983068, 0, 65537, 983069, 0, 65537, 983070, 0, 65537, 983071, 0, 65537, 983072, 0, 65537, 983073, 0, 65537, 983074, 0, 65537, 983075, 0, 65537, 983076, 0, 65537, 983077, 0, 65537, 983078, 0, 65538, 1048600, 0, 65536, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65537, 1048609, 0, 65537, 1048610, 0, 65537, 1048611, 0, 65537, 1048612, 0, 65537, 1048613, 0, 65537, 1048614, 0, 65538, 1114136, 0, 65536, 1114137, 0, 65537, 1114138, 0, 65537, 1114139, 0, 65537, 1114140, 0, 65537, 1114141, 0, 65537, 1114142, 0, 65537, 1114143, 0, 65537, 1114144, 0, 65537, 1114145, 0, 65537, 1114146, 0, 65537, 1114147, 0, 65537, 1114148, 0, 65537, 1114149, 0, 65537, 1114150, 0, 65538, 1179672, 0, 65536, 1179673, 0, 65537, 1179674, 0, 65537, 1179675, 0, 65537, 1179676, 0, 65537, 1179677, 0, 65537, 1179678, 0, 65537, 1179679, 0, 65537, 1179680, 0, 65537, 1179681, 0, 65537, 1179682, 0, 65537, 1179683, 0, 65537, 1179684, 0, 65537, 1179685, 0, 65537, 1179686, 0, 65538, 1245208, 0, 65536, 1245209, 0, 65537, 1245210, 0, 65537, 1245211, 0, 65537, 1245212, 0, 65537, 1245213, 0, 65537, 1245214, 0, 65537, 1245215, 0, 65537, 1245216, 0, 65537, 1245217, 0, 65537, 1245218, 0, 65537, 1245219, 0, 65537, 1245220, 0, 65537, 1245221, 0, 65537, 1245222, 0, 65538, 1310744, 0, 131072, 1310745, 0, 131073, 1310746, 0, 131073, 1310747, 0, 131073, 1310748, 0, 131073, 1310749, 0, 131073, 1310750, 0, 131073, 1310751, 0, 131073, 1310752, 0, 131073, 1310753, 0, 131073, 1310754, 0, 131073, 1310755, 0, 131073, 1310756, 0, 131073, 1310757, 0, 131073, 1310758, 0, 131074 )
 
-[node name="Stamp" type="Sprite" parent="."]
+[node name="Stamp" type="Sprite" parent="." groups=["ui_asset"]]
 position = Vector2( 215, 72 )
 texture = ExtResource( 4 )
 
-[node name="Stain" type="Sprite" parent="."]
+[node name="Stain" type="Sprite" parent="." groups=["ui_asset"]]
 position = Vector2( 401, 224 )
 texture = ExtResource( 5 )
 
-[node name="Stain2" type="Sprite" parent="."]
+[node name="Stain2" type="Sprite" parent="." groups=["ui_asset"]]
 position = Vector2( 235, 278 )
 texture = ExtResource( 3 )
 
-[node name="DialogueOptions" parent="." instance=ExtResource( 2 )]
+[node name="DialogueOptions" type="Control" parent="." groups=["ui_asset"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 200.0
 margin_top = 58.0
 margin_right = -167.0
 margin_bottom = -8.0
 rect_scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 8 )
 
-[node name="Option1" parent="DialogueOptions" index="0"]
+[node name="Option1" type="Control" parent="DialogueOptions" groups=["ui_asset"]]
 margin_left = -327.5
 margin_top = -80.0
 margin_right = -287.5
 margin_bottom = -39.9997
+script = ExtResource( 2 )
 
-[node name="Button" parent="DialogueOptions/Option1" index="0"]
+[node name="Button" type="TextureButton" parent="DialogueOptions/Option1" groups=["ui_asset"]]
 margin_left = 322.857
 margin_top = 145.714
 margin_right = 6218.86
 margin_bottom = 1777.71
+rect_min_size = Vector2( 5, 5 )
+rect_scale = Vector2( 0.048, 0.019 )
 
-[node name="Sprite" parent="DialogueOptions/Option1" index="1"]
+[node name="Sprite" parent="DialogueOptions/Option1" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 463.286, 156.857 )
 scale = Vector2( 0.0599143, 0.016649 )
 
-[node name="Label" parent="DialogueOptions/Option1" index="2"]
+[node name="Label" type="Label" parent="DialogueOptions/Option1" groups=["ui_asset"]]
 margin_left = 336.143
 margin_top = 148.286
 margin_right = 664.143
 margin_bottom = 175.286
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 7 )
 text = "Farm"
 align = 1
 
-[node name="Option2" parent="DialogueOptions" index="1"]
+[node name="Option2" type="Control" parent="DialogueOptions" groups=["ui_asset"]]
 margin_left = -326.5
 margin_top = -44.714
 margin_right = -286.5
 margin_bottom = -4.71398
+script = ExtResource( 2 )
+index = 1
 
-[node name="Button" parent="DialogueOptions/Option2" index="0"]
+[node name="Button" type="TextureButton" parent="DialogueOptions/Option2" groups=["ui_asset"]]
 margin_left = 320.429
 margin_top = 147.571
 margin_right = 6216.43
 margin_bottom = 1779.57
+rect_min_size = Vector2( 5, 5 )
+rect_scale = Vector2( 0.048, 0.019 )
 
-[node name="Sprite" parent="DialogueOptions/Option2" index="1"]
+[node name="Sprite" parent="DialogueOptions/Option2" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 463.286, 159.679 )
 scale = Vector2( 0.0605714, 0.0160714 )
 
-[node name="Label" parent="DialogueOptions/Option2" index="2"]
+[node name="Label" type="Label" parent="DialogueOptions/Option2" groups=["ui_asset"]]
 margin_left = 335.0
 margin_top = 152.0
 margin_right = 666.0
 margin_bottom = 179.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 7 )
 text = "Bailles de Luces"
 align = 1
 
-[node name="Option3" parent="DialogueOptions" index="2"]
+[node name="Option3" type="Control" parent="DialogueOptions" groups=["ui_asset"]]
 margin_left = -326.071
 margin_top = -27.1426
 margin_right = -286.071
 margin_bottom = 12.8574
+script = ExtResource( 2 )
+index = 2
 
-[node name="Button" parent="DialogueOptions/Option3" index="0"]
+[node name="Button" type="TextureButton" parent="DialogueOptions/Option3" groups=["ui_asset"]]
 margin_left = 330.0
 margin_top = 165.714
 margin_right = 6059.0
 margin_bottom = 1797.71
+rect_min_size = Vector2( 5, 5 )
+rect_scale = Vector2( 0.048, 0.019 )
 
-[node name="Sprite" parent="DialogueOptions/Option3" index="1"]
+[node name="Sprite" parent="DialogueOptions/Option3" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 461.143, 180.04 )
 scale = Vector2( 0.0602857, 0.0168445 )
 
-[node name="Label" parent="DialogueOptions/Option3" index="2"]
+[node name="Label" type="Label" parent="DialogueOptions/Option3" groups=["ui_asset"]]
 margin_left = 334.286
 margin_top = 171.429
 margin_right = 660.286
 margin_bottom = 198.429
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 7 )
 text = "Forest"
 align = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Option4" type="Control" parent="DialogueOptions" groups=["ui_asset"]]
+margin_left = -325.0
+margin_top = 11.25
+margin_right = -285.0
+margin_bottom = 51.25
+script = ExtResource( 2 )
+index = 2
+
+[node name="Button" type="TextureButton" parent="DialogueOptions/Option4" groups=["ui_asset"]]
+margin_left = 330.0
+margin_top = 165.714
+margin_right = 6059.0
+margin_bottom = 1797.71
+rect_min_size = Vector2( 5, 5 )
+rect_scale = Vector2( 0.048, 0.019 )
+
+[node name="Sprite" parent="DialogueOptions/Option4" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 461.143, 180.04 )
+scale = Vector2( 0.0602857, 0.0168445 )
+
+[node name="Label" type="Label" parent="DialogueOptions/Option4" groups=["ui_asset"]]
+margin_left = 334.286
+margin_top = 171.429
+margin_right = 660.286
+margin_bottom = 198.429
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 7 )
+text = "Cancel"
+align = 1
+
+[node name="Label" type="Label" parent="." groups=["ui_asset"]]
 margin_left = 230.0
 margin_top = 82.0
 margin_right = 444.0
@@ -221,12 +283,24 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.8
 anims/RESET = SubResource( 4 )
 anims/fade_to_black = SubResource( 5 )
 anims/fade_to_normal = SubResource( 6 )
 
+[connection signal="mouse_entered" from="DialogueOptions/Option1/Button" to="DialogueOptions/Option1" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueOptions/Option1/Button" to="DialogueOptions/Option1" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="DialogueOptions/Option1/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogueOptions/Option1/Button" to="DialogueOptions/Option1" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="DialogueOptions/Option2/Button" to="DialogueOptions/Option2" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueOptions/Option2/Button" to="DialogueOptions/Option2" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="DialogueOptions/Option2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogueOptions/Option2/Button" to="DialogueOptions/Option2" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="DialogueOptions/Option3/Button" to="DialogueOptions/Option3" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueOptions/Option3/Button" to="DialogueOptions/Option3" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="DialogueOptions/Option3/Button" to="." method="_on_Button_pressed"]
-
-[editable path="DialogueOptions"]
+[connection signal="pressed" from="DialogueOptions/Option3/Button" to="DialogueOptions/Option3" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="DialogueOptions/Option4/Button" to="DialogueOptions/Option4" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueOptions/Option4/Button" to="DialogueOptions/Option4" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="DialogueOptions/Option4/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogueOptions/Option4/Button" to="DialogueOptions/Option4" method="_on_Button_pressed"]

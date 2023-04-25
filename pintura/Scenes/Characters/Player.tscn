@@ -129,7 +129,7 @@ script = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 1 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.65, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -159,7 +159,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]
@@ -218,7 +217,7 @@ visible = false
 position = Vector2( -0.666748, -4 )
 scale = Vector2( 1.38095, 1.38095 )
 frames = SubResource( 18 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

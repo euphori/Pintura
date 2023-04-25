@@ -6,13 +6,21 @@ export(NodePath) var path_to_bailes
 export(NodePath) var path_to_forest
 export(NodePath) var path_to_start
 export(NodePath) var path_to_player
+export var distance_to_player = 5
 
-onready var farm = get_node(path_to_farm)
-onready var bailes = get_node(path_to_bailes)
-onready var forest = get_node(path_to_forest)
 onready var player = get_node(path_to_player)
 
+
+onready var locations = {
+	
+	"Farm" :get_node(path_to_farm),
+	"Bailles de Luces":get_node(path_to_bailes),
+	"Forest":get_node(path_to_forest),
+	"Back to Main Island": get_node(path_to_start)
+}
+
 var player_near
+var current_location
 
 func _ready():
 	$TravelOptions.visible = false
@@ -20,24 +28,50 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("interact") and player_near:
-		print("X")
+		for i in get_tree().get_nodes_in_group("ui_asset"):
+			i.visible = true
+		$TravelOptions.update_labels()
 		$TravelOptions/TileMap.visible = true
 		$TravelOptions.visible = true
 
-func teleport_player(target_position):
+
+
+func transistion(target_position):
+	$TravelOptions/AnimationPlayer.play("fade_to_black")
+	yield($TravelOptions/AnimationPlayer,"animation_finished")
 	player.global_position = target_position
+	self.global_position = player.global_position + Vector2(distance_to_player,distance_to_player)
+	for i in get_tree().get_nodes_in_group("ui_asset"):
+		i.visible = false
+	$TravelOptions/AnimationPlayer.play("fade_to_normal")
+	yield($TravelOptions/AnimationPlayer,"animation_finished")
+
+	
 
 func _on_Button_pressed():
 	print($TravelOptions/DialogueOptions.index_get())
 	$TravelOptions/TileMap.visible = false
 	$TravelOptions/DialogueOptions.visible = false
-	$TravelOptions/AnimationPlayer.play("fade_to_black")
-	yield($TravelOptions/AnimationPlayer,"animation_finished")
+	
 	match $TravelOptions/DialogueOptions.index_get():
 		0:
-			teleport_player(farm.global_position)
-	$TravelOptions/AnimationPlayer.play("fade_to_normal")
-	$TravelOptions.visible = false
+			if current_location != "Farm":
+				current_location = "Farm"
+				transistion(locations["Farm"].global_position)
+			else:
+				current_location = $TravelOptions.label1.get_text()
+				transistion(locations[$TravelOptions.label1.get_text()].global_position)
+		1:
+			current_location = $TravelOptions.label2.get_text()
+			transistion(locations[$TravelOptions.label2.get_text()].global_position)
+
+		2:
+			current_location = $TravelOptions.label3.get_text()
+			transistion(locations[$TravelOptions.label3.get_text()].global_position)
+
+		3:
+			$TravelOptions.visible = false
+
 	$TravelOptions/TileMap.visible = true
 	$TravelOptions/DialogueOptions.visible = true
 	

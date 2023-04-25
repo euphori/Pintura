@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=2]
+[gd_scene load_steps=167 format=2]
 
 [ext_resource path="res://Tilemap/fountain.tres" type="Texture" id=1]
 [ext_resource path="res://Tilemap/waterrightC.tres" type="Texture" id=2]
@@ -49,6 +49,11 @@
 [ext_resource path="res://Tilemap/Port.tscn" type="PackedScene" id=47]
 [ext_resource path="res://Assets/Textures/Character/aaadatu.png" type="Texture" id=48]
 [ext_resource path="res://Scenes/Characters/BoatGuy.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Areas/PlayerDetection.gd" type="Script" id=50]
+[ext_resource path="res://Scenes/Characters/NPC.gd" type="Script" id=51]
+[ext_resource path="res://Areas/PlayerDetection.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Dialogue/Dialogue.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Scenes/UI/InteractKey.tscn" type="PackedScene" id=54]
 
 [sub_resource type="TileSet" id=17]
 0/name = "Tileset-Terrain2.png 0"
@@ -798,45 +803,104 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=159]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=184]
+atlas = ExtResource( 41 )
 region = Rect2( 0, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=160]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=185]
+atlas = ExtResource( 41 )
 region = Rect2( 16, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=161]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=186]
+atlas = ExtResource( 41 )
 region = Rect2( 32, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=162]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=187]
+atlas = ExtResource( 41 )
 region = Rect2( 48, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=163]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=188]
+atlas = ExtResource( 41 )
 region = Rect2( 64, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=164]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=189]
+atlas = ExtResource( 41 )
 region = Rect2( 80, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=165]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=190]
+atlas = ExtResource( 41 )
 region = Rect2( 96, 0, 16, 17 )
 
-[sub_resource type="AtlasTexture" id=166]
-atlas = ExtResource( 30 )
+[sub_resource type="AtlasTexture" id=191]
+atlas = ExtResource( 41 )
 region = Rect2( 112, 0, 16, 17 )
 
 [sub_resource type="SpriteFrames" id=167]
 animations = [ {
-"frames": [ SubResource( 159 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 165 ), SubResource( 166 ) ],
+"frames": [ SubResource( 184 ), SubResource( 185 ), SubResource( 186 ), SubResource( 187 ), SubResource( 188 ), SubResource( 189 ), SubResource( 190 ), SubResource( 191 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.5, 4 )
+
+[sub_resource type="Animation" id=193]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -26 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -26 ) ]
+}
+
+[sub_resource type="Animation" id=194]
+resource_name = "bob"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7, -19 ), Vector2( -7, -22 ), Vector2( -7, -26 ), Vector2( -7, -22 ), Vector2( -7, -19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -23 ), Vector2( -3, -26 ), Vector2( -3, -30 ), Vector2( -3, -26 ), Vector2( -3, -23 ) ]
+}
 
 [sub_resource type="AtlasTexture" id=168]
 atlas = ExtResource( 32 )
@@ -914,7 +978,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=192]
 extents = Vector2( 39.5, 20.5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=142]
@@ -1103,13 +1167,13 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 0
+frame = 2
 
 [node name="Area2D" parent="Player" index="3"]
 collision_mask = 56
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 5
+frame = 2
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 visible = false
@@ -1132,7 +1196,7 @@ playing = true
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 2
+frame = 6
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
@@ -1162,6 +1226,56 @@ frames = SubResource( 167 )
 [node name="Dialogue" parent="GarlicGuy" index="5"]
 dialogue_file = "res://Dialogue/Json/garlicguy.json"
 path_to_player = NodePath("../../Player")
+
+[node name="Farmers" type="KinematicBody2D" parent="."]
+position = Vector2( 2446, 1087 )
+collision_layer = 33
+script = ExtResource( 51 )
+path_to_player = NodePath("../Player")
+
+[node name="Sprite" type="Sprite" parent="Farmers"]
+visible = false
+position = Vector2( 1, -17 )
+texture = ExtResource( 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmers"]
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="PlayerDetection" parent="Farmers" instance=ExtResource( 52 )]
+position = Vector2( 0, -8 )
+collision_layer = 32
+monitorable = false
+script = ExtResource( 50 )
+
+[node name="CollisionShape2D" parent="Farmers/PlayerDetection" index="0"]
+position = Vector2( 2, -2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Farmers"]
+position = Vector2( 1, -10 )
+frames = SubResource( 167 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Farmers"]
+position = Vector2( 16, 7 )
+frames = SubResource( 167 )
+flip_h = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Farmers"]
+position = Vector2( -10, 9 )
+frames = SubResource( 167 )
+
+[node name="InteractKey" parent="Farmers" instance=ExtResource( 54 )]
+visible = true
+text = "Talk"
+
+[node name="AnimationPlayer" parent="Farmers/InteractKey" index="3"]
+anims/RESET = SubResource( 193 )
+anims/bob = SubResource( 194 )
+
+[node name="Dialogue" parent="Farmers" instance=ExtResource( 53 )]
+dialogue_file = "res://Dialogue/Json/farmers.json"
+path_to_player = NodePath("../../Player")
+end_after_choosing = false
 
 [node name="YlangYlang" parent="." instance=ExtResource( 18 )]
 position = Vector2( 471, 22 )
@@ -1195,7 +1309,6 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 3
 playing = true
 
 [node name="Dialogue" parent="SugarcaneVendor" index="5"]
@@ -1224,13 +1337,26 @@ path_to_player = NodePath("../../Player")
 [node name="FarmLocation" type="Position2D" parent="."]
 position = Vector2( 2170, 975 )
 
+[node name="Bailles" type="Position2D" parent="."]
+position = Vector2( 2607, 1978 )
+
+[node name="Forest" type="Position2D" parent="."]
+position = Vector2( 1356, 1666 )
+
+[node name="MainIsland" type="Position2D" parent="."]
+position = Vector2( 2491, -3 )
+
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 394, -63 )
 
 [node name="BoatGuy" parent="." instance=ExtResource( 49 )]
 position = Vector2( 2504, -24 )
 path_to_farm = NodePath("../FarmLocation")
+path_to_bailes = NodePath("../Bailles")
+path_to_forest = NodePath("../Forest")
+path_to_start = NodePath("../MainIsland")
 path_to_player = NodePath("../Player")
+distance_to_player = 0
 
 [node name="Door" parent="." instance=ExtResource( 27 )]
 position = Vector2( 394, -96 )
@@ -1256,7 +1382,7 @@ texture = ExtResource( 43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Datuhouse"]
 position = Vector2( 0, -11.5 )
-shape = SubResource( 1 )
+shape = SubResource( 192 )
 
 [node name="Stalls" type="YSort" parent="Datuhouse"]
 position = Vector2( 1321, -21 )
@@ -28434,6 +28560,10 @@ position = Vector2( 3250, 1493 )
 texture = ExtResource( 17 )
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
+[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
+[connection signal="area_entered" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_area_entered"]
+[connection signal="area_exited" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_area_exited"]
+[connection signal="body_entered" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_body_entered"]
 [connection signal="after_enter" from="Door" to="Player" method="_on_Door_after_enter"]
 [connection signal="before_enter" from="Door" to="Player" method="_on_Door_before_enter"]
 
@@ -28444,6 +28574,8 @@ texture = ExtResource( 17 )
 [editable path="Player/UserInterface"]
 [editable path="GarlicGuy"]
 [editable path="GarlicGuy/PlayerDetection"]
+[editable path="Farmers/PlayerDetection"]
+[editable path="Farmers/InteractKey"]
 [editable path="YlangYlang"]
 [editable path="YlangYlang/PlayerDetection"]
 [editable path="SugarcaneVendor"]
@@ -28451,7 +28583,7 @@ texture = ExtResource( 17 )
 [editable path="Florist"]
 [editable path="Florist/PlayerDetection"]
 [editable path="BoatGuy"]
+[editable path="BoatGuy/InteractKey"]
 [editable path="BoatGuy/TravelOptions"]
-[editable path="BoatGuy/TravelOptions/DialogueOptions"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]

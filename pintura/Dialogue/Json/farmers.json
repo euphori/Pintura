@@ -1,0 +1,10 @@
+[
+
+	{"name": "Farmer #1", "text": "Have you heard, Dodong had to visit the babaylan again. His Tambal is really out to get him"},
+	{"name": "Farmer #2", "text": "He dropped his map of the forest somewhere trying to find the Amomonggo’s Cave for the fabled treasure. "},
+	{"name": "Farmer #1", "text": "Yeah it would be nice to drink something sweet and smooth to beat the heat. We’ve harvested so much sugarcane we have a few to spare. ","options": 3, "opt_1": "Ask about the tambal", "opt_2": "Ask about the Map", "opt_3": "Ask for a spare sugarcane"},
+	{"name": "Farmer #1", "text":"See ya!","respond": true, "opt_1": "if you see someone who looks identical to you, best you run away. Tambals would do most anything to hunt you down and get you lost in the forest.", "opt_2": "Dodong was trying to make a map to find the amomonggo’s cave. They’re ape like creatures that are mischievous and like to steal valuable things. He never finished the map because he encountered his Tambal, but I think he was just affected by work and the heat.", "opt_3": "Well they are spares, sure take a few though I don’t know what a little girl like you would need it for."}
+
+	
+	
+]

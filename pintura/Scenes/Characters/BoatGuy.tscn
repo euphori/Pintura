@@ -62,13 +62,16 @@ shape = SubResource( 9 )
 
 [node name="TravelOptions" parent="." instance=ExtResource( 3 )]
 layer = 5
-visible = false
+
+[node name="Option4" parent="TravelOptions/DialogueOptions" index="3"]
+index = 3
 
 [connection signal="area_entered" from="InteractKey" to="." method="_on_InteractKey_area_entered"]
 [connection signal="area_exited" from="InteractKey" to="." method="_on_InteractKey_area_exited"]
 [connection signal="pressed" from="TravelOptions/DialogueOptions/Option1/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TravelOptions/DialogueOptions/Option2/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TravelOptions/DialogueOptions/Option3/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TravelOptions/DialogueOptions/Option4/Button" to="." method="_on_Button_pressed"]
 
+[editable path="InteractKey"]
 [editable path="TravelOptions"]
-[editable path="TravelOptions/DialogueOptions"]
