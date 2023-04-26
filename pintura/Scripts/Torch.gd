@@ -3,9 +3,9 @@ extends Sprite
 onready var light = $Light2D
 onready var timer = $Timer
 onready var player = get_parent()
-var light_source = 2 setget ,light_source_get
-var light_deg = 5
-var fuel_strength = 4
+var light_source = 6 setget ,light_source_get
+var light_deg = 30
+var fuel_strength = 10
 
 
 func _ready():

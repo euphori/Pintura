@@ -39,6 +39,10 @@ func _input(event):
 func transistion(target_position):
 	$TravelOptions/AnimationPlayer.play("fade_to_black")
 	yield($TravelOptions/AnimationPlayer,"animation_finished")
+	if current_location == "Forest":
+		$CanvasModulate.visible = true
+	else:
+		$CanvasModulate.visible = false
 	player.global_position = target_position
 	self.global_position = player.global_position + Vector2(distance_to_player,distance_to_player)
 	for i in get_tree().get_nodes_in_group("ui_asset"):

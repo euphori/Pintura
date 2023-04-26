@@ -31,20 +31,20 @@ func _ready():
 		creature = $Navigation2D/Amomongo
 		creature.can_move = false
 		creature_involved = true
-		player_camera = player.get_node("Camera2D")
-		original_camera_position = $Camera2D.position
-		match camera_used:
-			"player_camera":
-				camera = player_camera
-			"creature_camera":
-				if creature_involved:
-					camera = $Navigation2D/Amomongo/Camera2D
-			"scene_camera":
-				original_camera_position = $Camera2D.position
-				camera = $Camera2D
-			"default":
-				camera = $Camera2D
-		camera_involved = true
+		
+	player_camera = player.get_node("Camera2D")
+	match camera_used:
+		"player_camera":
+			camera = player_camera
+		"creature_camera":
+			if creature_involved:
+				camera = $Navigation2D/Amomongo/Camera2D
+		"scene_camera":
+			original_camera_position = $Camera2D.position
+			camera = $Camera2D
+		"default":
+			camera = $Camera2D
+	camera_involved = true
 
 	if is_instance_valid($Dialogue):
 		print("DIA")
@@ -63,6 +63,7 @@ func _on_CutsceneTrigger_area_entered(area):
 	if creature_involved:
 		creature.can_move = true
 	if camera_involved:
+		print("CAMERA INVOLVED")
 		camera.global_position = player_camera.global_position
 		camera.current = true
 		on_scene = true
@@ -77,8 +78,10 @@ func _on_CutsceneTrigger_area_entered(area):
 
 func pan_camera():
 	if camera_used == "scene_camera":
+		print("CAMERA PAN")
 		if camera.position.y > original_camera_position.y:
 			camera.position.y -= PAN_SPEED
+
 	
 
 func return_camera():
@@ -109,6 +112,5 @@ func _on_Amomongo_scene_over():
 
 
 func _on_Timer_timeout():
-	if camera_used == "player_camera":
-		return_camera()
+	return_camera()
 	timer_set = false

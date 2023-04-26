@@ -8,7 +8,7 @@ var ACCELERATION = 500
 export(String,"Museum", "HiddenRoom", "DatuHouse", "WorldMap", "Tunnel") var location
 var can_move = true
 var MAX_ACCELERATION = 500
-
+var island_location
 
 
 signal toggle_torch

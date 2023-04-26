@@ -20,7 +20,7 @@ light_mode = 1
 offsets = PoolRealArray( 0, 0.0142857, 0.371429, 0.678571, 0.978571 )
 colors = PoolColorArray( 0, 0, 0, 0, 0.932617, 0.914381, 0.892544, 1, 0.963867, 0.917561, 0.862209, 0.62963, 0.87793, 0.738893, 0.572712, 0.311111, 0.968627, 0.647059, 0.262745, 0 )
 
-[sub_resource type="GradientTexture" id=3]
+[sub_resource type="GradientTexture" id=7]
 gradient = SubResource( 5 )
 
 [sub_resource type="ParticlesMaterial" id=6]
@@ -37,7 +37,7 @@ initial_velocity = 4.0
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 7 )
 
 [node name="Forest" type="Node2D"]
 position = Vector2( 0, 1 )
@@ -143,7 +143,7 @@ z_index = 1
 frame = 4
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 3
+frame = 2
 
 [node name="Trees" type="YSort" parent="YSort"]
 position = Vector2( 204, 191 )
@@ -727,7 +727,6 @@ position = Vector2( 596, 458 )
 [node name="Garlic" parent="." instance=ExtResource( 11 )]
 
 [connection signal="toggle_torch" from="YSort/Player" to="Tambal" method="_on_Player_toggle_torch"]
-[connection signal="toggle_journal" from="YSort/Player/UserInterface/Journal" to="YSort/Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="garlic_nearby" from="Garlic" to="Tambal" method="_on_Garlic_garlic_nearby"]
 
 [editable path="YSort/Player"]
