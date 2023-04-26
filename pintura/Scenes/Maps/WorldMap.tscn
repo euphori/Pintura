@@ -1167,13 +1167,13 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 2
+frame = 5
 
 [node name="Area2D" parent="Player" index="3"]
 collision_mask = 56
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 2
+frame = 0
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 visible = false
@@ -1196,7 +1196,7 @@ playing = true
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
@@ -1309,6 +1309,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
+frame = 3
 playing = true
 
 [node name="Dialogue" parent="SugarcaneVendor" index="5"]
@@ -1405,7 +1406,6 @@ position = Vector2( 365, -98 )
 texture = ExtResource( 39 )
 
 [node name="VillageHouses" type="YSort" parent="."]
-visible = false
 position = Vector2( 91, 267 )
 z_index = 1
 
@@ -28389,73 +28389,70 @@ position = Vector2( 30, -10 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 155, 445 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 520, -20 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Chicken12" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1079, -1253 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -28560,7 +28557,6 @@ position = Vector2( 3250, 1493 )
 texture = ExtResource( 17 )
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
-[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="area_entered" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_area_entered"]
 [connection signal="area_exited" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_area_exited"]
 [connection signal="body_entered" from="Farmers/PlayerDetection" to="Farmers/PlayerDetection" method="_on_PlayerDetection_body_entered"]
