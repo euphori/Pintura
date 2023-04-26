@@ -1171,36 +1171,36 @@ tile_data = PoolIntArray( 1179649, 2, 0, 1441796, 4, 0 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 2
+frame = 6
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 5
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
+frame = 4
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
-frame = 3
+frame = 7
 playing = true
 
 [node name="Boat" parent="." instance=ExtResource( 23 )]
@@ -28374,13 +28374,13 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 2
+frame = 4
 
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 5
+frame = 2
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -28434,11 +28434,11 @@ position = Vector2( 1, -17 )
 texture = ExtResource( 48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCs/Dancer"]
-position = Vector2( 0, -5 )
+position = Vector2( 21, 47.5 )
 shape = SubResource( 1 )
 
 [node name="PlayerDetection" parent="YSort/NPCs/Dancer" instance=ExtResource( 52 )]
-position = Vector2( 0, -8 )
+position = Vector2( 18, 46 )
 collision_layer = 32
 monitorable = false
 script = ExtResource( 50 )
@@ -28447,7 +28447,7 @@ script = ExtResource( 50 )
 position = Vector2( 2, -2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
-position = Vector2( 1, -10 )
+position = Vector2( 22, 42.5 )
 frames = SubResource( 167 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
@@ -28460,10 +28460,11 @@ position = Vector2( -32, 10 )
 frames = SubResource( 167 )
 
 [node name="InteractKey" parent="YSort/NPCs/Dancer" instance=ExtResource( 54 )]
+position = Vector2( 22, 45 )
 text = "Talk"
 
 [node name="Dialogue" parent="YSort/NPCs/Dancer" instance=ExtResource( 53 )]
-dialogue_file = "res://Dialogue/Json/garlicguy.json"
+dialogue_file = "res://Dialogue/Json/dancers_ask.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Farmers" type="KinematicBody2D" parent="YSort/NPCs"]
@@ -28528,6 +28529,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/YlangYlang" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
+frame = 4
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/YlangYlang" index="5"]
@@ -28547,7 +28549,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/SugarcaneVendor" index="5"]
@@ -28567,7 +28569,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/Florist" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/Florist" index="5"]
