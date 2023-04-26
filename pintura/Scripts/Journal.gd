@@ -7,6 +7,7 @@ onready var page_slots = $PageContainer.get_children()
 onready var page_count = $PageContainer.get_child_count()
 onready var inventory = get_parent().get_node("Inventory")
 onready var save_file = SaveFile.game_data
+onready var quest_page = $PageContainer/QuestPage
 
 signal toggle_journal
 
@@ -24,11 +25,32 @@ func _input(event):
 		emit_signal("toggle_journal")
 		if visible == false:
 			inventory.visible = false
+			page = 1
+			update_page()
+			show_quest_list()
 			visible = true
 		else:
 			inventory.visible = true
 			visible = false
+	
+	if event.is_action_pressed("ui_cancel"): 
+		if visible == true:
+			visible = false
+		else:
+			page = 0
+			update_page()
+			visible = true
 
+
+func show_quest_list():
+	match player.location:
+		"Museum":
+			quest_page.get_node("Museum").visible = true
+			quest_page.get_node("Islands").visible = false
+			quest_page.get_node("SideQuest").visible = false
+		"WorldMap":
+			quest_page.get_node("Museum").visible = false
+			quest_page.get_node("Islands").visible = true
 
 
 func update_page():

@@ -22,7 +22,7 @@ var grass_Steps = load("res://Music/Sound Effects/Grass Footsteps.mp3")
 var hurt_Sound = load("res://Music/Sound Effects/Hurt.wav")
 
 func _ready():
-	pass
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),Globals.get_volume())
 	
 func play_music():
 	match player.location:

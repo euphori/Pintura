@@ -2,7 +2,7 @@ extends Control
 
 
 onready var save_file = SaveFile.game_data
-
+onready var volume_slider = $Settings/VBoxContainer2/HSlider
 
 
 func _ready():
@@ -30,3 +30,14 @@ func _on_Continue_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
+
+
+func _on_Settings_pressed():
+	$TitleScreen.visible = false
+	$Settings.visible = true
+
+
+func _on_SettingsReturn_pressed():
+	Globals.set_volume(volume_slider.value)
+	$TitleScreen.visible = true
+	$Settings.visible = false

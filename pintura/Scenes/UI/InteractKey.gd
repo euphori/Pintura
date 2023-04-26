@@ -10,6 +10,7 @@ func _ready():
 	$Label.text = text
 	$AnimationPlayer.play("bob")
 
+
 func _on_InteractKey_area_entered(area):
 	if get_parent().get_name() == "Door":
 		if get_parent().switch_on == false and get_parent().need_switch == true:

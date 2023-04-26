@@ -159,6 +159,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]

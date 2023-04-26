@@ -5,6 +5,9 @@ export (bool) var can_move_during_dialogue
 export (bool) var can_move_after_dialogue = true
 export (NodePath) var path_to_player
 
+export(bool) var trigger_quest
+export (String,"Quest1","Quest2","Quest3","Quest4") var quest_line
+
 var dialogue = []
 
 var choosing
@@ -15,6 +18,7 @@ var dia_options = []
 var has_options = false
 export var end_after_choosing = true
 
+var journal_quest_page
 onready var message = $NinePatchRect/Message
 var player 
 signal dialogue_start
@@ -24,7 +28,8 @@ func _ready():
 	visible = true
 	player = get_node(path_to_player)
 	$NinePatchRect.visible = false
-	
+	journal_quest_page = player.get_node("UserInterface/Journal/PageContainer/QuestPage")
+	print(journal_quest_page)
 func start():
 	print(current_dialogue_id)
 	if dialogue_active:
@@ -70,7 +75,10 @@ func next_line():
 		var speaker = dialogue[current_dialogue_id]['name']
 		$NinePatchRect/Sprite.texture = load("res://Assets/Textures/Portrait/"+ speaker + ".png")
 		$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
-		$NinePatchRect/Message.text = dialogue[current_dialogue_id]['text']
+		if  dialogue[current_dialogue_id].has('text'):
+			$NinePatchRect/Message.text = dialogue[current_dialogue_id]['text']
+		else:
+			next_line()
 		message.animate_text()
 		
 
@@ -81,6 +89,9 @@ func finish_dialogue():
 	if can_move_after_dialogue:
 		player.can_move = true
 	player.get_node("UserInterface").visible = true
+	if trigger_quest:
+		if player.location == "WorldMap":
+			journal_quest_page.get_node("Islands/VBoxContainer").get_node(quest_line).visible = true
 	emit_signal("dialogue_finish")
 
 func show_options():

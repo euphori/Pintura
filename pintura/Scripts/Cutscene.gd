@@ -63,7 +63,6 @@ func _on_CutsceneTrigger_area_entered(area):
 	if creature_involved:
 		creature.can_move = true
 	if camera_involved:
-		print("CAMERA INVOLVED")
 		camera.global_position = player_camera.global_position
 		camera.current = true
 		on_scene = true
@@ -78,7 +77,6 @@ func _on_CutsceneTrigger_area_entered(area):
 
 func pan_camera():
 	if camera_used == "scene_camera":
-		print("CAMERA PAN")
 		if camera.position.y > original_camera_position.y:
 			camera.position.y -= PAN_SPEED
 

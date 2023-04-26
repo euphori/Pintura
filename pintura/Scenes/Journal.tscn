@@ -200,14 +200,14 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Title" type="Label" parent="PageContainer/QuestPage/Islands"]
-margin_left = 148.0
+margin_left = 134.0
 margin_top = 53.0
-margin_right = 307.0
+margin_right = 316.0
 margin_bottom = 80.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Museum Missions"
+text = "Main Island Missions"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PageContainer/QuestPage/Islands"]
 margin_left = 124.0
@@ -215,38 +215,96 @@ margin_top = 97.0
 margin_right = 352.0
 margin_bottom = 217.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_constants/separation = 0
+custom_constants/separation = 15
 
-[node name="Mission1" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
+[node name="Quest1" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
+margin_right = 228.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Find a way to go back to mother"
+autowrap = true
+
+[node name="Quest2" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
+margin_top = 72.0
+margin_right = 228.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Talk to the woman"
+
+[node name="Quest3" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
+visible = false
+margin_top = 114.0
+margin_right = 228.0
+margin_bottom = 160.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -8
+custom_fonts/font = SubResource( 1 )
+text = "Follow Hiraya to the village"
+autowrap = true
+
+[node name="Quest4" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
+visible = false
+margin_top = 114.0
+margin_right = 228.0
+margin_bottom = 171.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Explore and talk to the village people"
+autowrap = true
+
+[node name="SideQuest" type="Control" parent="PageContainer/QuestPage"]
+visible = false
+margin_left = 238.0
+margin_top = -4.0
+margin_right = 278.0
+margin_bottom = 36.0
+
+[node name="Title" type="Label" parent="PageContainer/QuestPage/SideQuest"]
+margin_left = 146.0
+margin_top = 57.0
+margin_right = 305.0
+margin_bottom = 84.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Side Missions"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageContainer/QuestPage/SideQuest"]
+margin_left = 124.0
+margin_top = 97.0
+margin_right = 352.0
+margin_bottom = 217.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_constants/separation = 15
+
+[node name="Mission1" type="Label" parent="PageContainer/QuestPage/SideQuest/VBoxContainer"]
 margin_right = 228.0
 margin_bottom = 27.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "- Explore Museum"
+text = "Find some sugar canes"
 
-[node name="Mission2" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
-margin_top = 27.0
+[node name="Mission2" type="Label" parent="PageContainer/QuestPage/SideQuest/VBoxContainer"]
+margin_top = 42.0
 margin_right = 228.0
-margin_bottom = 54.0
+margin_bottom = 88.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -8
+custom_fonts/font = SubResource( 1 )
+text = "Answer the garlic guy question"
+autowrap = true
+
+[node name="Mission3" type="Label" parent="PageContainer/QuestPage/SideQuest/VBoxContainer"]
+margin_top = 103.0
+margin_right = 228.0
+margin_bottom = 160.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "- Investigate the creature"
-
-[node name="Mission3" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
-margin_top = 54.0
-margin_right = 228.0
-margin_bottom = 81.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "- Find the key to the door"
-
-[node name="Mission4" type="Label" parent="PageContainer/QuestPage/Islands/VBoxContainer"]
-margin_top = 81.0
-margin_right = 228.0
-margin_bottom = 108.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "- Follow the creature"
+text = "Find a way to explore other areas"
+autowrap = true
 
 [connection signal="pressed" from="Quest" to="." method="_on_Quest_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]

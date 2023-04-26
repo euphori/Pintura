@@ -6,12 +6,17 @@ var remove = false
 var save_file = SaveFile.game_data
 export(String,"WorldMap") var location 
 export(String, "Hiraya") var char_name
+export var important = false
 
 func _ready():
 	print(save_file.met_hiraya)
 	Globals.met_hiraya = save_file.met_hiraya
+	if important == true:
+		$Exclaim.visible = true
+	else:
+		$Exclaim.visible = false
+
 	despawn()
-	print(char_name)
 
 func _physics_process(delta):
 	if !stationary:
@@ -24,6 +29,7 @@ func despawn():
 			queue_free()
 
 func _on_Dialogue_dialogue_finish():
+	$Exclaim.visible = false
 	Globals.met_hiraya = true
 	save_file.met_hiraya = true
 	can_move = true

@@ -202,6 +202,7 @@ navpoly = SubResource( 4 )
 [node name="CSCheckJournal" parent="." instance=ExtResource( 25 )]
 position = Vector2( 939, 851 )
 path_to_player = NodePath("../Player")
+camera_used = "player_camera"
 
 [node name="CollisionShape2D" parent="CSCheckJournal/CutsceneTrigger" index="0"]
 position = Vector2( 59, -27 )
