@@ -10,6 +10,7 @@ export var MAX_HEALTH = 100
 export var ARMOR = 50
 export var MAX_DISTANCE = 100
 
+export(NodePath) var path_to_player
 
 
 var motion = Vector2()
@@ -22,7 +23,7 @@ var torch_is_on
 var flee_duration = 2
 var time_set = false
 
-onready var player = get_node("/root/Forest/YSort/Player")
+onready var player = get_node(path_to_player)
 onready var wander_controller = $WanderController
 onready var aggro_range = $PlayerDetection/CollisionShape2D
 
@@ -120,7 +121,7 @@ func pick_random_state(state_list):
 
 
 func _on_PlayerDetection_body_entered(body):
-
+	print("CHASE")
 	state = CHASE
 	player_detected = true
 

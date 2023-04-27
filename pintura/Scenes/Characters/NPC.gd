@@ -29,9 +29,11 @@ func despawn():
 			queue_free()
 
 func _on_Dialogue_dialogue_finish():
+	print("FIN")
 	$Exclaim.visible = false
-	Globals.met_hiraya = true
-	save_file.met_hiraya = true
+	if char_name == "Hiraya":
+		Globals.met_hiraya = true
+		save_file.met_hiraya = true
 	can_move = true
 	current_desti = 1
 	remove = true

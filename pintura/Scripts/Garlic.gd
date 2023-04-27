@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 100
 var velocity = Vector2.ZERO
 signal garlic_nearby
-onready var tambal = get_node("/root/Forest/Tambal")
+onready var tambal = get_node("/root/WorldMap/Tambal")
 
 func _physics_process(delta):
 	speed -= 3
