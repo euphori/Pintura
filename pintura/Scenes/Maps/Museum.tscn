@@ -85,6 +85,9 @@ path_to_player = NodePath("../../Player")
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
 
+[node name="Exclaim" parent="NPC" index="6"]
+frame = 1
+
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
 margin_left = 40.0
