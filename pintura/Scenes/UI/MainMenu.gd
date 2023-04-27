@@ -8,6 +8,7 @@ onready var volume_slider = $Settings/VBoxContainer2/HSlider
 func _ready():
 	$MusicController.play_menu_sound()
 	print(save_file.last_scene)
+	volume_slider.value = Globals.get_volume()
 
 
 
@@ -38,6 +39,9 @@ func _on_Settings_pressed():
 
 
 func _on_SettingsReturn_pressed():
-	Globals.set_volume(volume_slider.value)
 	$TitleScreen.visible = true
 	$Settings.visible = false
+
+
+func _on_HSlider_value_changed(value):
+	Globals.set_volume(volume_slider.value)

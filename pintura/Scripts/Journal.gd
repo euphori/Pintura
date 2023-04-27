@@ -28,6 +28,7 @@ func _input(event):
 			page = 1
 			update_page()
 			show_quest_list()
+			initialize_quest_page()
 			visible = true
 		else:
 			inventory.visible = true
@@ -61,6 +62,34 @@ func update_page():
 			page_slots[i].visible = false
 
 
+
+func initialize_quest_page():
+	var page1 = quest_page.get_node("Islands/Page1")
+	var page2 = quest_page.get_node("Islands/Page2")
+	for i in page1.get_child_count():
+		match Globals.quest_island[page1.get_child(i).get_name()]:
+			"undiscovered":
+				page1.get_child(i).visible = false
+			"ongoing":
+				page1.get_child(i).visible = true
+				if page1.get_child(i).get_child_count() != 0:
+					page1.get_child(i).get_child(0).visible = false
+			"finished":
+				page1.get_child(i).visible = true
+				if page1.get_child(i).get_child_count() != 0:
+					page1.get_child(i).get_child(0).visible = true
+			
+	for i in page2.get_child_count():
+		match Globals.quest_island[page2.get_child(i).get_name()]:
+			"undiscovered":
+				page2.get_child(i).visible = false
+			"ongoing":
+				if page2.get_child(i).get_child_count() != 0:
+					page2.get_child(i).get_child(0).visible = false
+			"finished":
+				page2.get_child(i).visible = true
+				if page2.get_child(i).get_child_count() != 0:
+					page2.get_child(i).get_child(0).visible = true
 
 
 func _on_Quest_pressed():

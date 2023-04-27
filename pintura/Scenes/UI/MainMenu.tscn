@@ -168,4 +168,5 @@ text = "Back"
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/MarginContainer2/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/MarginContainer3/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="TitleScreen/VBoxContainer/VBoxContainer/MarginContainer4/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="value_changed" from="Settings/VBoxContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="Settings/SettingsReturn" to="." method="_on_SettingsReturn_pressed"]

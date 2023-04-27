@@ -5,8 +5,10 @@ export (bool) var can_move_during_dialogue
 export (bool) var can_move_after_dialogue = true
 export (NodePath) var path_to_player
 
-export(bool) var trigger_quest
-export (String,"Quest1","Quest2","Quest3","Quest4") var quest_line
+export(bool) var start_quest
+export(bool) var finish_quest
+export (String,"Quest1","Quest2","Quest3","Quest4","Quest5","Quest6","Quest7","Quest8","Quest9") var finish_quest_line
+export (String,"Quest1","Quest2","Quest3","Quest4","Quest5","Quest6","Quest7","Quest8","Quest9") var start_quest_line
 
 var dialogue = []
 
@@ -89,9 +91,12 @@ func finish_dialogue():
 	if can_move_after_dialogue:
 		player.can_move = true
 	player.get_node("UserInterface").visible = true
-	if trigger_quest:
-		if player.location == "WorldMap":
-			journal_quest_page.get_node("Islands/VBoxContainer").get_node(quest_line).visible = true
+	if start_quest:
+		if player.location == "WorldMap" or "DatuHouse":
+			Globals.quest_island[start_quest_line] = "ongoing"
+	if finish_quest:
+		if player.location == "WorldMap" or "DatuHouse":
+			Globals.quest_island[finish_quest_line] = "finished"
 	emit_signal("dialogue_finish")
 
 func show_options():

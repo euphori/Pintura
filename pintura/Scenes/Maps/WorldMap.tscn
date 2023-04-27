@@ -1204,37 +1204,36 @@ tile_data = PoolIntArray( 1179649, 2, 0, 1441796, 4, 0 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
-frame = 6
 playing = true
 
 [node name="Boat" parent="." instance=ExtResource( 23 )]
@@ -28411,10 +28410,13 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 4
+frame = 3
 
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
+
+[node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
+frame = 0
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -28441,8 +28443,10 @@ position = Vector2( 0, -10 )
 [node name="Dialogue" parent="YSort/NPCs/Hiraya" index="5"]
 dialogue_file = "res://Dialogue/Json/hiraya_intro.json"
 path_to_player = NodePath("../../../Player")
-trigger_quest = true
-quest_line = "Quest3"
+start_quest = true
+finish_quest = true
+finish_quest_line = "Quest2"
+start_quest_line = "Quest3"
 
 [node name="GarlicGuy" parent="YSort/NPCs" instance=ExtResource( 18 )]
 path_to_player = NodePath("../../Player")
@@ -28579,7 +28583,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/YlangYlang" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/YlangYlang" index="5"]
@@ -28599,7 +28603,6 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 4
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/SugarcaneVendor" index="5"]
@@ -28619,7 +28622,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/Florist" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/Florist" index="5"]
@@ -28802,7 +28805,6 @@ texture = ExtResource( 17 )
 [connection signal="dialogue_finish" from="ForestCutscene/Dialogue" to="ForestCutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="after_enter" from="Door" to="YSort/Player" method="_on_Door_after_enter"]
 [connection signal="before_enter" from="Door" to="YSort/Player" method="_on_Door_before_enter"]
-[connection signal="toggle_journal" from="YSort/Player/UserInterface/Journal" to="YSort/Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="dialogue_finish" from="YSort/NPCs/Hiraya/Dialogue" to="YSort/NPCs/Hiraya" method="_on_Dialogue_dialogue_finish"]
 [connection signal="area_entered" from="YSort/NPCs/Dancer/PlayerDetection" to="YSort/NPCs/Dancer/PlayerDetection" method="_on_PlayerDetection_area_entered"]
 [connection signal="area_exited" from="YSort/NPCs/Dancer/PlayerDetection" to="YSort/NPCs/Dancer/PlayerDetection" method="_on_PlayerDetection_area_exited"]
