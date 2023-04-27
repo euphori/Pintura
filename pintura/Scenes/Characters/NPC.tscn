@@ -72,7 +72,7 @@ text = "Talk"
 [node name="Exclaim" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -34 )
 frames = SubResource( 11 )
-frame = 4
+frame = 2
 playing = true
 
 [connection signal="area_entered" from="PlayerDetection" to="PlayerDetection" method="_on_PlayerDetection_area_entered"]
