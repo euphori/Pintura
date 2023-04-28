@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-export (String, "Open", "Talk", "Toggle", "Grab", "Exit", "Interact") var text
+export (String, "Open", "Talk", "Toggle", "Grab", "Exit", "Interact", "Push") var text
 
 
 func _ready():

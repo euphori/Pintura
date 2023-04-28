@@ -1232,36 +1232,36 @@ tile_data = PoolIntArray( 1179649, 2, 0, 1441796, 4, 0 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 7
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
+frame = 1
 playing = true
 
 [node name="Boat" parent="." instance=ExtResource( 23 )]
@@ -24027,14 +24027,14 @@ position = Vector2( 300, 58 )
 z_index = 1
 location = "WorldMap"
 
+[node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
+frame = 4
+
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
 
 [node name="CollisionShape2D" parent="YSort/Player/Interaction" index="0"]
 position = Vector2( 66, 108 )
-
-[node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 3
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -24067,7 +24067,7 @@ finish_quest_line = "Quest2"
 start_quest_line = "Quest3"
 
 [node name="Exclaim" parent="YSort/NPCs/Hiraya" index="6"]
-frame = 4
+frame = 1
 
 [node name="GarlicGuy" parent="YSort/NPCs" instance=ExtResource( 18 )]
 path_to_player = NodePath("../../Player")
@@ -24087,7 +24087,7 @@ dialogue_file = "res://Dialogue/Json/garlicguy.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/GarlicGuy" index="6"]
-frame = 4
+frame = 1
 
 [node name="Dancer" type="KinematicBody2D" parent="YSort/NPCs"]
 position = Vector2( 491, 1955 )
@@ -24139,11 +24139,11 @@ path_to_player = NodePath("../../../Player")
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Farmers" type="KinematicBody2D" parent="YSort/NPCs"]
-position = Vector2( 475, 1363 )
+position = Vector2( 240, 1345 )
 collision_layer = 33
 script = ExtResource( 51 )
 path_to_player = NodePath("../../Player")
@@ -24196,7 +24196,6 @@ end_after_choosing = false
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 3
 playing = true
 
 [node name="YlangYlang" parent="YSort/NPCs" instance=ExtResource( 18 )]
@@ -24212,7 +24211,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/YlangYlang" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/YlangYlang" index="5"]
@@ -24220,7 +24219,7 @@ dialogue_file = "res://Dialogue/Json/ylang.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/YlangYlang" index="6"]
-frame = 4
+frame = 1
 
 [node name="SugarcaneVendor" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -96, 54 )
@@ -24236,7 +24235,6 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 2
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/SugarcaneVendor" index="5"]
@@ -24244,7 +24242,7 @@ dialogue_file = "res://Dialogue/Json/sugarcane_intro.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/SugarcaneVendor" index="6"]
-frame = 4
+frame = 1
 
 [node name="Florist" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -89, -23 )
@@ -24260,7 +24258,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/Florist" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/Florist" index="5"]
@@ -24268,7 +24266,7 @@ dialogue_file = "res://Dialogue/Json/florist.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/Florist" index="6"]
-frame = 4
+frame = 1
 
 [node name="Animals" type="Node2D" parent="."]
 position = Vector2( 240, -344 )
@@ -24276,69 +24274,65 @@ position = Vector2( 240, -344 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 visible = false
 position = Vector2( 155, 445 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 204 )
-frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 204 )
+frame = 3
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 560, 8 )
 frames = SubResource( 204 )
+frame = 3
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Fountain" type="TileMap" parent="."]
