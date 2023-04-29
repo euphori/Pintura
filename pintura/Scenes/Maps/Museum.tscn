@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/UI/24.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/paintingartifact.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/coconutartifact.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/writingdeskartifact.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Textures/Cave Assets/pearl tiara.png" type="Texture" id=34]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -96,9 +97,6 @@ path_to_player = NodePath("../../Player")
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
 
-[node name="Exclaim" parent="NPC" index="6"]
-frame = 2
-
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
 margin_left = 40.0
@@ -143,7 +141,7 @@ position = Vector2( 837, 878 )
 scale = Vector2( 0.75, 0.75 )
 cell_size = Vector2( 8, 8 )
 cell_y_sort = true
-tile_data = PoolIntArray( -2949047, 6, 0, -2621367, 12, 0, -2621360, 10, 0, -2621356, 10, 0, -2621352, 10, 0, -2097073, 12, 0, -2031531, 10, 0, -2031527, 10, 0, -1572912, 7, 0, -1376232, 17, 0, -1245172, 14, 0, -1245166, 14, 0, -1245160, 17, 0, -1114088, 16, 0, -983058, 3, 0, -983049, 4, 0, -851988, 9, 0, -851980, 1, 0, -720922, 9, 0, -655376, 8, 0, -524306, 0, 0, -393274, 18, 0, -131127, 9, 0, -65592, 2, 0, 131046, 9, 0, 131144, 6, 0, 131147, 4, 0, 196663, 9, 0, 196673, 9, 0, 327624, 21, 0, 262156, 25, 0, 262157, 18, 0, 393227, 23, 0, 524283, 19, 0, 524287, 24, 0, 524293, 28, 0, 589860, 13, 0, 720892, 9, 0, 720893, 22, 0, 655375, 21, 0, 983076, 23, 0, 1310779, 24, 0, 1572807, 5, 0, 1507384, 9, 0, 1507385, 22, 0, 1703868, 22, 0, 1703883, 22, 0 )
+tile_data = PoolIntArray( -3932183, 5, 0, -3997681, 5, 0, -3932149, 6, 0, -3801089, 7, 0, -3604503, 15, 0, -3014679, 23, 0, -2949047, 6, 0, -2621463, 23, 0, -2621367, 12, 0, -2621360, 10, 0, -2621356, 10, 0, -2621352, 10, 0, -2097073, 12, 0, -2031531, 10, 0, -2031527, 10, 0, -1638423, 9, 0, -1638418, 24, 0, -1703920, 9, 0, -1572912, 7, 0, -1376232, 17, 0, -1245172, 14, 0, -1245166, 14, 0, -1245160, 17, 0, -1114088, 16, 0, -983058, 3, 0, -983049, 4, 0, -851988, 9, 0, -851980, 1, 0, -720922, 9, 0, -655376, 8, 0, -524306, 0, 0, -393274, 18, 0, -131127, 9, 0, -65592, 2, 0, 131046, 9, 0, 131144, 6, 0, 131147, 4, 0, 196663, 9, 0, 196673, 9, 0, 327624, 21, 0, 262156, 25, 0, 262157, 18, 0, 393227, 23, 0, 524283, 19, 0, 524287, 24, 0, 524293, 28, 0, 589860, 13, 0, 720892, 9, 0, 720893, 22, 0, 655375, 21, 0, 983076, 23, 0, 1310779, 24, 0, 1572807, 5, 0, 1507384, 9, 0, 1507385, 22, 0, 1703868, 22, 0, 1703883, 22, 0 )
 
 [node name="Paintsss" type="Sprite" parent="FurnitureB"]
 position = Vector2( -34.6666, -480 )
@@ -306,6 +304,11 @@ texture = ExtResource( 13 )
 [node name="Paintingartifact" type="Sprite" parent="Door"]
 position = Vector2( -651, 95 )
 texture = ExtResource( 31 )
+
+[node name="PearlTiara" type="Sprite" parent="Door/Paintingartifact"]
+position = Vector2( 226, -165 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 34 )
 
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]

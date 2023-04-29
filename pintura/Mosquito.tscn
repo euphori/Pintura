@@ -1,17 +1,22 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="ParticlesMaterial" id=1]
+render_priority = 2
+lifetime_randomness = 1.0
 emission_shape = 5
-emission_ring_radius = 17.65
+emission_ring_radius = 0.01
 emission_ring_inner_radius = 83.24
 emission_ring_height = 1.0
 emission_ring_axis = Vector3( 0, 0, 1 )
 flag_disable_z = true
+direction = Vector3( 1, -1, -1 )
+spread = 34.76
 gravity = Vector3( 0, 0, 0 )
+angular_velocity = -423.53
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = 200.0
-color = Color( 0.117647, 0.0980392, 0.0980392, 1 )
+color = Color( 0.101961, 0.0941176, 0.0941176, 1 )
 
 [node name="Mosquito" type="Particles2D"]
 position = Vector2( -1, 0 )
