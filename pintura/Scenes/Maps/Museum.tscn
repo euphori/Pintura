@@ -86,7 +86,7 @@ path_to_player = NodePath("../../Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="6"]
-frame = 5
+frame = 1
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
@@ -219,7 +219,6 @@ path_to_player = NodePath("../../Player")
 position = Vector2( 809, 915 )
 scale = Vector2( 0.5, 0.5 )
 cell_size = Vector2( 16, 16 )
-tile_data = PoolIntArray( 589767, 0, 0, 655303, 0, 0 )
 
 [node name="Floor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 780, 831 )
@@ -233,7 +232,7 @@ cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 21, 0 )
 
 [node name="Key" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1267, 728 )
+position = Vector2( 1281, 910 )
 
 [node name="MuseumArtifact1" type="Sprite" parent="."]
 position = Vector2( 674, 755 )
