@@ -481,7 +481,7 @@ position = Vector2( 47, 93 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 4
+frame = 3
 
 [node name="AnimationPlayer" parent="YSort/Player" index="4"]
 anims/RESET = SubResource( 2 )
