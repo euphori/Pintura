@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/aaaylangylang 1.png-9a5aecbd59774e7e50d30cb03d978603.stex"
+path="res://.import/ylang.png-71c124815d9cb769fe8e483f00418d55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/FOREST/aaaylangylang 1.png"
-dest_files=[ "res://.import/aaaylangylang 1.png-9a5aecbd59774e7e50d30cb03d978603.stex" ]
+source_file="res://Assets/Textures/FOREST/ylang.png"
+dest_files=[ "res://.import/ylang.png-71c124815d9cb769fe8e483f00418d55.stex" ]
 
 [params]
 

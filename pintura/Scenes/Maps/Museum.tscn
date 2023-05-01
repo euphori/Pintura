@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/UI/24.png" type="Texture" id=2]
@@ -62,6 +62,9 @@ outlines = [ PoolVector2Array( 339.122, -13.3828, 339.122, 46.3391, 336.937, 45.
 [sub_resource type="CircleShape2D" id=5]
 radius = 38.0132
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 9 )
+
 [node name="Museum" type="Node2D"]
 script = ExtResource( 18 )
 
@@ -96,6 +99,9 @@ path_to_player = NodePath("../../Player")
 
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
+
+[node name="Exclaim" parent="NPC" index="6"]
+frame = 2
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
@@ -305,8 +311,15 @@ texture = ExtResource( 13 )
 position = Vector2( -651, 95 )
 texture = ExtResource( 31 )
 
-[node name="PearlTiara" type="Sprite" parent="Door/Paintingartifact"]
-position = Vector2( 226, -165 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 746, 984 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2, 1 )
+shape = SubResource( 7 )
+
+[node name="PearlTiara" type="Sprite" parent="."]
+position = Vector2( 812, 568 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 34 )
 

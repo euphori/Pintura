@@ -234,25 +234,21 @@ shape = SubResource( 165 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 160, 182 )
 rotation = -0.0352014
-scale = Vector2( 1, 1 )
 shape = SubResource( 165 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 224, -10 )
 rotation = -0.0352014
-scale = Vector2( 1, 1 )
 shape = SubResource( 165 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 128, -186 )
 rotation = 0.10364
-scale = Vector2( 1, 1 )
 shape = SubResource( 165 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -112, -186 )
 rotation = 0.10364
-scale = Vector2( 1, 1 )
 shape = SubResource( 165 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -280,7 +276,7 @@ position = Vector2( 26, -46 )
 [node name="AnimatedSprite" parent="Datu" index="3"]
 position = Vector2( 28, -50 )
 frames = SubResource( 134 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="InteractKey" parent="Datu" index="4"]
@@ -295,36 +291,36 @@ finish_quest_line = "Quest3"
 start_quest_line = "Quest4"
 
 [node name="Exclaim" parent="Datu" index="6"]
-frame = 1
+frame = 0
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 241, 124 )
 frames = SubResource( 122 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 372, 170 )
 frames = SubResource( 122 )
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 349, 108 )
 frames = SubResource( 123 )
-frame = 7
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 259, 161 )
 frames = SubResource( 124 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 341, 153 )
 frames = SubResource( 125 )
+frame = 1
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
@@ -363,7 +359,7 @@ dialogue_file = "res://Dialogue/Json/hiraya_intro.json"
 path_to_player = NodePath("../../Player")
 
 [node name="Exclaim" parent="Hiraya" index="6"]
-frame = 1
+frame = 0
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
 
