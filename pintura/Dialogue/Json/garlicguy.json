@@ -2,8 +2,8 @@
 
 	{"name": "Garlic Vendor", "text": "Hey there you seem like a smart kid."},
 	{"name": "Garlic Vendor", "text": "Tell you what if you answer my question correctly, I’ll give you something in return."},
-	{"name": "Datu", "text": "Which home remedy is the most potent antifungal and antimicrobial herb?","options": 3, "opt_1": "Ylang Ylang", "opt_2": "Garlic", "opt_3": "I don't know. (Leave.)"},
-	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "Oho! Would you like to try again?", "opt_2": "That is correct!  Next time when you are in need of a quick fix for rashes or skin fungal infections, try rubbing sliced raw garlic on it for a few days. ", "opt_3": "Exit"}
+	{"name": "Garlic Vendor", "text": "Which home remedy is the most potent antifungal and antimicrobial herb?","options": 3, "opt_1": "Ylang Ylang", "opt_2": "Garlic", "opt_3": "I don't know. (Leave.)"},
+	{"name": "Garlic Vendor","text": "Goodbye. ","respond": true, "opt_1": "Oho! Would you like to try again?", "opt_2": "That is correct!  Next time when you are in need of a quick fix for rashes or skin fungal infections, try rubbing sliced raw garlic on it for a few days. ", "opt_3": "Exit"}
 
 	
 	
