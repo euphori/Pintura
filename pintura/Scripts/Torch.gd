@@ -28,7 +28,7 @@ func _on_Timer_timeout():
 	if light_source != 0:
 		if $AnimatedSprite.visible == false:
 			$AnimatedSprite.visible = true
-		light_source -= .001
+		light_source -= .002
 		reduce_light()
 		timer.start(light_deg)
 	else:
