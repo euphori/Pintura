@@ -118,7 +118,7 @@ path_to_player = NodePath("../../Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="6"]
-frame = 3
+frame = 2
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false

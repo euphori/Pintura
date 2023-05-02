@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=2]
+[gd_scene load_steps=245 format=2]
 
 [ext_resource path="res://Tilemap/fountain.tres" type="Texture" id=1]
 [ext_resource path="res://Tilemap/waterrightC.tres" type="Texture" id=2]
@@ -61,6 +61,8 @@
 [ext_resource path="res://Assets/Textures/Traders Market Assets/aaa stall 3-export.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Textures/Datu village Assets/NibblingGoatIdleSide.png" type="Texture" id=60]
 [ext_resource path="res://Assets/Textures/Datu village Assets/DaintyPigIdleSide.png" type="Texture" id=61]
+[ext_resource path="res://Scripts/torch.png" type="Texture" id=62]
+[ext_resource path="res://Assets/burning_loop_3.png" type="Texture" id=64]
 
 [sub_resource type="TileSet" id=17]
 0/name = "Tileset-Terrain2.png 0"
@@ -752,6 +754,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=1]
+radius = 150.03
+
 [sub_resource type="CanvasItemMaterial" id=195]
 light_mode = 1
 
@@ -845,6 +850,9 @@ points = PoolVector2Array( 0, 0, 50, 0, 50, 78, 0, 78 )
 } ]
 0/z_index = 0
 
+[sub_resource type="CanvasItemMaterial" id=261]
+light_mode = 1
+
 [sub_resource type="AtlasTexture" id=184]
 atlas = ExtResource( 41 )
 region = Rect2( 0, 0, 16, 17 )
@@ -922,8 +930,40 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=262]
 extents = Vector2( 3.5, 4 )
+
+[sub_resource type="AtlasTexture" id=254]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=255]
+atlas = ExtResource( 64 )
+region = Rect2( 15, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=256]
+atlas = ExtResource( 64 )
+region = Rect2( 30, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=257]
+atlas = ExtResource( 64 )
+region = Rect2( 45, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=258]
+atlas = ExtResource( 64 )
+region = Rect2( 60, 0, 15, 24 )
+
+[sub_resource type="AtlasTexture" id=259]
+atlas = ExtResource( 64 )
+region = Rect2( 75, 0, 15, 24 )
+
+[sub_resource type="SpriteFrames" id=260]
+animations = [ {
+"frames": [ SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ), SubResource( 259 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 57 )
@@ -1470,36 +1510,37 @@ tile_data = PoolIntArray( 1179649, 2, 0, 1441796, 4, 0 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 293, 113 )
 frames = SubResource( 96 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
+frame = 3
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 244, 113 )
 frames = SubResource( 131 )
-frame = 4
+frame = 7
 playing = true
 
 [node name="Boat" parent="." instance=ExtResource( 23 )]
@@ -1546,8 +1587,9 @@ camera_used = "scene_camera"
 [node name="CutsceneTrigger" parent="DancerCutscene" index="0"]
 position = Vector2( -1, -81 )
 
-[node name="CollisionShape2D" parent="DancerCutscene/CutsceneTrigger" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DancerCutscene/CutsceneTrigger" index="0"]
 position = Vector2( -7, -74 )
+shape = SubResource( 1 )
 
 [node name="Dialogue" parent="DancerCutscene" instance=ExtResource( 53 )]
 dialogue_file = "res://Dialogue/Json/dancers_help.json"
@@ -1863,7 +1905,7 @@ z_index = 1
 tile_set = SubResource( 222 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -2752491, 0, 0, -2752487, 0, 0, -2752485, 0, 0, -2752481, 0, 0, -2752478, 0, 0, -2752467, 0, 0, -2686959, 0, 0, -2686958, 0, 0, -2686957, 0, 0, -2686956, 0, 0, -2686954, 0, 0, -2686953, 0, 0, -2686952, 0, 0, -2686951, 0, 0, -2686950, 0, 0, -2686949, 0, 0, -2686948, 0, 0, -2686947, 0, 0, -2686946, 0, 0, -2686944, 0, 0, -2686943, 0, 0, -2686942, 0, 0, -2686941, 0, 0, -2686940, 0, 0, -2686939, 0, 0, -2686938, 0, 0, -2686937, 0, 0, -2686936, 0, 0, -2686935, 0, 0, -2686934, 0, 0, -2686933, 0, 0, -2686932, 0, 0, -2686931, 0, 0, -2686930, 0, 0, -2621425, 0, 0, -2621424, 0, 0, -2621423, 0, 0, -2621421, 0, 0, -2621420, 0, 0, -2621419, 0, 0, -2621418, 0, 0, -2621417, 0, 0, -2621415, 0, 0, -2621414, 0, 0, -2621413, 0, 0, -2621412, 0, 0, -2621410, 0, 0, -2621409, 0, 0, -2621408, 0, 0, -2621407, 0, 0, -2621406, 0, 0, -2621405, 0, 0, -2621403, 0, 0, -2621402, 0, 0, -2621401, 0, 0, -2621399, 0, 0, -2621398, 0, 0, -2621397, 0, 0, -2621396, 0, 0, -2621395, 0, 0, -2621394, 0, 0, -2621393, 0, 0, -2555892, 0, 0, -2555891, 0, 0, -2555890, 0, 0, -2555889, 0, 0, -2555883, 0, 0, -2555882, 0, 0, -2555881, 0, 0, -2555880, 0, 0, -2555875, 0, 0, -2555858, 0, 0, -2555857, 0, 0, -2555856, 0, 0, -2490357, 0, 0, -2490349, 0, 0, -2490348, 0, 0, -2490347, 0, 0, -2490321, 0, 0, -2490320, 0, 0, -2424785, 0, 0, -2424784, 0, 0, -2359248, 0, 0, -2293712, 0, 0, -2293711, 0, 0, -2228175, 0, 0, -2162636, 0, 0, -2162631, 0, 0, -2097102, 0, 0, -2097101, 0, 0, -2097099, 0, 0, -2097094, 0, 0, -2097093, 0, 0, -2031562, 0, 0, -2031559, 0, 0, -2031558, 0, 0, -2031557, 0, 0, -1966020, 0, 0, -1900483, 0, 0, -1900481, 0, 0, -1834949, 0, 0, -1572797, 0, 0, -1572796, 0, 0, -1572795, 0, 0, -1441723, 0, 0, -1376185, 0, 0, -1048502, 0, 0, -917430, 0, 0, -917421, 0, 0, 1245273, 0, 0, 1245274, 0, 0, 1245276, 0, 0, 1245278, 0, 0, 1245279, 0, 0, 1310802, 0, 0, 1310803, 0, 0, 1310805, 0, 0, 1310811, 0, 0, 1376338, 0, 0, 1376352, 0, 0, 1572943, 0, 0, 1572944, 0, 0, 1638476, 0, 0, 1638477, 0, 0, 1638478, 0, 0, 1704010, 0, 0, 2359363, 0, 0, 2490434, 0, 0, 2555969, 0, 0, 2752576, 0, 0, 2949110, 0, 0, 3014646, 0, 0, 2949183, 0, 0, 3080182, 0, 0, 3145718, 0, 0, 3080254, 0, 0, 3145789, 0, 0, 3276860, 0, 0, 3473401, 0, 0, 3473402, 0, 0, 3604473, 0, 0, 3670009, 0, 0, 3670010, 0, 0, 3670011, 0, 0, 3735546, 0, 0, 3735547, 0, 0, 3801082, 0, 0, 3801083, 0, 0, 3866619, 0, 0, 3866620, 0, 0, 3932160, 0, 0, 3932161, 0, 0, 4063228, 0, 0, 4063229, 0, 0, 4063230, 0, 0, 4063231, 0, 0, 3997696, 0, 0, 3997697, 0, 0, 4063237, 0, 0, 4063238, 0, 0, 4063239, 0, 0, 4063240, 0, 0, 4128775, 0, 0, 4128776, 0, 0, 4128777, 0, 0 )
+tile_data = PoolIntArray( -2752491, 0, 0, -2752487, 0, 0, -2752485, 0, 0, -2752481, 0, 0, -2752478, 0, 0, -2752467, 0, 0, -2686959, 0, 0, -2686958, 0, 0, -2686957, 0, 0, -2686956, 0, 0, -2686954, 0, 0, -2686953, 0, 0, -2686952, 0, 0, -2686951, 0, 0, -2686950, 0, 0, -2686949, 0, 0, -2686948, 0, 0, -2686947, 0, 0, -2686946, 0, 0, -2686944, 0, 0, -2686943, 0, 0, -2686942, 0, 0, -2686941, 0, 0, -2686940, 0, 0, -2686939, 0, 0, -2686938, 0, 0, -2686937, 0, 0, -2686936, 0, 0, -2686935, 0, 0, -2686934, 0, 0, -2686933, 0, 0, -2686932, 0, 0, -2686931, 0, 0, -2686930, 0, 0, -2621425, 0, 0, -2621424, 0, 0, -2621423, 0, 0, -2621421, 0, 0, -2621420, 0, 0, -2621419, 0, 0, -2621418, 0, 0, -2621417, 0, 0, -2621415, 0, 0, -2621414, 0, 0, -2621413, 0, 0, -2621412, 0, 0, -2621410, 0, 0, -2621409, 0, 0, -2621408, 0, 0, -2621407, 0, 0, -2621406, 0, 0, -2621405, 0, 0, -2621403, 0, 0, -2621402, 0, 0, -2621401, 0, 0, -2621399, 0, 0, -2621398, 0, 0, -2621397, 0, 0, -2621396, 0, 0, -2621395, 0, 0, -2621394, 0, 0, -2621393, 0, 0, -2555892, 0, 0, -2555891, 0, 0, -2555890, 0, 0, -2555889, 0, 0, -2555883, 0, 0, -2555882, 0, 0, -2555881, 0, 0, -2555880, 0, 0, -2555875, 0, 0, -2555858, 0, 0, -2555857, 0, 0, -2555856, 0, 0, -2490357, 0, 0, -2490349, 0, 0, -2490348, 0, 0, -2490347, 0, 0, -2490321, 0, 0, -2490320, 0, 0, -2424785, 0, 0, -2424784, 0, 0, -2359248, 0, 0, -2293712, 0, 0, -2293711, 0, 0, -2228175, 0, 0, -2162636, 0, 0, -2162631, 0, 0, -2097102, 0, 0, -2097101, 0, 0, -2097099, 0, 0, -2097094, 0, 0, -2097093, 0, 0, -2031562, 0, 0, -2031559, 0, 0, -2031558, 0, 0, -2031557, 0, 0, -1966020, 0, 0, -1900483, 0, 0, -1900481, 0, 0, -1834949, 0, 0, -1572797, 0, 0, -1572796, 0, 0, -1572795, 0, 0, -1441723, 0, 0, -1376185, 0, 0, -1048502, 0, 0, -917430, 0, 0, -917421, 0, 0, 1245273, 0, 0, 1245274, 0, 0, 1245276, 0, 0, 1245278, 0, 0, 1245279, 0, 0, 1310802, 0, 0, 1310803, 0, 0, 1310805, 0, 0, 1310811, 0, 0, 1376338, 0, 0, 1376352, 0, 0, 1572943, 0, 0, 1572944, 0, 0, 1638476, 0, 0, 1638477, 0, 0, 1638478, 0, 0, 1638484, 0, 0, 1638485, 0, 0, 1638486, 0, 0, 1638487, 0, 0, 1638489, 0, 0, 1638490, 0, 0, 1638491, 0, 0, 1638492, 0, 0, 1638493, 0, 0, 1638494, 0, 0, 1638495, 0, 0, 1638496, 0, 0, 1704010, 0, 0, 2359363, 0, 0, 2490434, 0, 0, 2555969, 0, 0, 2752576, 0, 0, 2949110, 0, 0, 3014646, 0, 0, 2949183, 0, 0, 3080182, 0, 0, 3145718, 0, 0, 3080254, 0, 0, 3145789, 0, 0, 3276860, 0, 0, 3473401, 0, 0, 3473402, 0, 0, 3604473, 0, 0, 3670009, 0, 0, 3670010, 0, 0, 3670011, 0, 0, 3735546, 0, 0, 3735547, 0, 0, 3801082, 0, 0, 3801083, 0, 0, 3866619, 0, 0, 3866620, 0, 0, 3932160, 0, 0, 3932161, 0, 0, 4063228, 0, 0, 4063229, 0, 0, 4063230, 0, 0, 4063231, 0, 0, 3997696, 0, 0, 3997697, 0, 0, 4063237, 0, 0, 4063238, 0, 0, 4063239, 0, 0, 4063240, 0, 0, 4128775, 0, 0, 4128776, 0, 0, 4128777, 0, 0 )
 
 [node name="Tree" parent="YSort/Trees" instance=ExtResource( 25 )]
 position = Vector2( 0, 0 )
@@ -20847,11 +20889,11 @@ position = Vector2( 2829, 703 )
 z_index = 1
 
 [node name="Tree3359" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2727, 819 )
+position = Vector2( 2727, 814 )
 z_index = 1
 
 [node name="Tree3361" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 3087, 831 )
+position = Vector2( 3078, 813 )
 z_index = 1
 
 [node name="Tree3362" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20859,7 +20901,7 @@ position = Vector2( 2861, 806 )
 z_index = 1
 
 [node name="Tree3363" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2890, 836 )
+position = Vector2( 2950, 806 )
 z_index = 1
 
 [node name="Tree3364" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20867,7 +20909,7 @@ position = Vector2( 2940, 786 )
 z_index = 1
 
 [node name="Tree3365" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2940, 835 )
+position = Vector2( 2984, 813 )
 z_index = 1
 
 [node name="Tree3366" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20879,11 +20921,11 @@ position = Vector2( 2897, 776 )
 z_index = 1
 
 [node name="Tree3368" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2970, 828 )
+position = Vector2( 2964, 791 )
 z_index = 1
 
 [node name="Tree3369" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2862, 836 )
+position = Vector2( 2833, 834 )
 z_index = 1
 
 [node name="Tree3372" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20891,19 +20933,19 @@ position = Vector2( 2940, 786 )
 z_index = 1
 
 [node name="Tree3373" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2908, 791 )
+position = Vector2( 2888, 802 )
 z_index = 1
 
 [node name="Tree3374" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 3014, 831 )
+position = Vector2( 3034, 794 )
 z_index = 1
 
 [node name="Tree3375" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2970, 837 )
+position = Vector2( 2986, 797 )
 z_index = 1
 
 [node name="Tree3376" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2800, 838 )
+position = Vector2( 2839, 841 )
 z_index = 1
 
 [node name="Tree3379" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20915,11 +20957,11 @@ position = Vector2( 3123, 836 )
 z_index = 1
 
 [node name="Tree3381" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2996, 826 )
+position = Vector2( 3012, 799 )
 z_index = 1
 
 [node name="Tree3382" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 3050, 835 )
+position = Vector2( 3049, 809 )
 z_index = 1
 
 [node name="Tree5593" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20935,7 +20977,7 @@ position = Vector2( 3142, 844 )
 z_index = 1
 
 [node name="Tree5596" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 3108, 832 )
+position = Vector2( 3105, 794 )
 z_index = 1
 
 [node name="Tree5597" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20951,7 +20993,7 @@ position = Vector2( 2724, 1269 )
 z_index = 1
 
 [node name="Tree5534" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2918, 833 )
+position = Vector2( 2919, 809 )
 z_index = 1
 
 [node name="Tree5581" parent="YSort/Trees" instance=ExtResource( 25 )]
@@ -20975,19 +21017,19 @@ position = Vector2( 2663, 866 )
 z_index = 1
 
 [node name="Tree5586" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2689, 837 )
+position = Vector2( 2677, 844 )
 z_index = 1
 
 [node name="Tree5587" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2831, 836 )
+position = Vector2( 2842, 831 )
 z_index = 1
 
 [node name="Tree5588" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2759, 817 )
+position = Vector2( 2760, 812 )
 z_index = 1
 
 [node name="Tree5589" parent="YSort/Trees" instance=ExtResource( 25 )]
-position = Vector2( 2708, 832 )
+position = Vector2( 2792, 813 )
 rotation = 0.000483003
 z_index = 1
 
@@ -22310,6 +22352,7 @@ rotation = -0.00106786
 z_index = 1
 
 [node name="Ylang" parent="YSort/Trees" instance=ExtResource( 12 )]
+material = SubResource( 261 )
 position = Vector2( 693, 1219 )
 z_index = 1
 
@@ -22319,7 +22362,7 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 2
+frame = 0
 
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
@@ -22328,7 +22371,7 @@ collision_mask = 56
 position = Vector2( 66, 108 )
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 1
+frame = 5
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -22361,7 +22404,7 @@ finish_quest_line = "Quest2"
 start_quest_line = "Quest3"
 
 [node name="Exclaim" parent="YSort/NPCs/Hiraya" index="6"]
-frame = 3
+frame = 2
 
 [node name="GarlicGuy" parent="YSort/NPCs" instance=ExtResource( 18 )]
 path_to_player = NodePath("../../Player")
@@ -22381,7 +22424,7 @@ dialogue_file = "res://Dialogue/Json/garlicguy.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/GarlicGuy" index="6"]
-frame = 3
+frame = 2
 
 [node name="Dancer" type="KinematicBody2D" parent="YSort/NPCs"]
 position = Vector2( 491, 1955 )
@@ -22397,7 +22440,7 @@ texture = ExtResource( 48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCs/Dancer"]
 position = Vector2( 21, 47.5 )
-shape = SubResource( 1 )
+shape = SubResource( 262 )
 
 [node name="PlayerDetection" parent="YSort/NPCs/Dancer" instance=ExtResource( 52 )]
 position = Vector2( 18, 46 )
@@ -22415,14 +22458,25 @@ frames = SubResource( 167 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( 30, -2 )
 frames = SubResource( 167 )
-frame = 3
+frame = 6
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( -32, 10 )
 frames = SubResource( 167 )
-frame = 7
+frame = 10
+playing = true
+
+[node name="Torch" type="Sprite" parent="YSort/NPCs/Dancer/AnimatedSprite3"]
+position = Vector2( -3, 1 )
+scale = Vector2( 0.249996, 0.333328 )
+texture = ExtResource( 62 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/NPCs/Dancer/AnimatedSprite3/Torch"]
+position = Vector2( 0, -18.0005 )
+frames = SubResource( 260 )
+frame = 1
 playing = true
 
 [node name="InteractKey" parent="YSort/NPCs/Dancer" instance=ExtResource( 54 )]
@@ -22437,7 +22491,7 @@ path_to_player = NodePath("../../../Player")
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Farmers" type="KinematicBody2D" parent="YSort/NPCs"]
@@ -22494,7 +22548,7 @@ end_after_choosing = false
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="YlangYlang" parent="YSort/NPCs" instance=ExtResource( 18 )]
@@ -22510,7 +22564,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/YlangYlang" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/YlangYlang" index="5"]
@@ -22518,7 +22572,7 @@ dialogue_file = "res://Dialogue/Json/ylang.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/YlangYlang" index="6"]
-frame = 3
+frame = 2
 
 [node name="SugarcaneVendor" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -96, 54 )
@@ -22534,7 +22588,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/SugarcaneVendor" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/SugarcaneVendor" index="5"]
@@ -22542,7 +22596,7 @@ dialogue_file = "res://Dialogue/Json/sugarcane_intro.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/SugarcaneVendor" index="6"]
-frame = 3
+frame = 2
 
 [node name="Florist" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -89, -23 )
@@ -22558,6 +22612,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/Florist" index="3"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
+frame = 3
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/Florist" index="5"]
@@ -22565,7 +22620,7 @@ dialogue_file = "res://Dialogue/Json/florist.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/Florist" index="6"]
-frame = 3
+frame = 2
 
 [node name="Animals" type="Node2D" parent="."]
 position = Vector2( 240, -344 )
@@ -22573,212 +22628,216 @@ position = Vector2( 240, -344 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 visible = false
 position = Vector2( 155, 445 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 204 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 204 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 204 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 204 )
+frame = 3
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 560, 8 )
 frames = SubResource( 204 )
+frame = 3
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 204 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Duck" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 214, 52 )
 frames = SubResource( 217 )
+frame = 3
 playing = true
 
 [node name="Duck5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 189, 109 )
 frames = SubResource( 217 )
+frame = 3
 playing = true
 
 [node name="Duck6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 178, 54 )
 frames = SubResource( 217 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Duck7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 291, 94 )
 frames = SubResource( 217 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Duck8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 280, 67 )
 frames = SubResource( 217 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Duck2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 253, 52 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
+frame = 3
 playing = true
 
 [node name="Duck3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 326, 97 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Duck4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 335, 54 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Carabao" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2376, 1535 )
 scale = Vector2( 0.8125, 0.8125 )
 frames = SubResource( 233 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Carabao2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2432, 1511 )
 scale = Vector2( 0.8125, 0.8125 )
 frames = SubResource( 233 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Carabao3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2472, 1864 )
 scale = Vector2( -0.9075, 0.8125 )
 frames = SubResource( 233 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Cat" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1476.5, 772.091 )
 scale = Vector2( 0.562496, 0.613632 )
 frames = SubResource( 238 )
-frame = 1
 playing = true
 
 [node name="Cat2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1513, 798 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
+frame = 3
 playing = true
 
 [node name="Cat3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1387, 920 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Cat4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1624, 964 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Frog" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1522, 19 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 1
 playing = true
 
 [node name="Frog2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1565, -76 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 1
 playing = true
 
 [node name="Frog3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1662, -107 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
+frame = 3
 playing = true
 
 [node name="Frog4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1143, -249 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
+frame = 3
 playing = true
 
 [node name="Frog5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 971, -248 )
 scale = Vector2( -0.62, 0.5 )
 frames = SubResource( 243 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Frog6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 797, -388 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Frog7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1025, -475 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 1
 playing = true
 
 [node name="Goat" type="AnimatedSprite" parent="Animals"]
@@ -22786,7 +22845,6 @@ position = Vector2( 1178.37, 229.284 )
 rotation = 3.14159
 scale = Vector2( 1.57943, -1.27373 )
 frames = SubResource( 248 )
-frame = 1
 playing = true
 
 [node name="Goat2" type="AnimatedSprite" parent="Animals"]
@@ -22794,21 +22852,20 @@ position = Vector2( 1072.57, 493.123 )
 rotation = 3.14159
 scale = Vector2( 1.60442, -1.29388 )
 frames = SubResource( 248 )
-frame = 1
 playing = true
 
 [node name="Pig" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 449, -19 )
 scale = Vector2( 1.3125, 1.3125 )
 frames = SubResource( 253 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Pig2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 450, 6 )
 scale = Vector2( -1.44749, 1.3125 )
 frames = SubResource( 253 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Fountain" type="TileMap" parent="."]
