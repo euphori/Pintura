@@ -102,9 +102,8 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="NPC" parent="." instance=ExtResource( 21 )]
-position = Vector2( 793, 835 )
+position = Vector2( 777, 846 )
 z_index = 1
-char_name = "Mother"
 
 [node name="Sprite" parent="NPC" index="0"]
 texture = ExtResource( 8 )
@@ -119,7 +118,7 @@ path_to_player = NodePath("../../Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="6"]
-frame = 0
+frame = 2
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
@@ -378,16 +377,6 @@ position = Vector2( 812, 568 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 34 )
 
-[node name="Cutscene3" parent="." instance=ExtResource( 25 )]
-position = Vector2( 1132, 705 )
-path_to_player = NodePath("../Player")
-
-[node name="Dialogue" parent="Cutscene3" instance=ExtResource( 27 )]
-path_to_player = NodePath("../../Player")
-
-[node name="PlayerSpawn" type="Position2D" parent="."]
-position = Vector2( 1234, 701 )
-
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]
@@ -406,5 +395,3 @@ position = Vector2( 1234, 701 )
 [editable path="CSCheckJournal/CutsceneTrigger"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
-[editable path="Cutscene3"]
-[editable path="Cutscene3/CutsceneTrigger"]

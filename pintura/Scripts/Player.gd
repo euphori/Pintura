@@ -10,8 +10,6 @@ var can_move = true
 var MAX_ACCELERATION = 500
 var island_location
 
-var currentHealth: int = 3 
-
 
 signal toggle_torch
 
