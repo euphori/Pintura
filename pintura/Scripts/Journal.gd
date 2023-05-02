@@ -101,6 +101,7 @@ func _on_Settings_pressed():
 	update_page()
 
 
+
 func _on_Save_pressed():
 	Globals.world_player_position = player.global_position
 	save_file.world_player_position = Globals.world_player_position
@@ -113,3 +114,10 @@ func _on_Save_pressed():
 
 func _on_Exit_Game_pressed():
 	get_tree().quit()
+
+
+func _on_Ency_pressed():
+	page = 2
+	update_page()
+	
+
