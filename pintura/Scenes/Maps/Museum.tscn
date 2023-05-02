@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Scenes/Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/UI/24.png" type="Texture" id=2]
@@ -43,6 +43,81 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "fade_to_black"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_change_scene"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "back_to_menu"
+} ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fade_to_normal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 130.096
@@ -121,7 +196,22 @@ path_to_player = NodePath("../../YSort/Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="5"]
-frame = 3
+frame = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="NPC"]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="NPC/CanvasLayer"]
+margin_right = 639.0
+margin_bottom = 360.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC/CanvasLayer"]
+playback_speed = 0.8
+anims/RESET = SubResource( 14 )
+anims/fade_to_black = SubResource( 15 )
+anims/fade_to_normal = SubResource( 16 )
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
@@ -428,6 +518,7 @@ position = Vector2( -104, -16 )
 dialogue_file = "res://Dialogue/Json/notice_artifacts.json"
 path_to_player = NodePath("../../YSort/Player")
 
+[connection signal="dialogue_finish" from="NPC/Dialogue" to="NPC" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]

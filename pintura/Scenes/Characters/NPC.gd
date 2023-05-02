@@ -42,7 +42,13 @@ func _on_Dialogue_dialogue_finish():
 	if char_name == "Dancers":
 		if Globals.helped_the_dancers:
 			Globals.set_torch(true)
+	if char_name == "Mother":
+		if Globals.museum_ending:
+			get_parent().get_node("NPC/CanvasLayer/AnimationPlayer").play("fade_to_black")
 	can_move = true
 	current_desti = 1
 	remove = true
+
+func back_to_menu():
+	Load.load_scene(get_parent(),"res://Scenes/UI/MainMenu.tscn")
 
