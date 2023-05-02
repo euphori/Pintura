@@ -7,6 +7,7 @@ var save_file = SaveFile.game_data
 export(String,"WorldMap") var location 
 export(String, "Hiraya", "Mother") var char_name
 export var important = false
+var player_near = false
 
 func _ready():
 	if Globals.museum_ending and char_name == "Mother":

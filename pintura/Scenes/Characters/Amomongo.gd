@@ -3,9 +3,10 @@ extends "res://Scripts/Creatures.gd"
 
 
 signal scene_over
-
+onready var tiara = get_node("/root/Museum/PearlTiara")
 
 func _ready():
+	
 	$Sprite.frame = 74
 	if Globals.museum_ending:
 		queue_free()
@@ -27,6 +28,7 @@ func _physics_process(delta):
 func play_musuem_cutscene():
 	if global_position.distance_to(destination[0].global_position) >=5 :
 		if got_item:
+			tiara.visible = false
 			direction = global_position.direction_to(agent.get_next_location())
 			if global_position.distance_to(destination[1].global_position) <= 15:
 				disappear()
