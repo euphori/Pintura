@@ -1,0 +1,8 @@
+[
+	{"name": "Dancer", "text": "Thank goodness for your quick thinking! How’d you know The extracts of the Ylan Ylang repels mosquitos?"},
+	{"name": "Dancer", "text": "We owe you a lot!"},
+	{"name": "Dancer", "text": "What do you want?","options": 3, "opt_1": "Ask about festival", "opt_2": "Ask to borrow a torch", "opt_3": "Nothing. (Leave.)"},
+	{"name": "Datu","respond": true, "opt_1": "We’re preparing for the Bailes de Luces Festival. It’s a festival where we celebrate all the blessings we’ve received during the year. We use our torches or sulo and dance the night away to give the village a sense of hope for what’s to come in the future.", "opt_2": "You need one of our torches? Sure you can! It’s the least we can do after you saved the festival. Don’t know what you’ll need it for though, but whatever that is good luck to ya!", "opt_3": "Exit"}
+
+	
+]

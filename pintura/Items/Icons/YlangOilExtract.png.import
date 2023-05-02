@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/YlangOilExtract.png-2705b090c9911d9e314aa78cf0245e3c.stex"
+path="res://.import/YlangOilExtract.png-dc136dc942c0110c1ee4591e80860096.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Sugarcane Village Assets/YlangOilExtract.png"
-dest_files=[ "res://.import/YlangOilExtract.png-2705b090c9911d9e314aa78cf0245e3c.stex" ]
+source_file="res://Items/Icons/YlangOilExtract.png"
+dest_files=[ "res://.import/YlangOilExtract.png-dc136dc942c0110c1ee4591e80860096.stex" ]
 
 [params]
 

@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var player_near = false
 #var green = preload("res://Assets/Textures/Environment/Forest/Trees/green_birch.tres")
 #var yellow = preload("res://Assets/Textures/Environment/Forest/Trees/yellow_birch.tres")
 #var rng = RandomNumberGenerator.new()

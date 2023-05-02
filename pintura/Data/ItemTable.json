@@ -16,6 +16,12 @@
     "StackSize": 99,
     "Description": "used in cooking",
     "Value": 50
+  },
+  "YlangOilExtract": {
+    "ItemCategory": "Consumable",
+    "StackSize": 1,
+    "Description": "used in cooking",
+    "Value": 50
   }
 
 }

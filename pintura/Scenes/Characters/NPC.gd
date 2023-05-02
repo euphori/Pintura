@@ -5,13 +5,15 @@ var current_desti = 0
 var remove = false
 var save_file = SaveFile.game_data
 export(String,"WorldMap") var location 
-export(String, "Hiraya", "Mother") var char_name
+export(String, "Hiraya", "Mother", "Dancers") var char_name
 export var important = false
 var player_near = false
 
 func _ready():
+
 	if Globals.museum_ending and char_name == "Mother":
 		$Dialogue.dialogue_file = "res://Dialogue/Json/mother_last.json"
+
 	print(save_file.met_hiraya)
 	Globals.met_hiraya = save_file.met_hiraya
 	if important == true:
@@ -37,6 +39,9 @@ func _on_Dialogue_dialogue_finish():
 	if char_name == "Hiraya":
 		Globals.met_hiraya = true
 		save_file.met_hiraya = true
+	if char_name == "Dancers":
+		if Globals.helped_the_dancers:
+			Globals.set_torch(true)
 	can_move = true
 	current_desti = 1
 	remove = true

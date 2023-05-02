@@ -21,6 +21,7 @@ onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 
 func _ready():
+	Globals.set_location(location)
 	if Globals.museum_ending and location == "Museum":
 		global_position = get_parent().get_node("PlayerSpawn").global_position
 	$MusicController.play_music()
@@ -59,7 +60,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 	if Input.is_action_just_pressed("light"):
-		emit_signal("toggle_torch")
+		if Globals.has_torch:
+			emit_signal("toggle_torch")
 		
 	
 
