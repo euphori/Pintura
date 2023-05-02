@@ -526,9 +526,6 @@ z_index = 1
 position = Vector2( 47, 93 )
 z_index = 1
 
-[node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 2
-
 [node name="AnimationPlayer" parent="YSort/Player" index="4"]
 anims/RESET = SubResource( 2 )
 anims/walk = SubResource( 3 )
@@ -537,7 +534,7 @@ anims/walk = SubResource( 3 )
 position = Vector2( 148, 184 )
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 2
+frame = 5
 
 [node name="PressurePlate" type="Area2D" parent="YSort"]
 position = Vector2( -82, -46 )
@@ -694,8 +691,29 @@ texture = ExtResource( 17 )
 
 [node name="Doorportal" type="AnimatedSprite" parent="Door2"]
 frames = SubResource( 51 )
-frame = 4
+frame = 1
 playing = true
+
+[node name="Cutscene2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 188, -132 )
+path_to_player = NodePath("../YSort/Player")
+return_camera_after_dialogue = true
+camera_used = "player_camera"
+
+[node name="CutsceneTrigger" parent="Cutscene2" index="0"]
+position = Vector2( 7, 111 )
+
+[node name="CollisionShape2D" parent="Cutscene2/CutsceneTrigger" index="0"]
+position = Vector2( -2, -30 )
+shape = SubResource( 43 )
+
+[node name="Dialogue" parent="Cutscene2" instance=ExtResource( 16 )]
+dialogue_file = "res://Dialogue/Json/cave_pressureplate.json"
+path_to_player = NodePath("../../YSort/Player")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -2504, 24 )
+color = Color( 0.513726, 0.866667, 0.501961, 1 )
 
 [connection signal="area_exited" from="YSort/PressurePlate" to="YSort/PressurePlate" method="_on_PressurePlate_area_exited"]
 [connection signal="body_entered" from="YSort/PressurePlate" to="YSort/CaveDoor" method="_on_PressurePlate_body_entered"]
@@ -703,6 +721,7 @@ playing = true
 [connection signal="body_exited" from="YSort/PressurePlate" to="YSort/CaveDoor" method="_on_PressurePlate_body_exited"]
 [connection signal="body_exited" from="YSort/PressurePlate" to="YSort/PressurePlate" method="_on_PressurePlate_body_exited"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="YSort/Player"]
 [editable path="YSort/Player/Interaction"]
@@ -714,3 +733,5 @@ playing = true
 [editable path="Cutscene/CutsceneTrigger"]
 [editable path="Door2"]
 [editable path="Door2/InteractKey"]
+[editable path="Cutscene2"]
+[editable path="Cutscene2/CutsceneTrigger"]
