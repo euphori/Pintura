@@ -4,6 +4,7 @@ export(String, FILE, "*.tscn,*.scn") var next_scene setget set_file_path
 export (bool) var need_key
 export (bool) var need_switch
 export(String, "MuseumKey") var key_id
+export (bool) var last_portal = false
 
 signal before_enter
 signal after_enter
@@ -44,6 +45,8 @@ func _input(event):
 			return
 		else:
 			emit_signal("before_enter")
+			if last_portal:
+				Globals.museum_ending = true
 			$CanvasLayer/AnimationPlayer.play("fade_to_black")
 			emit_signal("after_enter")
 		
