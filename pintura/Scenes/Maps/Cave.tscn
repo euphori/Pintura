@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Assets/Textures/Cave Assets/tunneltilset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Textures/Cave Assets/box.tres" type="Texture" id=2]
@@ -457,6 +457,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 20, 0, 20 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 10, 23 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Tunnel Tilemap" type="TileMap" parent="."]
@@ -481,7 +484,7 @@ position = Vector2( 47, 93 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 3
+frame = 2
 
 [node name="AnimationPlayer" parent="YSort/Player" index="4"]
 anims/RESET = SubResource( 2 )
@@ -489,9 +492,6 @@ anims/walk = SubResource( 3 )
 
 [node name="Inventory" parent="YSort/Player/UserInterface" index="0"]
 position = Vector2( 148, 184 )
-
-[node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 1
 
 [node name="PressurePlate" type="Area2D" parent="YSort"]
 position = Vector2( -82, -46 )
@@ -609,6 +609,12 @@ tile_set = SubResource( 40 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -262129, 0, 0, -262126, 0, 0, -196593, 0, 0, -196590, 0, 0, -131057, 0, 0, -131054, 0, 0, 65554, 0, 0, 65558, 0, 0, 131088, 0, 0, 196623, 0, 0, 196629, 0, 0, 262156, 0, 0, 327698, 0, 0, 327701, 0, 0, 327702, 0, 0, 327704, 0, 0, 393225, 0, 0, 393227, 0, 0, 393230, 0, 0, 393233, 0, 0, 458771, 0, 0, 458773, 0, 0, 458774, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524302, 0, 0, 524303, 0, 0, 589846, 0, 0, 655371, 0, 0, 720915, 0, 0, 720917, 0, 0, 720918, 0, 0, 720920, 0, 0, 720921, 0, 0, 851980, 0, 0, 851981, 0, 0, 851986, 0, 0, 851987, 0, 0, 917519, 0, 0, 917526, 0, 0, 983054, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 271, 164 )
+shape = SubResource( 42 )
 
 [connection signal="area_exited" from="YSort/PressurePlate" to="YSort/PressurePlate" method="_on_PressurePlate_area_exited"]
 [connection signal="body_entered" from="YSort/PressurePlate" to="YSort/CaveDoor" method="_on_PressurePlate_body_entered"]
