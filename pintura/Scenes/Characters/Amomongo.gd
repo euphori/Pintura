@@ -7,6 +7,8 @@ signal scene_over
 
 func _ready():
 	$Sprite.frame = 74
+	if Globals.museum_ending:
+		queue_free()
 	for i in range(destination_path.size()):
 		destination.append("")
 		destination[i] = get_node((destination_path[i]))

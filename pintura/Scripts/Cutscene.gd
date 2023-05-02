@@ -27,6 +27,8 @@ var original_camera_position
 var player_camera
 
 func _ready():
+	if Globals.museum_ending and player.location == "Museum":
+		queue_free()
 	if is_instance_valid($Navigation2D/Amomongo):
 		creature = $Navigation2D/Amomongo
 		creature.can_move = false

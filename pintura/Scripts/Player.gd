@@ -21,6 +21,8 @@ onready var garlic_scene = preload("res://Scenes/Garlic.tscn")
 
 
 func _ready():
+	if Globals.museum_ending and location == "Museum":
+		global_position = get_parent().get_node("PlayerSpawn").global_position
 	$MusicController.play_music()
 	if location == "WorldMap" and Globals.world_player_position != Vector2.ZERO:
 		update_position()
@@ -99,6 +101,13 @@ func _on_Door_after_enter():
 
 
 func _on_Door_before_enter():
+	Globals.last_location = location
+	print(save_file.last_location)
+	if location == "WorldMap":
+		Globals.world_player_position = self.global_position
+
+
+func _on_Door2_before_enter():
 	Globals.last_location = location
 	print(save_file.last_location)
 	if location == "WorldMap":

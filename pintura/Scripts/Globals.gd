@@ -7,7 +7,7 @@ var helped_the_dancers = false
 var has_torch
 var has_garlic
 var music_volume = 1 setget set_volume,get_volume
-
+var museum_ending = false
 
 #Quest
 var quest_island ={
