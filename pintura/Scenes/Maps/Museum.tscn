@@ -72,7 +72,7 @@ extents = Vector2( 10, 12 )
 [sub_resource type="CapsuleShape2D" id=13]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 10, 20 )
+extents = Vector2( 13, 20 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 10, 16 )
@@ -109,17 +109,14 @@ char_name = "Mother"
 [node name="Sprite" parent="NPC" index="0"]
 texture = ExtResource( 8 )
 
-[node name="AnimatedSprite" parent="NPC" index="3"]
+[node name="AnimatedSprite" parent="NPC" index="2"]
 frames = SubResource( 6 )
 
-[node name="Dialogue" parent="NPC" index="5"]
+[node name="Dialogue" parent="NPC" index="4"]
 path_to_player = NodePath("../../Player")
 
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
-
-[node name="Exclaim" parent="NPC" index="6"]
-frame = 4
 
 [node name="Carpet" type="TextureRect" parent="."]
 visible = false
@@ -165,7 +162,8 @@ position = Vector2( 837, 878 )
 scale = Vector2( 0.75, 0.75 )
 cell_size = Vector2( 8, 8 )
 cell_y_sort = true
-tile_data = PoolIntArray( -3932183, 5, 0, -3997681, 5, 0, -3932149, 6, 0, -3801089, 7, 0, -3604503, 15, 0, -3014679, 23, 0, -2949047, 6, 0, -2621463, 23, 0, -2621367, 12, 0, -2621360, 10, 0, -2621356, 10, 0, -2621352, 10, 0, -2097073, 12, 0, -2031531, 10, 0, -2031527, 10, 0, -1638423, 9, 0, -1638418, 24, 0, -1703920, 9, 0, -1572912, 7, 0, -1376232, 17, 0, -1245172, 14, 0, -1245166, 14, 0, -1245160, 17, 0, -1114088, 16, 0, -983058, 3, 0, -983049, 4, 0, -851988, 9, 0, -851980, 1, 0, -720922, 9, 0, -655376, 8, 0, -524306, 0, 0, -393274, 18, 0, -131127, 9, 0, -65592, 2, 0, 131046, 9, 0, 131144, 6, 0, 131147, 4, 0, 196663, 9, 0, 196673, 9, 0, 327624, 21, 0, 262156, 25, 0, 262157, 18, 0, 393227, 23, 0, 524283, 19, 0, 524287, 24, 0, 524293, 28, 0, 589860, 13, 0, 720892, 9, 0, 720893, 22, 0, 655375, 21, 0, 983076, 23, 0, 1310779, 24, 0, 1572807, 5, 0, 1507384, 9, 0, 1507385, 22, 0, 1703868, 22, 0, 1703883, 22, 0 )
+show_collision = true
+tile_data = PoolIntArray( -3932183, 5, 0, -3997681, 5, 0, -3932149, 6, 0, -3801089, 7, 0, -3604503, 15, 0, -3014679, 23, 0, -2949047, 6, 0, -2621463, 23, 0, -2621367, 12, 0, -2621360, 10, 0, -2621356, 10, 0, -2621352, 10, 0, -2097073, 12, 0, -2031531, 10, 0, -2031527, 10, 0, -1638423, 9, 0, -1638418, 24, 0, -1703920, 9, 0, -1572912, 7, 0, -1376232, 17, 0, -1310708, 14, 0, -1310702, 14, 0, -1245160, 17, 0, -1114088, 16, 0, -983058, 3, 0, -983049, 4, 0, -851988, 9, 0, -851980, 1, 0, -720922, 9, 0, -655376, 8, 0, -524306, 0, 0, -393274, 18, 0, -131127, 9, 0, -65592, 2, 0, 131046, 9, 0, 131144, 6, 0, 131147, 4, 0, 196663, 9, 0, 196673, 9, 0, 327624, 21, 0, 262156, 25, 0, 262157, 18, 0, 393227, 23, 0, 524283, 19, 0, 524287, 24, 0, 524293, 28, 0, 589860, 13, 0, 720892, 9, 0, 720893, 22, 0, 655375, 21, 0, 983076, 23, 0, 1310779, 24, 0, 1572807, 5, 0, 1507384, 9, 0, 1507385, 22, 0, 1703868, 22, 0, 1703883, 22, 0 )
 
 [node name="Paintsss" type="Sprite" parent="FurnitureB"]
 position = Vector2( -34.6666, -480 )
@@ -263,7 +261,20 @@ tile_data = PoolIntArray( -1114117, 1, 65538, -1114116, 1, 65538, -1114115, 1, 6
 [node name="DoorsWindows" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1243, 704 )
 cell_size = Vector2( 16, 16 )
-tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 21, 0 )
+show_collision = true
+collision_layer = 17
+collision_mask = 18
+tile_data = PoolIntArray( -393212, 8, 0, -393209, 8, 0, -196606, 0, 0, 196597, 20, 0 )
+
+[node name="Stair Collision" type="StaticBody2D" parent="DoorsWindows"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorsWindows/Stair Collision"]
+polygon = PoolVector2Array( -259, 56, -331, 56, -331, 88, -259, 88 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DoorsWindows/Stair Collision"]
+position = Vector2( 106.791, 27.05 )
+scale = Vector2( 0.855903, 0.96875 )
+polygon = PoolVector2Array( -259, 56, -331, 56, -331, 88, -259, 88 )
 
 [node name="Key" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1281, 910 )
@@ -287,6 +298,7 @@ position = Vector2( 0, 26 )
 
 [node name="Artifact5" type="Sprite" parent="Door"]
 position = Vector2( -890, 120 )
+z_as_relative = false
 texture = ExtResource( 11 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door/Artifact5"]
@@ -297,6 +309,7 @@ shape = SubResource( 8 )
 
 [node name="Artifact11" type="Sprite" parent="Door"]
 position = Vector2( -905, 172 )
+z_as_relative = false
 texture = ExtResource( 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door/Artifact11"]
@@ -307,6 +320,7 @@ shape = SubResource( 9 )
 
 [node name="Artifact9" type="Sprite" parent="Door"]
 position = Vector2( -906, 232 )
+z_as_relative = false
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door/Artifact9"]
@@ -316,6 +330,7 @@ shape = SubResource( 13 )
 
 [node name="Artifact10" type="Sprite" parent="Door"]
 position = Vector2( -809, 120 )
+z_as_relative = false
 texture = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door/Artifact10"]
@@ -326,6 +341,7 @@ shape = SubResource( 10 )
 
 [node name="Artifacts4" type="Sprite" parent="Door"]
 position = Vector2( -905, 294 )
+z_as_relative = false
 texture = ExtResource( 28 )
 
 [node name="Artifact6" type="Sprite" parent="Door/Artifacts4"]
@@ -352,20 +368,30 @@ texture = ExtResource( 31 )
 
 [node name="MuseumArtifact1" type="Sprite" parent="Door"]
 position = Vector2( -563, 117 )
+z_as_relative = false
 texture = ExtResource( 30 )
 
 [node name="Coconutartifact" type="Sprite" parent="Door/MuseumArtifact1"]
 position = Vector2( -339, 281 )
 texture = ExtResource( 32 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Door/MuseumArtifact1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Door/MuseumArtifact1/Coconutartifact"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/MuseumArtifact1/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/MuseumArtifact1/Coconutartifact/StaticBody2D"]
+position = Vector2( 339, -281 )
 shape = SubResource( 12 )
 
-[node name="Writingdeskartifact" type="Sprite" parent="Door"]
-position = Vector2( 128, 146 )
+[node name="Writingdeskartifact" type="Sprite" parent="Door/MuseumArtifact1"]
+position = Vector2( 691, 29 )
+z_as_relative = false
 texture = ExtResource( 33 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door/MuseumArtifact1/Writingdeskartifact"]
+position = Vector2( -691, -29 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Door/MuseumArtifact1/Writingdeskartifact/StaticBody2D"]
+position = Vector2( 691, 24 )
+shape = SubResource( 10 )
 
 [node name="Entrance Collision" type="StaticBody2D" parent="."]
 position = Vector2( 746, 984 )
@@ -382,6 +408,21 @@ position = Vector2( 812, 568 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 34 )
 
+[node name="Notice Artifacts" parent="." instance=ExtResource( 25 )]
+position = Vector2( 351, 870 )
+path_to_player = NodePath("../Player")
+camera_used = "player_camera"
+
+[node name="CutsceneTrigger" parent="Notice Artifacts" index="0"]
+position = Vector2( -17, -2 )
+
+[node name="CollisionShape2D" parent="Notice Artifacts/CutsceneTrigger" index="0"]
+position = Vector2( -104, -16 )
+
+[node name="Dialogue" parent="Notice Artifacts" instance=ExtResource( 27 )]
+dialogue_file = "res://Dialogue/Json/notice_artifacts.json"
+path_to_player = NodePath("../../Player")
+
 [connection signal="dialogue_finish" from="Cutscene2/Dialogue" to="Cutscene2" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Cutscene/Dialogue" to="Cutscene" method="_on_Dialogue_dialogue_finish"]
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]
@@ -389,7 +430,6 @@ texture = ExtResource( 34 )
 [connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="CSCheckJournal" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="NPC"]
-[editable path="NPC/PlayerDetection"]
 [editable path="NPC/Dialogue"]
 [editable path="NPC/Dialogue/DialogueOptions"]
 [editable path="Cutscene2"]
@@ -400,3 +440,5 @@ texture = ExtResource( 34 )
 [editable path="CSCheckJournal/CutsceneTrigger"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
+[editable path="Notice Artifacts"]
+[editable path="Notice Artifacts/CutsceneTrigger"]
