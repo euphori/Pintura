@@ -22371,7 +22371,7 @@ z_index = 1
 location = "WorldMap"
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 0
+frame = 2
 
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
@@ -22380,7 +22380,7 @@ collision_mask = 56
 position = Vector2( 66, 108 )
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 2
+frame = 1
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -22413,7 +22413,7 @@ finish_quest_line = "Quest2"
 start_quest_line = "Quest3"
 
 [node name="Exclaim" parent="YSort/NPCs/Hiraya" index="5"]
-frame = 5
+frame = 0
 
 [node name="GarlicGuy" parent="YSort/NPCs" instance=ExtResource( 18 )]
 path_to_player = NodePath("../../Player")
@@ -22433,7 +22433,7 @@ dialogue_file = "res://Dialogue/Json/garlicguy.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/GarlicGuy" index="5"]
-frame = 5
+frame = 0
 
 [node name="Dancer" type="KinematicBody2D" parent="YSort/NPCs"]
 position = Vector2( 474, 2004 )
@@ -22469,14 +22469,14 @@ frames = SubResource( 167 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( 30, -2 )
 frames = SubResource( 167 )
-frame = 15
+frame = 7
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( -32, 10 )
 frames = SubResource( 167 )
-frame = 3
+frame = 11
 playing = true
 
 [node name="Torch" type="Sprite" parent="YSort/NPCs/Dancer/AnimatedSprite3"]
@@ -22502,7 +22502,6 @@ path_to_player = NodePath("../../../Player")
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 5
 playing = true
 
 [node name="Farmers" type="KinematicBody2D" parent="YSort/NPCs"]
@@ -22559,7 +22558,7 @@ end_after_choosing = false
 visible = false
 position = Vector2( 0, -30 )
 frames = SubResource( 199 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="YlangYlang" parent="YSort/NPCs" instance=ExtResource( 18 )]
@@ -22583,7 +22582,7 @@ dialogue_file = "res://Dialogue/Json/ylang.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/YlangYlang" index="5"]
-frame = 5
+frame = 0
 
 [node name="SugarcaneVendor" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -96, 54 )
@@ -22606,7 +22605,7 @@ dialogue_file = "res://Dialogue/Json/sugarcane_intro.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/SugarcaneVendor" index="5"]
-frame = 5
+frame = 0
 
 [node name="Florist" parent="YSort/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -89, -23 )
@@ -22630,7 +22629,7 @@ dialogue_file = "res://Dialogue/Json/florist.json"
 path_to_player = NodePath("../../../Player")
 
 [node name="Exclaim" parent="YSort/NPCs/Florist" index="5"]
-frame = 5
+frame = 0
 
 [node name="Animals" type="Node2D" parent="."]
 position = Vector2( 240, -344 )
