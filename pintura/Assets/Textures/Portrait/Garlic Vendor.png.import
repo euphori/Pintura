@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Garlic Vendor.jpg-052340b29a5c9482cb3f24293fdacae1.stex"
+path="res://.import/Garlic Vendor.png-ae1b76bfe8637c74d7c36309a8fc7842.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Portrait/Garlic Vendor.jpg"
-dest_files=[ "res://.import/Garlic Vendor.jpg-052340b29a5c9482cb3f24293fdacae1.stex" ]
+source_file="res://Assets/Textures/Portrait/Garlic Vendor.png"
+dest_files=[ "res://.import/Garlic Vendor.png-ae1b76bfe8637c74d7c36309a8fc7842.stex" ]
 
 [params]
 

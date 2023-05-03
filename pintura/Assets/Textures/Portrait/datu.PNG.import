@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/datu.PNG-5fe652e3ce4c2771ca338103241145b7.stex"
+path="res://.import/datu.png-7f034cce9b73ab4c97e744982881d6d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Portrait/datu.PNG"
-dest_files=[ "res://.import/datu.PNG-5fe652e3ce4c2771ca338103241145b7.stex" ]
+source_file="res://Assets/Textures/Portrait/datu.png"
+dest_files=[ "res://.import/datu.png-7f034cce9b73ab4c97e744982881d6d4.stex" ]
 
 [params]
 

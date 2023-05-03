@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/datus.PNG-1e089a0fa9d52a528fc20f99edafbc11.stex"
+path="res://.import/datuss.PNG-550274076c89b2db1e90df9422e499a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Portrait/datus.PNG"
-dest_files=[ "res://.import/datus.PNG-1e089a0fa9d52a528fc20f99edafbc11.stex" ]
+source_file="res://Assets/Textures/Portrait/datuss.PNG"
+dest_files=[ "res://.import/datuss.PNG-550274076c89b2db1e90df9422e499a3.stex" ]
 
 [params]
 

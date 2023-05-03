@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dancers.jpg-a576f24f18c143d8df4497b007683f5e.stex"
+path="res://.import/Farmer #2.png-426e44f9b9de9e81650cef2661318b45.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Portrait/Dancers.jpg"
-dest_files=[ "res://.import/Dancers.jpg-a576f24f18c143d8df4497b007683f5e.stex" ]
+source_file="res://Assets/Textures/Portrait/Farmer #2.png"
+dest_files=[ "res://.import/Farmer #2.png-426e44f9b9de9e81650cef2661318b45.stex" ]
 
 [params]
 

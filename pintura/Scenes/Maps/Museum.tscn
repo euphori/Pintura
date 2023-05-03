@@ -195,6 +195,9 @@ path_to_player = NodePath("../../YSort/Player")
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
 
+[node name="Exclaim" parent="NPC" index="5"]
+frame = 4
+
 [node name="CanvasLayer" type="CanvasLayer" parent="NPC"]
 layer = 3
 

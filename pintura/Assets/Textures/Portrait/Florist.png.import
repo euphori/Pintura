@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Farmer2.png-6212ea10447b1f7a6103e977998e88c5.stex"
+path="res://.import/Florist.png-deadd77d7c22a6ab29c01aa3325c1352.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Portrait/Farmer2.png"
-dest_files=[ "res://.import/Farmer2.png-6212ea10447b1f7a6103e977998e88c5.stex" ]
+source_file="res://Assets/Textures/Portrait/Florist.png"
+dest_files=[ "res://.import/Florist.png-deadd77d7c22a6ab29c01aa3325c1352.stex" ]
 
 [params]
 
