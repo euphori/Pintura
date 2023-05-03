@@ -195,9 +195,6 @@ path_to_player = NodePath("../../YSort/Player")
 [node name="NinePatchRect" parent="NPC/Dialogue" index="0"]
 visible = false
 
-[node name="Exclaim" parent="NPC" index="5"]
-frame = 0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="NPC"]
 layer = 3
 
@@ -503,16 +500,27 @@ position = Vector2( 812, 568 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 34 )
 
-[node name="Notice Artifacts" parent="." instance=ExtResource( 25 )]
-position = Vector2( 351, 870 )
+[node name="Notice Key" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1272, 960 )
 path_to_player = NodePath("../YSort/Player")
 camera_used = "player_camera"
 
-[node name="CutsceneTrigger" parent="Notice Artifacts" index="0"]
-position = Vector2( -17, -2 )
+[node name="CollisionShape2D" parent="Notice Key/CutsceneTrigger" index="0"]
+position = Vector2( 59, -27 )
+shape = SubResource( 5 )
+
+[node name="Dialogue" parent="Notice Key" instance=ExtResource( 27 )]
+dialogue_file = "res://Dialogue/Json/notice_key.json"
+path_to_player = NodePath("../../YSort/Player")
+
+[node name="Notice Artifacts" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1272, 960 )
+path_to_player = NodePath("../YSort/Player")
+camera_used = "player_camera"
 
 [node name="CollisionShape2D" parent="Notice Artifacts/CutsceneTrigger" index="0"]
-position = Vector2( -104, -16 )
+position = Vector2( -923, -76 )
+shape = SubResource( 5 )
 
 [node name="Dialogue" parent="Notice Artifacts" instance=ExtResource( 27 )]
 dialogue_file = "res://Dialogue/Json/notice_artifacts.json"
@@ -524,6 +532,10 @@ path_to_player = NodePath("../../YSort/Player")
 [connection signal="scene_over" from="Cutscene/Navigation2D/Amomongo" to="Cutscene" method="_on_Amomongo_scene_over"]
 [connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="YSort/Player" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="CSCheckJournal/Dialogue" to="CSCheckJournal" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Notice Key/Dialogue" to="YSort/Player" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Notice Key/Dialogue" to="Notice Key" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Notice Artifacts/Dialogue" to="YSort/Player" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Notice Artifacts/Dialogue" to="Notice Artifacts" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="NPC"]
 [editable path="NPC/Dialogue"]
@@ -536,5 +548,7 @@ path_to_player = NodePath("../../YSort/Player")
 [editable path="CSCheckJournal/CutsceneTrigger"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
+[editable path="Notice Key"]
+[editable path="Notice Key/CutsceneTrigger"]
 [editable path="Notice Artifacts"]
 [editable path="Notice Artifacts/CutsceneTrigger"]

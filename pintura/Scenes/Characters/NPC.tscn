@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/UI/InteractKey.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/NPC.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 3.5, 4 )
 
 [sub_resource type="AtlasTexture" id=5]
@@ -49,7 +49,7 @@ position = Vector2( 1, -17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5 )
-shape = SubResource( 1 )
+shape = SubResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
@@ -61,5 +61,5 @@ text = "Talk"
 [node name="Exclaim" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -34 )
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
