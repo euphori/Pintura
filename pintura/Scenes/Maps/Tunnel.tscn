@@ -134,8 +134,9 @@ position = Vector2( 0, -5 )
 texture = ExtResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Door"]
+z_as_relative = false
 frames = SubResource( 14 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -623,22 +624,38 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -2424810, 0, 0, -2359267, 0, 0, -2097122, 0, 0, -1900524, 0, 0, -1900521, 0, 0, -1769448, 0, 0, -1769443, 0, 0, -1572823, 536870912, 0, -1572822, 536870912, 0, -1507306, 0, 0, -1507285, 536870912, 0, -1507283, 536870912, 0, -1441757, 536870912, 0, -1376230, 0, 0, -1376218, 536870912, 0, -1310685, 536870912, 0, -1310680, 536870912, 0, -1310678, 536870912, 0, -1310677, 536870912, 0, -1245150, 536870912, 0, -1245144, 536870912, 0, -1179616, 536870912, 0, -1179606, 536870912, 0, -1114050, 0, 0, -1048547, 0, 0, -1048540, 0, 0, -1048519, 0, 0, -983013, 0, 0, -983006, 0, 0, -982984, 0, 0, -982977, 0, 0, -982976, 0, 0, -982975, 0, 0, -917488, 0, 0, -917469, 0, 0, -917438, 0, 0, -917437, 0, 0, -851900, 0, 0, -786364, 0, 0, -720867, 0, 0, -720866, 0, 0, -720828, 0, 0, -655330, 0, 0, -655292, 0, 0, -589802, 0, 0, -589793, 0, 0, -589755, 0, 0, -524272, 0, 0, -524270, 0, 0, -458686, 0, 0, -393202, 0, 0, -393196, 0, 0, -393184, 0, 0, -393151, 0, 0, -393150, 0, 0, -327672, 1073741824, 0, -327656, 0, 0, -262137, 1073741824, 0, -262136, 1073741824, 0, -196593, 0, 0, -196581, 0, 0, -196573, 0, 0, -131058, 0, 0, -131041, 0, 0, -65497, 0, 0, -65477, 0, 0, 7, 0, 0, 24, 0, 0, 33, 0, 0, 36, 0, 0, 52, 0, 0, 65552, 0, 0, 65597, 0, 0, 65598, 0, 0, 65599, 0, 0, 65600, 0, 0, 65601, 0, 0, 131081, 0, 0, 131094, 0, 0, 131100, 0, 0, 131128, 0, 0, 196624, 0, 0, 196664, 0, 0, 196665, 0, 0, 262146, 0, 0, 262171, 0, 0, 262172, 0, 0, 327695, 0, 0, 327696, 0, 0, 393221, 0, 0, 393231, 0, 0, 393272, 0, 0, 393273, 0, 0, 458768, 0, 0, 458782, 0, 0, 458807, 0, 0, 524300, 0, 0, 524346, 0, 0, 589837, 0, 0, 589846, 0, 0, 589880, 0, 0, 655375, 0, 0, 655388, 0, 0, 655416, 0, 0, 655418, 0, 0, 720899, 0, 0, 720913, 0, 0, 786435, 0, 0, 786441, 0, 0, 786446, 0, 0, 786475, 1, 0, 786488, 0, 0, 851971, 0, 0, 851980, 0, 0, 851989, 0, 0, 852020, 0, 0, 852024, 0, 0, 917507, 0, 0, 917551, 0, 0, 917554, 0, 0, 983047, 0, 0, 983072, 0, 0, 1048621, 0, 0, 1048626, 0, 0, 1114122, 0, 0, 1114141, 0, 0, 1179698, 0, 0, 1179702, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245237, 0, 0, 1310759, 0, 0, 1310770, 0, 0, 1310773, 0, 0, 1376297, 0, 0, 1376302, 0, 0, 1441826, 0, 0, 1507375, 0, 0, 1835084, 0, 0, 1835085, 0, 0, 1835086, 0, 0, 1835087, 0, 0, 1966151, 0, 0, 2162756, 0, 0, 2162760, 0, 0, 2228307, 0, 0, 2228309, 0, 0, 2293763, 0, 0, 2293845, 0, 0, 2359298, 0, 0, 2359300, 0, 0, 2359301, 0, 0, 2359379, 0, 0, 2424834, 0, 0, 2424835, 0, 0, 2424837, 0, 0, 2424910, 0, 0, 2490369, 0, 0, 2490370, 0, 0, 2490371, 0, 0, 2490372, 0, 0, 2490373, 0, 0, 2621439, 0, 0, 2555904, 0, 0, 2555905, 0, 0, 2686973, 0, 0, 2621519, 0, 0, 2883617, 0, 0, 3014654, 0, 0, 2949126, 0, 0, 2949127, 0, 0, 2949128, 0, 0, 2949154, 0, 0, 3080190, 0, 0, 3014656, 0, 0, 3014657, 0, 0, 3014658, 0, 0, 3014659, 0, 0, 3014662, 0, 0, 3014663, 0, 0, 3014664, 0, 0, 3014681, 0, 0, 3014690, 0, 0, 3080194, 0, 0, 3080195, 0, 0, 3080196, 0, 0, 3080197, 0, 0, 3080198, 0, 0, 3080199, 0, 0, 3080200, 0, 0, 3080208, 0, 0, 3080216, 0, 0, 3080217, 0, 0, 3145734, 0, 0, 3145735, 0, 0, 3145751, 0, 0, 3145809, 0, 0, 3145815, 0, 0, 3145816, 0, 0, 3211270, 0, 0, 3211286, 0, 0, 3276822, 0, 0, 3407866, 0, 0, 3342372, 0, 0, 3342375, 0, 0, 3342376, 0, 0, 3342377, 0, 0, 3473402, 0, 0, 3407909, 0, 0, 3407910, 0, 0, 3407952, 0, 0, 3407953, 0, 0, 3407954, 0, 0, 3407955, 0, 0, 3407956, 0, 0, 3473415, 0, 0, 3538951, 0, 0, 3538952, 0, 0, 3538954, 0, 0, 3538955, 0, 0, 3538977, 0, 0, 3604489, 0, 0, 3604491, 0, 0, 3604513, 0, 0, 3670025, 0, 0, 3670027, 0, 0, 3670049, 0, 0, 3801084, 0, 0, 3801085, 0, 0, 3801086, 0, 0, 3735561, 0, 0, 3735562, 0, 0, 3735585, 0, 0, 3735586, 0, 0, 3932171, 0, 0, 3932188, 0, 0, 3932189, 0, 0, 3997707, 0, 0, 3997708, 0, 0, 3997723, 0, 0, 4063258, 0, 0 )
 
-[node name="Notice Artifacts" parent="." instance=ExtResource( 15 )]
+[node name="Notice Tunnel End" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1192, -8 )
 path_to_player = NodePath("../Player")
 camera_used = "player_camera"
 
-[node name="CollisionShape2D" parent="Notice Artifacts/CutsceneTrigger" index="0"]
+[node name="CollisionShape2D" parent="Notice Tunnel End/CutsceneTrigger" index="0"]
 position = Vector2( -923, -76 )
 shape = SubResource( 15 )
 
-[node name="Dialogue" parent="Notice Artifacts" instance=ExtResource( 16 )]
+[node name="Dialogue" parent="Notice Tunnel End" instance=ExtResource( 16 )]
 dialogue_file = "res://Dialogue/Json/notice_portaltunnel.json"
 path_to_player = NodePath("../../Player")
 
-[connection signal="dialogue_finish" from="Notice Artifacts/Dialogue" to="Notice Artifacts" method="_on_Dialogue_dialogue_finish"]
+[node name="Notice Tunnel Intro" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1176, 568 )
+path_to_player = NodePath("../Player")
+camera_used = "player_camera"
+
+[node name="CollisionShape2D" parent="Notice Tunnel Intro/CutsceneTrigger" index="0"]
+position = Vector2( -923, -76 )
+shape = SubResource( 15 )
+
+[node name="Dialogue" parent="Notice Tunnel Intro" instance=ExtResource( 16 )]
+dialogue_file = "res://Dialogue/Json/notice_portaltunnel_intro.json"
+path_to_player = NodePath("../../Player")
+
+[connection signal="dialogue_finish" from="Notice Tunnel End/Dialogue" to="Notice Tunnel End" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Notice Tunnel Intro/Dialogue" to="Notice Tunnel Intro" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="Door"]
 [editable path="Door/InteractKey"]
-[editable path="Notice Artifacts"]
-[editable path="Notice Artifacts/CutsceneTrigger"]
+[editable path="Notice Tunnel End"]
+[editable path="Notice Tunnel End/CutsceneTrigger"]
+[editable path="Notice Tunnel Intro"]
+[editable path="Notice Tunnel Intro/CutsceneTrigger"]

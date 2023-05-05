@@ -45,3 +45,6 @@ func _on_SettingsReturn_pressed():
 
 func _on_HSlider_value_changed(value):
 	Globals.set_volume(volume_slider.value)
+
+
+

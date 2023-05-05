@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Assets/Textures/Cave Assets/tunneltilset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Textures/Cave Assets/box.tres" type="Texture" id=2]
@@ -359,6 +359,62 @@ extents = Vector2( 6, 7 )
 
 [sub_resource type="CircleShape2D" id=33]
 radius = 15.0333
+
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -26 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, -26 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "bob"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7, -19 ), Vector2( -7, -22 ), Vector2( -7, -26 ), Vector2( -7, -22 ), Vector2( -7, -19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, -23 ), Vector2( -3, -26 ), Vector2( -3, -30 ), Vector2( -3, -26 ), Vector2( -3, -23 ) ]
+}
 
 [sub_resource type="Animation" id=35]
 length = 0.001
@@ -823,7 +879,7 @@ position = Vector2( 47, 93 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 5
+frame = 1
 
 [node name="AnimationPlayer" parent="YSort/Player" index="4"]
 anims/RESET = SubResource( 2 )
@@ -833,12 +889,12 @@ anims/walk = SubResource( 3 )
 position = Vector2( 148, 184 )
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 4
+frame = 0
 
 [node name="vhs" type="Sprite" parent="YSort/Player/UserInterface" index="3"]
 material = SubResource( 56 )
-position = Vector2( 316.5, 179 )
-scale = Vector2( 9.85938, 5.78125 )
+position = Vector2( 362, 237 )
+scale = Vector2( 11.2813, 7.59375 )
 texture = ExtResource( 18 )
 
 [node name="PressurePlate" type="Area2D" parent="YSort"]
@@ -917,6 +973,70 @@ shape = SubResource( 33 )
 
 [node name="Tween" type="Tween" parent="YSort/MovableBox"]
 
+[node name="MovableBox2" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 164, 19 )
+z_index = 1
+collision_layer = 16
+collision_mask = 27
+script = ExtResource( 12 )
+push_strength = 12
+path_to_player = NodePath("../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/MovableBox2"]
+position = Vector2( 0, 8 )
+shape = SubResource( 34 )
+
+[node name="Sprite" type="Sprite" parent="YSort/MovableBox2"]
+texture = ExtResource( 2 )
+
+[node name="Down" type="RayCast2D" parent="YSort/MovableBox2"]
+modulate = Color( 0.431373, 0.4, 0.4, 1 )
+position = Vector2( 0, 5 )
+scale = Vector2( 5, 0.5 )
+enabled = true
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Right" type="RayCast2D" parent="YSort/MovableBox2"]
+modulate = Color( 0.431373, 0.4, 0.4, 1 )
+position = Vector2( 3, 5 )
+rotation = -1.5708
+scale = Vector2( 5, 0.5 )
+enabled = true
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Up" type="RayCast2D" parent="YSort/MovableBox2"]
+modulate = Color( 0.431373, 0.4, 0.4, 1 )
+position = Vector2( 0, 5 )
+rotation = -3.14159
+scale = Vector2( 5, 0.5 )
+enabled = true
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Left" type="RayCast2D" parent="YSort/MovableBox2"]
+modulate = Color( 0.431373, 0.4, 0.4, 1 )
+position = Vector2( -3, 5 )
+rotation = 1.5708
+scale = Vector2( 5, 0.5 )
+enabled = true
+collision_mask = 2
+collide_with_areas = true
+
+[node name="InteractKey" parent="YSort/MovableBox2" instance=ExtResource( 11 )]
+text = "Push"
+
+[node name="CollisionShape2D" parent="YSort/MovableBox2/InteractKey" index="0"]
+position = Vector2( 0, 3 )
+shape = SubResource( 33 )
+
+[node name="AnimationPlayer" parent="YSort/MovableBox2/InteractKey" index="3"]
+anims/RESET = SubResource( 60 )
+anims/bob = SubResource( 61 )
+
+[node name="Tween" type="Tween" parent="YSort/MovableBox2"]
+
 [node name="Bailes Tilemap" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( -217, -193 )
 cell_size = Vector2( 16, 16 )
@@ -956,7 +1076,7 @@ texture = ExtResource( 6 )
 tile_set = SubResource( 40 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -262129, 0, 0, -262126, 0, 0, -196593, 0, 0, -196590, 0, 0, -131057, 0, 0, -131054, 0, 0, 65554, 0, 0, 65558, 0, 0, 131088, 0, 0, 196623, 0, 0, 196629, 0, 0, 262156, 0, 0, 327698, 0, 0, 327701, 0, 0, 327702, 0, 0, 327704, 0, 0, 393225, 0, 0, 393227, 0, 0, 393230, 0, 0, 393233, 0, 0, 458771, 0, 0, 458773, 0, 0, 458774, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524302, 0, 0, 524303, 0, 0, 589846, 0, 0, 655371, 0, 0, 720915, 0, 0, 720917, 0, 0, 720918, 0, 0, 720920, 0, 0, 720921, 0, 0, 851980, 0, 0, 851981, 0, 0, 851986, 0, 0, 851987, 0, 0, 917519, 0, 0, 917526, 0, 0, 983054, 0, 0 )
+tile_data = PoolIntArray( -262129, 0, 0, -262126, 0, 0, -196593, 0, 0, -196590, 0, 0, -131057, 0, 0, -131054, 0, 0, 65554, 0, 0, 65558, 0, 0, 131088, 0, 0, 196623, 0, 0, 196629, 0, 0, 262156, 0, 0, 327698, 0, 0, 327701, 0, 0, 327702, 0, 0, 327704, 0, 0, 393225, 0, 0, 393227, 0, 0, 393230, 0, 0, 393233, 0, 0, 458771, 0, 0, 458773, 0, 0, 458774, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524302, 0, 0, 524303, 0, 0, 589846, 0, 0, 655371, 0, 0, 720915, 0, 0, 720917, 0, 0, 720918, 0, 0, 720920, 0, 0, 720921, 0, 0, 851980, 0, 0, 851981, 0, 0, 851986, 0, 0, 851987, 0, 0, 917519, 0, 0, 917526, 0, 0, 983054, 0, 0, 983058, 0, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -1000,7 +1120,7 @@ margin_right = 640.0
 
 [node name="Doorportal" type="AnimatedSprite" parent="Door2"]
 frames = SubResource( 51 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="Cutscene2" parent="." instance=ExtResource( 14 )]
@@ -1022,7 +1142,7 @@ path_to_player = NodePath("../../YSort/Player")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -2504, 24 )
-color = Color( 0.490196, 0.74902, 0.490196, 1 )
+color = Color( 0.172549, 0.262745, 0.172549, 1 )
 
 [node name="Icon" type="Sprite" parent="."]
 visible = false
@@ -1043,6 +1163,7 @@ texture = ExtResource( 18 )
 [editable path="YSort/Player/Interaction"]
 [editable path="YSort/Player/UserInterface"]
 [editable path="YSort/MovableBox/InteractKey"]
+[editable path="YSort/MovableBox2/InteractKey"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
 [editable path="Cutscene"]
