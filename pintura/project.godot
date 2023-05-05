@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Pintura"
-run/main_scene="res://Scenes/UI/MainMenu.tscn"
+run/main_scene="res://Scenes/UI/Intro.tscn"
 run/flush_stdout_on_print.debug=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

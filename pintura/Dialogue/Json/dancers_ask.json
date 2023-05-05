@@ -3,7 +3,7 @@
 	{"name": "Dancer", "text": "Hello litte girl. As you can see we are all busy here with the mosquito problem."},
 	{"name": "Dancer", "text": "We will never be able to prepare for the festival."},
 	{"name": "Dancer", "text": "What do you want?","options": 3, "opt_1": "Ask about festival", "opt_2": "Ask to borrow a torch", "opt_3": "Nothing. (Leave.)"},
-	{"name": "Datu","respond": true, "opt_1": "We’re preparing for the Bailes de Luces Festival. It’s a festival where we celebrate all the blessings we’ve received during the year. We use our torches or sulo and dance the night away to give the village a sense of hope for what’s to come in the future.", "opt_2": "No can do little girl, we need it for the festival. If there even is going to be a festival to celebrate. These pesky mosquitos would be the death of the performance!", "opt_3": "Exit"}
+	{"name": "Dancer","respond": true, "opt_1": "We’re preparing for the Bailes de Luces Festival. It’s a festival where we celebrate all the blessings we’ve received during the year. We use our torches or sulo and dance the night away to give the village a sense of hope for what’s to come in the future.", "opt_2": "No can do little girl, we need it for the festival. If there even is going to be a festival to celebrate. These pesky mosquitos would be the death of the performance! But if you find some repellant like ylang2 near the forest. We will let you borrow one!", "opt_3": "Exit"}
 
 	
 ]

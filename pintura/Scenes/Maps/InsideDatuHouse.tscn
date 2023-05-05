@@ -270,19 +270,15 @@ hframes = 8
 [node name="CollisionShape2D" parent="Datu" index="1"]
 position = Vector2( 27, -46 )
 
-[node name="PlayerDetection" parent="Datu" index="2"]
-position = Vector2( 26, -46 )
-
-[node name="AnimatedSprite" parent="Datu" index="3"]
+[node name="AnimatedSprite" parent="Datu" index="2"]
 position = Vector2( 28, -50 )
 frames = SubResource( 134 )
-frame = 4
 playing = true
 
-[node name="InteractKey" parent="Datu" index="4"]
+[node name="InteractKey" parent="Datu" index="3"]
 position = Vector2( 28, -46 )
 
-[node name="Dialogue" parent="Datu" index="5"]
+[node name="Dialogue" parent="Datu" index="4"]
 dialogue_file = "res://Dialogue/Json/datu_intro.json"
 path_to_player = NodePath("../../Player")
 start_quest = true
@@ -290,37 +286,36 @@ finish_quest = true
 finish_quest_line = "Quest3"
 start_quest_line = "Quest4"
 
-[node name="Exclaim" parent="Datu" index="6"]
-frame = 0
+[node name="Exclaim" parent="Datu" index="5"]
+frame = 3
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 241, 124 )
 frames = SubResource( 122 )
-frame = 2
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 372, 170 )
 frames = SubResource( 122 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 349, 108 )
 frames = SubResource( 123 )
+frame = 6
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 259, 161 )
 frames = SubResource( 124 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 341, 153 )
 frames = SubResource( 125 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
@@ -351,23 +346,21 @@ destination_path = [ NodePath("../Player"), NodePath("../Datuhouse/Door") ]
 texture = ExtResource( 10 )
 hframes = 8
 
-[node name="InteractKey" parent="Hiraya" index="4"]
+[node name="InteractKey" parent="Hiraya" index="3"]
 position = Vector2( 0, -10 )
 
-[node name="Dialogue" parent="Hiraya" index="5"]
-dialogue_file = "res://Dialogue/Json/hiraya_intro.json"
+[node name="Dialogue" parent="Hiraya" index="4"]
+dialogue_file = "res://Dialogue/Json/hiraya_inside_datu.json"
 path_to_player = NodePath("../../Player")
 
-[node name="Exclaim" parent="Hiraya" index="6"]
-frame = 0
+[node name="Exclaim" parent="Hiraya" index="5"]
+frame = 3
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
 
 [editable path="Datu"]
-[editable path="Datu/PlayerDetection"]
 [editable path="Datu/Dialogue"]
 [editable path="Datu/Dialogue/DialogueOptions"]
 [editable path="Door"]
 [editable path="Door/InteractKey"]
 [editable path="Hiraya"]
-[editable path="Hiraya/PlayerDetection"]

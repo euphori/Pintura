@@ -1,8 +1,11 @@
 [
 
 	{"name": "Datu", "text": "Let us welcome our visitor with open arms! But be warned to stay within the walls of the village the forest is no place for a little girl. "},
+	{"name": "Flora", "text": "....."},
+	{"name": "Datu", "text": "The creature has stolen the tiara! Help us find the tiara back and we will give you a reward! "},
+	{"name": "Flora", "text": "....."},
 	{"name": "Datu", "text": "Is there anything you would like to know?. ","options": 3, "opt_1": "Where am I?", "opt_2": "Who are you?", "opt_3": "Leave."},
-	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "Youre in the far far away land", "opt_2": "I am no one", "opt_3": "Exit"}
+	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "Youre in the far far away land", "opt_2": "I am the Datu of this village", "opt_3": "Exit"}
 
 	
 	

@@ -15,7 +15,7 @@ func _ready():
 
 func _on_NewGame_pressed():
 	SaveFile.reset_data()
-	Load.load_scene(self,"res://Scenes/Maps/Museum.tscn")
+	Load.load_scene(self,"res://Scenes/UI/Intro_Museum.tscn")
 	
 
 
