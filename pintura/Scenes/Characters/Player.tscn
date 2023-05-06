@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Textures/Character/g.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://UserInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/JournalIcon.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/MusicController.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/UI/Hboxes/Hurtbox.tscn" type="PackedScene" id=13]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
@@ -122,6 +123,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 1.5, 3.75 )
 
+[sub_resource type="CapsuleShape2D" id=255]
+radius = 5.0
+height = 8.0
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 position = Vector2( 0, -12 )
 z_index = 2
@@ -162,7 +167,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Torch"]
 position = Vector2( 0, -22 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="Torch"]
@@ -233,10 +237,17 @@ shape = SubResource( 21 )
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, 3 )
 
+[node name="Hurtbox" parent="." instance=ExtResource( 13 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 255 )
+
 [connection signal="toggle_torch" from="." to="Torch" method="_on_Player_toggle_torch"]
 [connection signal="timeout" from="Torch/Timer" to="Torch" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Interaction" to="." method="_on_Interaction_body_entered"]
 [connection signal="toggle_journal" from="UserInterface/Journal" to="UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Interaction"]
 [editable path="UserInterface"]
+[editable path="Hurtbox"]

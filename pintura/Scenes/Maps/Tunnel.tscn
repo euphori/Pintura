@@ -136,7 +136,7 @@ texture = ExtResource( 12 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Door"]
 z_as_relative = false
 frames = SubResource( 14 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

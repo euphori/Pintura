@@ -71,10 +71,10 @@ position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 2
+frame = 4
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 5
+frame = 4
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )
@@ -188,6 +188,7 @@ destination_path = [ NodePath("../../../Door") ]
 stationary = false
 can_move = true
 
+[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="trigger_switch" from="Lamp" to="MovableShelf" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp" to="Door" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp2" to="MovableShelf" method="_on_Lamp_trigger_switch"]
@@ -197,6 +198,7 @@ can_move = true
 [editable path="Player"]
 [editable path="Player/Interaction"]
 [editable path="Player/UserInterface"]
+[editable path="Player/Hurtbox"]
 [editable path="Lamp/InteractKey"]
 [editable path="Lamp2/InteractKey"]
 [editable path="MovableShelf"]

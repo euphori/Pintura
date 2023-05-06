@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var JUMP_HEIGHT = 940
 export var ACCELERATION = 250
-export var MAX_SPEED = 70
+export var MAX_SPEED = 80
 export var GRAVITY = 700
 export var AIR_RESISTANCE = 0.02
 export var FRICTION = .25
@@ -140,3 +140,9 @@ func set_flee_timer():
 func _on_FleeTimer_timeout():
 	state = CREEP
 	time_set = false
+
+
+#func _on_Hurtbox_area_entered(area):
+#	$AnimatedSprite.global_position = global_position
+#	queue_free()
+

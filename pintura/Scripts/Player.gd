@@ -9,6 +9,8 @@ export(String,"Museum", "HiddenRoom", "DatuHouse", "WorldMap", "Tunnel") var loc
 var can_move = true
 var MAX_ACCELERATION = 500
 var island_location
+var knockback = Vector2.ZERO
+
 
 
 signal toggle_torch
@@ -39,6 +41,10 @@ func goto_last_position():
 		global_position = save_file.world_player_position
 
 func _physics_process(delta):
+	
+	knockback = knockback.move_toward(Vector2.ZERO, 50 * delta)
+	knockback = move_and_slide(knockback)
+
 	var input_vector = Vector2.ZERO
 	if can_move:
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -76,9 +82,9 @@ func _input(event):
 	if event.is_action_pressed("throw"):
 		throw()
 		
-	#if event is InputEventMouseButton and event.is_pressed():
-	#	if event.button_index == BUTTON_RIGHT:
-		#	self.global_position = get_global_mouse_position()
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == BUTTON_RIGHT:
+			self.global_position = get_global_mouse_position()
 	
 
 func throw():
@@ -114,3 +120,15 @@ func _on_Door2_before_enter():
 	print(save_file.last_location)
 	if location == "WorldMap":
 		Globals.world_player_position = self.global_position
+
+
+func _on_Forest_Sound_area_entered(area):
+	$MusicController.play_forest()
+
+
+func _on_Worldmap_Sound_area_entered(area):
+	$MusicController.play_music()
+
+
+func _on_Worldmap_Sound2_area_entered(area):
+	$MusicController.play_music()
