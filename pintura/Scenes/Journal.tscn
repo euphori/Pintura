@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/journal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Journal.gd" type="Script" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://Assets/Fonts/PIXELADE.TTF" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/EncyPage.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Textures/UI/arrow_left.tres" type="Texture" id=16]
+[ext_resource path="res://Assets/JORNAl/bahaykubo.png" type="Texture" id=17]
+[ext_resource path="res://Assets/JORNAl/Amomonggo.png" type="Texture" id=18]
+[ext_resource path="res://Assets/d.png" type="Texture" id=19]
+[ext_resource path="res://Assets/JORNAl/garlicinfo.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -487,6 +491,28 @@ visible = false
 position = Vector2( 326, 164 )
 scale = Vector2( 2.42708, 2.42708 )
 texture = ExtResource( 5 )
+
+[node name="Garlic" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 203, 160 )
+scale = Vector2( 2.73636, 2.73636 )
+texture = ExtResource( 20 )
+
+[node name="info" type="Sprite" parent="PageContainer/EncyPage/Pages/Garlic"]
+position = Vector2( 89.5349, 0.365448 )
+texture = ExtResource( 19 )
+
+[node name="Kubo" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 210, 159 )
+scale = Vector2( 3.19546, 3.19546 )
+texture = ExtResource( 17 )
+
+[node name="Amo" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 215, 165 )
+scale = Vector2( 3.33182, 3.33182 )
+texture = ExtResource( 18 )
 
 [node name="Left" type="TextureButton" parent="PageContainer/EncyPage"]
 margin_left = 122.0

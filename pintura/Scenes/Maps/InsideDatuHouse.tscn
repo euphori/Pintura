@@ -273,6 +273,7 @@ position = Vector2( 27, -46 )
 [node name="AnimatedSprite" parent="Datu" index="2"]
 position = Vector2( 28, -50 )
 frames = SubResource( 134 )
+frame = 2
 playing = true
 
 [node name="InteractKey" parent="Datu" index="3"]
@@ -292,30 +293,31 @@ frame = 3
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 241, 124 )
 frames = SubResource( 122 )
+frame = 1
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 372, 170 )
 frames = SubResource( 122 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 349, 108 )
 frames = SubResource( 123 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 259, 161 )
 frames = SubResource( 124 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 341, 153 )
 frames = SubResource( 125 )
-frame = 7
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]

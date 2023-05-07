@@ -121,8 +121,3 @@ func _on_Ency_pressed():
 	update_page()
 	
 
-
-
-func _on_Inventory_pressed():
-	page = 3
-	update_page()

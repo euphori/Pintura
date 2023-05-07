@@ -8,13 +8,15 @@ export(String,"WorldMap") var location
 export(String, "Hiraya", "Mother", "Dancers") var char_name
 export var important = false
 var player_near = false
+onready var tiara = get_node("/root/Museum/PearlTiara")
 
 func _ready():
 
 	if Globals.museum_ending and char_name == "Mother":
 		$Dialogue.dialogue_file = "res://Dialogue/Json/mother_last.json"
+		tiara.visible = false
 
-	print(save_file.met_hiraya)
+	print(save_file.met_hiraya)	
 	Globals.met_hiraya = save_file.met_hiraya
 	if important == true:
 		$Exclaim.visible = true
@@ -50,5 +52,5 @@ func _on_Dialogue_dialogue_finish():
 	remove = true
 
 func back_to_menu():
-	Load.load_scene(get_parent(),"res://Scenes/UI/Ending.tscnb")
+	Load.load_scene(get_parent(),"res://Scenes/UI/Ending.tscn")
 

@@ -1,0 +1,10 @@
+[
+
+	{"name": "Villager", "text": "Welcome to our village Litle girl! "},
+	{"name": "Flora", "text": "....."},
+	{"name": "Villager", "text": "Is there anything you would like to know?. ","options": 3, "opt_1": "Where am I?", "opt_2": "Have you seen the amomonggo?", "opt_3": "Leave."},
+	{"name": "Villager","text": "Goodbye. ","respond": true, "opt_1": "Youre in the far far away land", "opt_2": "That vile creature! It is in the forest, along with some other creatures", "opt_3": "Exit"}
+
+	
+	
+]
