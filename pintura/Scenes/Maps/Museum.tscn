@@ -196,7 +196,7 @@ path_to_player = NodePath("../../YSort/Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="5"]
-frame = 1
+frame = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="NPC"]
 layer = 3

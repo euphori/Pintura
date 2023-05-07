@@ -2,7 +2,7 @@
 
 	{"name": "SugarcaneVendor", "text": "We make the best sugar cane juice in the Entire village!"},
 	{"name": "SugarcaneVendor", "text": "Would you like some?. ","options": 2, "opt_1": "Sure", "opt_2": "No thanks."},
-	{"name": "SugarcaneVendor","text": "Goodbye. ","respond": true, "opt_1": "Great! Just fetch me some sugar cane in the Farm and maybe ill make you some", "opt_2": "Your loss. " }
+	{"name": "SugarcaneVendor","text": "Goodbye. ","respond": true, "opt_1": "Great! Just fetch me some sugarcane in the (Farm) and maybe ill make you some", "opt_2": "Your loss. " }
 
 	
 	

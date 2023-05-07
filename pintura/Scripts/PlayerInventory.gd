@@ -9,7 +9,7 @@ var gold = 500
 
 var inventory = {
 	
-	0:["Garlic", 98], # --> slot index: [item_name , item_quantity]
+	0:["Garlic", 10], # --> slot index: [item_name , item_quantity]
 	
 }
 
