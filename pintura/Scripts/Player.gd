@@ -10,6 +10,7 @@ var can_move = true
 var MAX_ACCELERATION = 500
 var island_location
 var knockback = Vector2.ZERO
+onready var stats = $Stats
 
 
 
@@ -42,7 +43,7 @@ func goto_last_position():
 
 func _physics_process(delta):
 	
-	knockback = knockback.move_toward(Vector2.ZERO, 50 * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)
 
 	var input_vector = Vector2.ZERO
@@ -120,15 +121,26 @@ func _on_Door2_before_enter():
 	print(save_file.last_location)
 	if location == "WorldMap":
 		Globals.world_player_position = self.global_position
+		
+
+#func _on_Hurtbox_area_entered(area):
+	#stats.health -= 1
+	#print(stats.health)
+	#knockback = area.knockback_vector * 110
+	
+
+#func _on_Forest_Sound_area_entered(area):
+#	$MusicController.play_forest()
 
 
-func _on_Forest_Sound_area_entered(area):
-	$MusicController.play_forest()
+#func _on_Worldmap_Sound_area_entered(area):
+	#$MusicController.play_music()
 
 
-func _on_Worldmap_Sound_area_entered(area):
-	$MusicController.play_music()
+#func _on_Worldmap_Sound2_area_entered(area):
+#	$MusicController.play_music()
+
+func _on_Stats_no_health():
+	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn") 
 
 
-func _on_Worldmap_Sound2_area_entered(area):
-	$MusicController.play_music()

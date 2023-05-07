@@ -46,6 +46,7 @@ Load="*res://Scripts/Load.gd"
 MusicController="*res://Scenes/MusicController.tscn"
 Globals="*res://Scripts/Globals.gd"
 SaveFile="*res://Scripts/SaveFile.gd"
+Stats="*res://Scenes/Stats.tscn"
 
 [display]
 

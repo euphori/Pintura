@@ -50,5 +50,5 @@ func _on_Dialogue_dialogue_finish():
 	remove = true
 
 func back_to_menu():
-	Load.load_scene(get_parent(),"res://Scenes/UI/Ending.tscn")
+	Load.load_scene(get_parent(),"res://Scenes/UI/Ending.tscnb")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Textures/MUSEUM ASSETTSS/paintin1.png" type="Texture" id=1]
 [ext_resource path="res://Tilemap/Museum/Floor.tscn" type="PackedScene" id=2]
@@ -54,6 +54,9 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=5]
 radius = 75.326
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 143, 3 )
+
 [node name="HiddenRoom" type="Node2D"]
 position = Vector2( -667, -740 )
 __meta__ = {
@@ -71,15 +74,15 @@ position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
 [node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 4
+frame = 0
 
 [node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 4
+frame = 1
 
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )
 cell_size = Vector2( 16, 16 )
-tile_data = PoolIntArray( -851971, 6, 65536, -917498, 6, 65536, -786435, 6, 65536, -851962, 6, 65536, -720899, 6, 65536, -786426, 6, 65536, -655363, 6, 65536, -720890, 6, 65536, -589827, 6, 65536, -655354, 6, 65536, -524291, 6, 65536, -589818, 6, 65536, -458755, 6, 65536, -524282, 6, 65536, -393219, 6, 65536, -458746, 6, 65536, -327683, 6, 65536, -393210, 6, 65536, -262147, 6, 65536, -327674, 6, 65536, -196611, 6, 65536, -262138, 6, 65536, -131075, 6, 65536, -196602, 6, 65536, -65539, 6, 65536, -131066, 6, 65536, -3, 6, 65536, -65530, 6, 65536, 65533, 6, 65536, 6, 6, 65536, 131069, 6, 65536, 65542, 6, 65536, 786424, 4, 0 )
+tile_data = PoolIntArray( -917507, 6, 65536, -983034, 6, 65536, -851971, 6, 65536, -917498, 6, 65536, -786435, 6, 65536, -851962, 6, 65536, -720899, 6, 65536, -786426, 6, 65536, -655363, 6, 65536, -720890, 6, 65536, -589827, 6, 65536, -655354, 6, 65536, -524291, 6, 65536, -589818, 6, 65536, -458755, 6, 65536, -524282, 6, 65536, -393219, 6, 65536, -458746, 6, 65536, -327683, 6, 65536, -393210, 6, 65536, -262147, 6, 65536, -327674, 6, 65536, -196611, 6, 65536, -262138, 6, 65536, -131075, 6, 65536, -196602, 6, 65536, -65539, 6, 65536, -131066, 6, 65536, -3, 6, 65536, -65530, 6, 65536, 65533, 6, 65536, 6, 6, 65536, 131069, 6, 65536, 65542, 6, 65536, 786424, 4, 0 )
 
 [node name="FurnitureB" parent="." instance=ExtResource( 5 )]
 position = Vector2( 823, 622 )
@@ -188,7 +191,14 @@ destination_path = [ NodePath("../../../Door") ]
 stationary = false
 can_move = true
 
-[connection signal="toggle_journal" from="Player/UserInterface/Journal" to="Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
+[node name="wallcollision" type="StaticBody2D" parent="."]
+position = Vector2( 854, 548.5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallcollision"]
+position = Vector2( -8, 37 )
+shape = SubResource( 6 )
+
 [connection signal="trigger_switch" from="Lamp" to="MovableShelf" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp" to="Door" method="_on_Lamp_trigger_switch"]
 [connection signal="trigger_switch" from="Lamp2" to="MovableShelf" method="_on_Lamp_trigger_switch"]
