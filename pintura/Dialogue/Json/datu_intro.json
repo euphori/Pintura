@@ -5,7 +5,7 @@
 	{"name": "Datu", "text": "The creature has stolen the tiara! Help us find the tiara back and we will give you a reward! "},
 	{"name": "Flora", "text": "....."},
 	{"name": "Datu", "text": "Is there anything you would like to know?. ","options": 3, "opt_1": "Who are you?", "opt_2": "Where is the amomonggo's Lair?", "opt_3": "Leave."},
-	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "I am the Datu of this village", "opt_2": "It is somewhere inside the forest!", "opt_3": "Exit"}
+	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "I am the Datu of this village", "opt_2": "It is hiding inside the forest. But do not go there unprepared!", "opt_3": "Exit"}
 
 	
 	

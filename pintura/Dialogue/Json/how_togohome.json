@@ -1,0 +1,10 @@
+[
+
+	{"name": "Village Girl", "text": "Hey there!"},
+	
+	{"name": "Village Girl", "text": "Is there something you want??","options": 3, "opt_1": "Who are you?", "opt_2": "How can I go home?", "opt_3": "(Leave.)"},
+	{"name": "Village Girl","text": "Latur. ","respond": true, "opt_1": "I am a village girl", "opt_2": "Ehh, ask the datu he's is inside ", "opt_3": "Exit"}
+	
+	
+	
+]

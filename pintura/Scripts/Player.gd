@@ -144,3 +144,14 @@ func _on_Stats_no_health():
 	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn") 
 
 
+
+
+
+
+
+func _on_Entrance_area_entered(area):
+	$"Camera2D/Area Show/ALabel".visible = true
+
+
+func _on_Entrance_area_exited(area):
+	$"Camera2D/Area Show/ALabel".visible = false
