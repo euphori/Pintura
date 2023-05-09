@@ -1745,7 +1745,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=328]
-radius = 38.0132
+radius = 18.1108
 
 [sub_resource type="CircleShape2D" id=329]
 radius = 38.0132
@@ -1795,36 +1795,36 @@ tile_data = PoolIntArray( 1179649, 2, 0, 1441796, 4, 0 )
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
 position = Vector2( 1798, -307 )
 frames = SubResource( 87 )
-frame = 6
 playing = true
 
 [node name="Extra NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -53, 288 )
 frames = SubResource( 96 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -21, 216 )
 frames = SubResource( 105 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 263, 314 )
 frames = SubResource( 113 )
+frame = 2
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( -46, 215 )
 frames = SubResource( 122 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Ylang2 NPC" type="AnimatedSprite" parent="Extra NPC"]
 position = Vector2( 257, 175 )
 frames = SubResource( 131 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="Boat" parent="." instance=ExtResource( 23 )]
@@ -1994,6 +1994,54 @@ texture = ExtResource( 56 )
 texture_scale = 0.5
 color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
 
+[node name="Light2D2" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( 10, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D6" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( 10, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D7" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( -151, -109 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D8" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( -151, -109 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D9" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( -151, -109 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D3" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( 149, 92 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D4" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( 149, 92 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D5" type="Light2D" parent="ForestParticles/Particles2D15"]
+position = Vector2( 149, 92 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
 [node name="Particles2D14" type="Particles2D" parent="ForestParticles"]
 material = SubResource( 195 )
 position = Vector2( -212, 61 )
@@ -2074,6 +2122,18 @@ texture = ExtResource( 56 )
 texture_scale = 0.5
 color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
 
+[node name="Light2D2" type="Light2D" parent="ForestParticles/Particles2D9"]
+position = Vector2( 10, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D3" type="Light2D" parent="ForestParticles/Particles2D9"]
+position = Vector2( 10, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
 [node name="Particles2D13" type="Particles2D" parent="ForestParticles"]
 material = SubResource( 195 )
 position = Vector2( -1130, -465 )
@@ -2108,6 +2168,72 @@ process_material = SubResource( 197 )
 
 [node name="Light2D" type="Light2D" parent="ForestParticles/Particles2D2"]
 position = Vector2( 9, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Particles2D16" type="Particles2D" parent="ForestParticles"]
+material = SubResource( 195 )
+position = Vector2( -115, 71 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 197 )
+
+[node name="Light2D" type="Light2D" parent="ForestParticles/Particles2D16"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Particles2D17" type="Particles2D" parent="ForestParticles"]
+material = SubResource( 195 )
+position = Vector2( -115, 71 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 197 )
+
+[node name="Light2D" type="Light2D" parent="ForestParticles/Particles2D17"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Particles2D18" type="Particles2D" parent="ForestParticles"]
+material = SubResource( 195 )
+position = Vector2( -115, 71 )
+z_index = 2
+amount = 50
+lifetime = 10.0
+preprocess = 0.1
+explosiveness = 0.4
+process_material = SubResource( 197 )
+
+[node name="Light2D" type="Light2D" parent="ForestParticles/Particles2D18"]
+position = Vector2( 9, -1 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D2" type="Light2D" parent="ForestParticles/Particles2D18"]
+position = Vector2( 210, -46 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D3" type="Light2D" parent="ForestParticles/Particles2D18"]
+position = Vector2( 210, -46 )
+texture = ExtResource( 56 )
+texture_scale = 0.5
+color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
+
+[node name="Light2D4" type="Light2D" parent="ForestParticles/Particles2D18"]
+position = Vector2( 210, -46 )
 texture = ExtResource( 56 )
 texture_scale = 0.5
 color = Color( 0.960784, 0.6, 0.0862745, 0.172549 )
@@ -22703,7 +22829,7 @@ margin_bottom = -100.0
 text = "Health Bar"
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 2
+frame = 0
 
 [node name="Area2D" parent="YSort/Player" index="3"]
 collision_mask = 56
@@ -22712,7 +22838,7 @@ collision_mask = 56
 position = Vector2( 66, 108 )
 
 [node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 5
+frame = 1
 
 [node name="NPCs" type="YSort" parent="YSort"]
 position = Vector2( 1657, -129 )
@@ -22851,19 +22977,17 @@ shape = SubResource( 266 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( 30, -20 )
 frames = SubResource( 291 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/NPCs/Dancer/AnimatedSprite2"]
 position = Vector2( -8, 64 )
 frames = SubResource( 300 )
-frame = 6
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="YSort/NPCs/Dancer"]
 position = Vector2( -37, -1 )
 frames = SubResource( 167 )
-frame = 5
 playing = true
 
 [node name="Torch" type="Sprite" parent="YSort/NPCs/Dancer/AnimatedSprite3"]
@@ -22874,7 +22998,7 @@ texture = ExtResource( 62 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/NPCs/Dancer/AnimatedSprite3/Torch"]
 position = Vector2( 0, -18.0005 )
 frames = SubResource( 260 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="InteractKey" parent="YSort/NPCs/Dancer" instance=ExtResource( 54 )]
@@ -22924,14 +23048,14 @@ frames = SubResource( 309 )
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="YSort/NPCs/Farmers"]
 position = Vector2( 1, -8 )
 frames = SubResource( 318 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/NPCs/Farmers"]
 position = Vector2( -3, 27 )
 scale = Vector2( -0.920039, 1 )
 frames = SubResource( 327 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="InteractKey" parent="YSort/NPCs/Farmers" instance=ExtResource( 54 )]
@@ -22966,7 +23090,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/YlangYlang" index="2"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/YlangYlang" index="4"]
@@ -22990,7 +23114,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/SugarcaneVendor" index="2"]
 position = Vector2( 2, -12 )
 frames = SubResource( 183 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/SugarcaneVendor" index="4"]
@@ -23014,7 +23138,7 @@ texture = ExtResource( 28 )
 [node name="AnimatedSprite" parent="YSort/NPCs/Florist" index="2"]
 position = Vector2( 2, -12 )
 frames = SubResource( 151 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Dialogue" parent="YSort/NPCs/Florist" index="4"]
@@ -23030,217 +23154,220 @@ position = Vector2( 240, -344 )
 [node name="Chicken" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 246, 88 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 311, 71 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 
 [node name="Chicken7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 536, 318 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 
 [node name="Chicken8" type="AnimatedSprite" parent="Animals"]
 visible = false
 position = Vector2( 155, 445 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 305, 132 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Chicken4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 194, 79 )
 frames = SubResource( 204 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Chicken5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 206, 124 )
 frames = SubResource( 204 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Chicken6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 261, 112 )
 frames = SubResource( 204 )
+frame = 1
 playing = true
 
 [node name="Chicken9" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 128, -721 )
 frames = SubResource( 204 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Chicken11" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 560, 8 )
 frames = SubResource( 204 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Chicken14" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1500, -727 )
 frames = SubResource( 204 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Duck" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 214, 52 )
 frames = SubResource( 217 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Duck5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 189, 109 )
 frames = SubResource( 217 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Duck6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 178, 54 )
 frames = SubResource( 217 )
-frame = 2
 playing = true
 
 [node name="Duck7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 291, 94 )
 frames = SubResource( 217 )
-frame = 2
 playing = true
 
 [node name="Duck8" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 280, 67 )
 frames = SubResource( 217 )
-frame = 2
 playing = true
 
 [node name="Duck2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 253, 52 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Duck3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 326, 97 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
-frame = 2
 playing = true
 
 [node name="Duck4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 335, 54 )
 scale = Vector2( -1.08, 1 )
 frames = SubResource( 217 )
-frame = 2
 playing = true
 
 [node name="Carabao" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2376, 1535 )
 scale = Vector2( 0.8125, 0.8125 )
 frames = SubResource( 233 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Carabao2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2432, 1511 )
 scale = Vector2( 0.8125, 0.8125 )
 frames = SubResource( 233 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Carabao3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 2472, 1864 )
 scale = Vector2( -0.9075, 0.8125 )
 frames = SubResource( 233 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Cat" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1476.5, 772.091 )
 scale = Vector2( 0.562496, 0.613632 )
 frames = SubResource( 238 )
+frame = 2
 playing = true
 
 [node name="Cat2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1513, 798 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Cat3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1387, 920 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
-frame = 2
 playing = true
 
 [node name="Cat4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1624, 964 )
 scale = Vector2( -0.597504, 0.613632 )
 frames = SubResource( 238 )
-frame = 2
 playing = true
 
 [node name="Frog" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1522, 19 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
+frame = 2
 playing = true
 
 [node name="Frog2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1565, -76 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
+frame = 2
 playing = true
 
 [node name="Frog3" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1662, -107 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Frog4" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1143, -249 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Frog5" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 971, -248 )
 scale = Vector2( -0.62, 0.5 )
 frames = SubResource( 243 )
-frame = 2
 playing = true
 
 [node name="Frog6" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 797, -388 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Frog7" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 1025, -475 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 243 )
+frame = 2
 playing = true
 
 [node name="Goat" type="AnimatedSprite" parent="Animals"]
-position = Vector2( 1178.37, 229.284 )
+position = Vector2( 1182, 194 )
 rotation = 3.14159
 scale = Vector2( 1.57943, -1.27373 )
 frames = SubResource( 248 )
+frame = 2
 playing = true
 
 [node name="Goat2" type="AnimatedSprite" parent="Animals"]
@@ -23248,20 +23375,20 @@ position = Vector2( 1072.57, 493.123 )
 rotation = 3.14159
 scale = Vector2( 1.60442, -1.29388 )
 frames = SubResource( 248 )
+frame = 2
 playing = true
 
 [node name="Pig" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 449, -19 )
 scale = Vector2( 1.3125, 1.3125 )
 frames = SubResource( 253 )
-frame = 2
 playing = true
 
 [node name="Pig2" type="AnimatedSprite" parent="Animals"]
 position = Vector2( 450, 6 )
 scale = Vector2( -1.44749, 1.3125 )
 frames = SubResource( 253 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Fountain" type="TileMap" parent="."]
@@ -25724,6 +25851,19 @@ shape = SubResource( 328 )
 dialogue_file = "res://Dialogue/Json/worldmap_intro.json"
 path_to_player = NodePath("../../YSort/Player")
 
+[node name="Cant goback" parent="." instance=ExtResource( 55 )]
+position = Vector2( 1515, 219 )
+path_to_player = NodePath("../YSort/Player")
+camera_used = "player_camera"
+
+[node name="CollisionShape2D" parent="Cant goback/CutsceneTrigger" index="0"]
+position = Vector2( -919, -82 )
+shape = SubResource( 328 )
+
+[node name="Dialogue" parent="Cant goback" instance=ExtResource( 53 )]
+dialogue_file = "res://Dialogue/Json/cant_goback.json"
+path_to_player = NodePath("../../YSort/Player")
+
 [node name="Notice Garden" parent="." instance=ExtResource( 55 )]
 position = Vector2( 3824, 1945 )
 path_to_player = NodePath("../YSort/Player")
@@ -25839,7 +25979,6 @@ margin_bottom = 14.0
 [connection signal="after_enter" from="Door" to="YSort/Player" method="_on_Door_after_enter"]
 [connection signal="before_enter" from="Door" to="YSort/Player" method="_on_Door_before_enter"]
 [connection signal="toggle_torch" from="YSort/Player" to="Tambal" method="_on_Player_toggle_torch"]
-[connection signal="toggle_journal" from="YSort/Player/UserInterface/Journal" to="YSort/Player/UserInterface/JournalIcon" method="_on_Journal_toggle_journal"]
 [connection signal="dialogue_finish" from="YSort/NPCs/Hiraya/Dialogue" to="YSort/NPCs/Hiraya" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="YSort/NPCs/GarlicGuy/Dialogue" to="YSort/NPCs/GarlicGuy" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="YSort/NPCs/GarlicGuy2/Dialogue" to="YSort/NPCs/GarlicGuy2" method="_on_Dialogue_dialogue_finish"]
@@ -25857,6 +25996,7 @@ margin_bottom = 14.0
 [connection signal="dialogue_finish" from="YSort/NPCs/Florist/Dialogue" to="YSort/NPCs/Florist" method="_on_Dialogue_dialogue_finish"]
 [connection signal="before_enter" from="Door2" to="YSort/Player" method="_on_Door2_before_enter"]
 [connection signal="dialogue_finish" from="Notice Worldmap/Dialogue" to="Notice Worldmap" method="_on_Dialogue_dialogue_finish"]
+[connection signal="dialogue_finish" from="Cant goback/Dialogue" to="Cant goback" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Notice Garden/Dialogue" to="Notice Garden" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Notice Lake/Dialogue" to="Notice Lake" method="_on_Dialogue_dialogue_finish"]
 [connection signal="dialogue_finish" from="Forest Intro Dialogue/Dialogue" to="Forest Intro Dialogue" method="_on_Dialogue_dialogue_finish"]
@@ -25896,6 +26036,8 @@ margin_bottom = 14.0
 [editable path="Door2/InteractKey"]
 [editable path="Notice Worldmap"]
 [editable path="Notice Worldmap/CutsceneTrigger"]
+[editable path="Cant goback"]
+[editable path="Cant goback/CutsceneTrigger"]
 [editable path="Notice Garden"]
 [editable path="Notice Garden/CutsceneTrigger"]
 [editable path="Notice Lake"]

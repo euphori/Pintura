@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/journal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Journal.gd" type="Script" id=2]
@@ -18,8 +18,15 @@
 [ext_resource path="res://Assets/Textures/UI/arrow_left.tres" type="Texture" id=16]
 [ext_resource path="res://Assets/JORNAl/bahaykubo.png" type="Texture" id=17]
 [ext_resource path="res://Assets/JORNAl/Amomonggo.png" type="Texture" id=18]
-[ext_resource path="res://Assets/d.png" type="Texture" id=19]
+[ext_resource path="res://Assets/JORNAl/description/GarlicDescription.png" type="Texture" id=19]
 [ext_resource path="res://Assets/JORNAl/garlicinfo.png" type="Texture" id=20]
+[ext_resource path="res://Assets/JORNAl/negros map.png" type="Texture" id=21]
+[ext_resource path="res://Assets/JORNAl/pearl necklace.png" type="Texture" id=22]
+[ext_resource path="res://Assets/JORNAl/senna alata.png" type="Texture" id=23]
+[ext_resource path="res://Assets/JORNAl/description/amomonggo.png" type="Texture" id=24]
+[ext_resource path="res://Assets/JORNAl/description/BahayKubosDescription.png" type="Texture" id=25]
+[ext_resource path="res://Assets/JORNAl/description/SennaAlata.png" type="Texture" id=26]
+[ext_resource path="res://Assets/JORNAl/description/PearlCrown.png" type="Texture" id=27]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -488,8 +495,8 @@ texture = ExtResource( 7 )
 
 [node name="Forestmap" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
-position = Vector2( 326, 164 )
-scale = Vector2( 2.42708, 2.42708 )
+position = Vector2( 328, 167 )
+scale = Vector2( 2.51562, 2.51562 )
 texture = ExtResource( 5 )
 
 [node name="Garlic" type="Sprite" parent="PageContainer/EncyPage/Pages"]
@@ -498,8 +505,8 @@ position = Vector2( 203, 160 )
 scale = Vector2( 2.73636, 2.73636 )
 texture = ExtResource( 20 )
 
-[node name="info" type="Sprite" parent="PageContainer/EncyPage/Pages/Garlic"]
-position = Vector2( 89.5349, 0.365448 )
+[node name="infog" type="Sprite" parent="PageContainer/EncyPage/Pages/Garlic"]
+position = Vector2( 88.8041, -1.4618 )
 texture = ExtResource( 19 )
 
 [node name="Kubo" type="Sprite" parent="PageContainer/EncyPage/Pages"]
@@ -508,11 +515,54 @@ position = Vector2( 210, 159 )
 scale = Vector2( 3.19546, 3.19546 )
 texture = ExtResource( 17 )
 
+[node name="infok" type="Sprite" parent="PageContainer/EncyPage/Pages/Kubo"]
+position = Vector2( 74.1677, 1.90735e-06 )
+scale = Vector2( 0.890113, 0.890113 )
+texture = ExtResource( 25 )
+
 [node name="Amo" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
 position = Vector2( 215, 165 )
 scale = Vector2( 3.33182, 3.33182 )
 texture = ExtResource( 18 )
+
+[node name="infoa" type="Sprite" parent="PageContainer/EncyPage/Pages/Amo"]
+position = Vector2( 69.9317, -2.10095 )
+scale = Vector2( 0.896657, 0.896657 )
+texture = ExtResource( 24 )
+
+[node name="Senna Alata" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 204, 134 )
+scale = Vector2( 2.24545, 2.24545 )
+texture = ExtResource( 23 )
+
+[node name="infos" type="Sprite" parent="PageContainer/EncyPage/Pages/Senna Alata"]
+position = Vector2( 107.328, 10.2429 )
+scale = Vector2( 1.29859, 1.29859 )
+texture = ExtResource( 26 )
+
+[node name="Pearl" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 211, 130 )
+scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 22 )
+
+[node name="infop" type="Sprite" parent="PageContainer/EncyPage/Pages/Pearl"]
+position = Vector2( 109.524, 15.7143 )
+scale = Vector2( 1.53896, 1.53896 )
+texture = ExtResource( 27 )
+
+[node name="Negros" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 132 )
+scale = Vector2( 2.53636, 2.53636 )
+texture = ExtResource( 21 )
+
+[node name="infon" type="Sprite" parent="PageContainer/EncyPage/Pages/Negros"]
+position = Vector2( 95.018, 10.2509 )
+scale = Vector2( 1.23118, 1.23118 )
+texture = ExtResource( 27 )
 
 [node name="Left" type="TextureButton" parent="PageContainer/EncyPage"]
 margin_left = 122.0
