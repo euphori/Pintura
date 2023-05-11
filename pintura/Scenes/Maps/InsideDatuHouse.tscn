@@ -271,9 +271,9 @@ hframes = 8
 position = Vector2( 27, -46 )
 
 [node name="AnimatedSprite" parent="Datu" index="2"]
-position = Vector2( 28, -50 )
+position = Vector2( 21, -43 )
 frames = SubResource( 134 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="InteractKey" parent="Datu" index="3"]
@@ -288,37 +288,34 @@ finish_quest_line = "Quest3"
 start_quest_line = "Quest4"
 
 [node name="Exclaim" parent="Datu" index="5"]
-frame = 1
+position = Vector2( 21, -51 )
 
 [node name="Extra NPC" type="AnimatedSprite" parent="."]
-position = Vector2( 241, 124 )
+position = Vector2( 208, 128 )
 frames = SubResource( 122 )
-frame = 3
 playing = true
 
 [node name="Extra NPC2" type="AnimatedSprite" parent="."]
-position = Vector2( 372, 170 )
+position = Vector2( 392, 192 )
 frames = SubResource( 122 )
-frame = 3
 playing = true
 flip_h = true
 
 [node name="Senna Alata NPC" type="AnimatedSprite" parent="."]
-position = Vector2( 349, 108 )
+position = Vector2( 360, 72 )
 frames = SubResource( 123 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="Sugarcane Vendor NPC" type="AnimatedSprite" parent="."]
-position = Vector2( 259, 161 )
+position = Vector2( 224, 168 )
 frames = SubResource( 124 )
-frame = 3
 playing = true
 
 [node name="Garlic Guy NPC" type="AnimatedSprite" parent="."]
-position = Vector2( 341, 153 )
+position = Vector2( 352, 144 )
 frames = SubResource( 125 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
@@ -339,7 +336,7 @@ margin_right = 603.0
 margin_bottom = 383.0
 
 [node name="Hiraya" parent="." instance=ExtResource( 4 )]
-position = Vector2( 243, 109 )
+position = Vector2( 248, 96 )
 z_index = 2
 MAX_SPEED = 80
 path_to_player = NodePath("../Player")
@@ -355,9 +352,6 @@ position = Vector2( 0, -10 )
 [node name="Dialogue" parent="Hiraya" index="4"]
 dialogue_file = "res://Dialogue/Json/hiraya_inside_datu.json"
 path_to_player = NodePath("../../Player")
-
-[node name="Exclaim" parent="Hiraya" index="5"]
-frame = 1
 
 [connection signal="dialogue_finish" from="Hiraya/Dialogue" to="Hiraya" method="_on_Dialogue_dialogue_finish"]
 

@@ -2,10 +2,11 @@
 
 	{"name": "Datu", "text": "Let us welcome our visitor with open arms! But be warned to stay within the walls of the village the forest is no place for a little girl. "},
 	{"name": "Flora", "text": "....."},
-	{"name": "Datu", "text": "The creature has stolen the tiara! Help us find the tiara back and we will give you a reward! "},
-	{"name": "Flora", "text": "....."},
+	{"name": "Datu", "text": "The creature has stolen the tiara! Help us find the tiara back and we will give you a reward!"},
+	{"name": "Datu", "text": "Here, this (map) can help you navigate this village. "},
+	{"name": "", "text": "Use the journal (J) to see it"},
 	{"name": "Datu", "text": "Is there anything you would like to know?. ","options": 3, "opt_1": "Who are you?", "opt_2": "Where is the amomonggo's Lair?", "opt_3": "Leave."},
-	{"name": "Datu","text": "Goodbye. ","respond": true, "opt_1": "I am the Datu of this village", "opt_2": "It is hiding inside the forest. But do not go there unprepared!", "opt_3": "Exit"}
+	{"name": "Datu","text": "Farewell. ","respond": true, "opt_1": "I am the Datu of this village", "opt_2": "It is hiding inside the forest. But (do not go) there unprepared!  Now go, the (port) it is beside the (market)", "opt_3": "Exit"}
 
 	
 	

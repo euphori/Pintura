@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/journal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Journal.gd" type="Script" id=2]
@@ -27,6 +27,13 @@
 [ext_resource path="res://Assets/JORNAl/description/BahayKubosDescription.png" type="Texture" id=25]
 [ext_resource path="res://Assets/JORNAl/description/SennaAlata.png" type="Texture" id=26]
 [ext_resource path="res://Assets/JORNAl/description/PearlCrown.png" type="Texture" id=27]
+[ext_resource path="res://Assets/JORNAl/bailesdelucews.png" type="Texture" id=28]
+[ext_resource path="res://Assets/JORNAl/bailesdancr.png" type="Texture" id=29]
+[ext_resource path="res://Assets/JORNAl/sugarcane.png" type="Texture" id=30]
+[ext_resource path="res://Assets/JORNAl/stall.png" type="Texture" id=31]
+[ext_resource path="res://Assets/JORNAl/sugarmiller.png" type="Texture" id=32]
+[ext_resource path="res://Assets/JORNAl/sugaruice.png" type="Texture" id=33]
+[ext_resource path="res://Assets/JORNAl/Vendor.png" type="Texture" id=34]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -563,6 +570,48 @@ texture = ExtResource( 21 )
 position = Vector2( 95.018, 10.2509 )
 scale = Vector2( 1.23118, 1.23118 )
 texture = ExtResource( 27 )
+
+[node name="BailesDeluces" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 209, 153 )
+scale = Vector2( 2.86591, 2.86591 )
+texture = ExtResource( 28 )
+
+[node name="Sugarcane" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 151 )
+scale = Vector2( 3.09432, 3.09432 )
+texture = ExtResource( 30 )
+
+[node name="Stall" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 154 )
+scale = Vector2( 3.10455, 3.10454 )
+texture = ExtResource( 31 )
+
+[node name="Dancer" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 166 )
+scale = Vector2( 3.10455, 3.10454 )
+texture = ExtResource( 29 )
+
+[node name="Miller" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 206, 149 )
+scale = Vector2( 3.03409, 3.03409 )
+texture = ExtResource( 32 )
+
+[node name="Sugar Juice" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 205, 148 )
+scale = Vector2( 3.12955, 3.12954 )
+texture = ExtResource( 33 )
+
+[node name="Vendor" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 207.813, 150.96 )
+scale = Vector2( 3.025, 3.025 )
+texture = ExtResource( 34 )
 
 [node name="Left" type="TextureButton" parent="PageContainer/EncyPage"]
 margin_left = 122.0

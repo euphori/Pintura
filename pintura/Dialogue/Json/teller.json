@@ -2,7 +2,7 @@
 
 	{"name": "Villager", "text": "Hello Dear."},
 	{"name": "Villager", "text": "Need something?. ","options": 2, "opt_1": "How can I go to the forest?", "opt_2": "No thanks."},
-	{"name": "Villager","text": "Bye. ","respond": true, "opt_1": "You can ride a bangka in the port there, But I suggest not to go there directly, go to the farm first", "opt_2": "Ok. " }
+	{"name": "Villager","text": "Bye. ","respond": true, "opt_1": "You can ride a (bangka) in the port there, But I suggest not to go there directly, go to the farm first", "opt_2": "Ok. " }
 
 	
 	
