@@ -73,12 +73,6 @@ tile_data = PoolIntArray( -1114112, 0, 2, -1114111, 0, 2, -1114110, 0, 2, -11141
 position = Vector2( 855, 818 )
 location = "HiddenRoom"
 
-[node name="AnimatedSprite" parent="Player/Torch" index="1"]
-frame = 4
-
-[node name="Exclamation" parent="Player/UserInterface/JournalIcon" index="1"]
-frame = 1
-
 [node name="Divider" parent="." instance=ExtResource( 4 )]
 position = Vector2( 812, 799 )
 cell_size = Vector2( 16, 16 )
