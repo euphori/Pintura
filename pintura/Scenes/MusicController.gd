@@ -40,6 +40,6 @@ func play_menu_sound():
 	$Music.stream = Menu_Sound
 	$Music.play()
 
-#func play_forest():
-#	$Music.stream = bgm_Chased
-#	$Music.play()
+func play_forest():
+	$Music.stream = bgm_Chased
+	$Music.play()

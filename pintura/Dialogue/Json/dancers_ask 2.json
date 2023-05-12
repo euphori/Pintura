@@ -1,7 +1,8 @@
 [
 
-	{"name": "Dancer", "text": "The Ylang2 extract is in the outer part of forest."},
-	{"name": "Dancer", "text": "But don't go deeper in there! just follow the lights.."}
+	{"name": "Dancer", "text": "The Ylang2 extract is in the outer part of (Forest)."},
+	{"name": "Dancer", "text": "Go there"},
+	{"name": "Dancer", "text": "But don't go deeper!! just follow the lights.."}
 	
 
 	

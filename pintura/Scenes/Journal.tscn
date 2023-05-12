@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/journal.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Journal.gd" type="Script" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/Fonts/PIXELADE.TTF" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/EncyPage.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Textures/UI/arrow_left.tres" type="Texture" id=16]
-[ext_resource path="res://Assets/JORNAl/bahaykubo.png" type="Texture" id=17]
+[ext_resource path="res://Assets/JORNAl/description/bahaykubo.png" type="Texture" id=17]
 [ext_resource path="res://Assets/JORNAl/Amomonggo.png" type="Texture" id=18]
 [ext_resource path="res://Assets/JORNAl/description/GarlicDescription.png" type="Texture" id=19]
 [ext_resource path="res://Assets/JORNAl/garlicinfo.png" type="Texture" id=20]
@@ -34,6 +34,13 @@
 [ext_resource path="res://Assets/JORNAl/sugarmiller.png" type="Texture" id=32]
 [ext_resource path="res://Assets/JORNAl/sugaruice.png" type="Texture" id=33]
 [ext_resource path="res://Assets/JORNAl/Vendor.png" type="Texture" id=34]
+[ext_resource path="res://Assets/JORNAl/description/sugarmillerr.png" type="Texture" id=35]
+[ext_resource path="res://Assets/JORNAl/description/bailess.png" type="Texture" id=36]
+[ext_resource path="res://Assets/JORNAl/description/sugarcanne.png" type="Texture" id=37]
+[ext_resource path="res://Assets/JORNAl/description/vendorr.png" type="Texture" id=38]
+[ext_resource path="res://Assets/JORNAl/description/sugarr.png" type="Texture" id=39]
+[ext_resource path="res://Assets/JORNAl/description/stalls.png" type="Texture" id=40]
+[ext_resource path="res://Assets/JORNAl/description/neginfo.png" type="Texture" id=41]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -495,16 +502,15 @@ script = ExtResource( 15 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="WrldMap" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-position = Vector2( 324, 165 )
-scale = Vector2( 2.60417, 2.60417 )
-texture = ExtResource( 7 )
+[node name="Negros" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+position = Vector2( 208, 132 )
+scale = Vector2( 2.53636, 2.53636 )
+texture = ExtResource( 21 )
 
-[node name="Forestmap" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 328, 167 )
-scale = Vector2( 2.51562, 2.51562 )
-texture = ExtResource( 5 )
+[node name="infon" type="Sprite" parent="PageContainer/EncyPage/Pages/Negros"]
+position = Vector2( 93.8353, 19.319 )
+scale = Vector2( 0.762239, 0.762239 )
+texture = ExtResource( 41 )
 
 [node name="Garlic" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
@@ -526,6 +532,17 @@ texture = ExtResource( 17 )
 position = Vector2( 74.1677, 1.90735e-06 )
 scale = Vector2( 0.890113, 0.890113 )
 texture = ExtResource( 25 )
+
+[node name="Pearl" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 211, 130 )
+scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 22 )
+
+[node name="infop" type="Sprite" parent="PageContainer/EncyPage/Pages/Pearl"]
+position = Vector2( 109.524, 15.7143 )
+scale = Vector2( 1.53896, 1.53896 )
+texture = ExtResource( 27 )
 
 [node name="Amo" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
@@ -549,51 +566,27 @@ position = Vector2( 107.328, 10.2429 )
 scale = Vector2( 1.29859, 1.29859 )
 texture = ExtResource( 26 )
 
-[node name="Pearl" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+[node name="Sugar Juice" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
-position = Vector2( 211, 130 )
-scale = Vector2( 2.1, 2.1 )
-texture = ExtResource( 22 )
+position = Vector2( 205, 148 )
+scale = Vector2( 3.12955, 3.12954 )
+texture = ExtResource( 33 )
 
-[node name="infop" type="Sprite" parent="PageContainer/EncyPage/Pages/Pearl"]
-position = Vector2( 109.524, 15.7143 )
-scale = Vector2( 1.53896, 1.53896 )
-texture = ExtResource( 27 )
+[node name="Sjuice info" type="Sprite" parent="PageContainer/EncyPage/Pages/Sugar Juice"]
+position = Vector2( 77.3274, 6.39072 )
+scale = Vector2( 0.449044, 0.449044 )
+texture = ExtResource( 39 )
 
-[node name="Negros" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+[node name="Vendor" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
-position = Vector2( 208, 132 )
-scale = Vector2( 2.53636, 2.53636 )
-texture = ExtResource( 21 )
+position = Vector2( 207.813, 150.96 )
+scale = Vector2( 3.025, 3.025 )
+texture = ExtResource( 34 )
 
-[node name="infon" type="Sprite" parent="PageContainer/EncyPage/Pages/Negros"]
-position = Vector2( 95.018, 10.2509 )
-scale = Vector2( 1.23118, 1.23118 )
-texture = ExtResource( 27 )
-
-[node name="BailesDeluces" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 209, 153 )
-scale = Vector2( 2.86591, 2.86591 )
-texture = ExtResource( 28 )
-
-[node name="Sugarcane" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 208, 151 )
-scale = Vector2( 3.09432, 3.09432 )
-texture = ExtResource( 30 )
-
-[node name="Stall" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 208, 154 )
-scale = Vector2( 3.10455, 3.10454 )
-texture = ExtResource( 31 )
-
-[node name="Dancer" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 208, 166 )
-scale = Vector2( 3.10455, 3.10454 )
-texture = ExtResource( 29 )
+[node name="v info" type="Sprite" parent="PageContainer/EncyPage/Pages/Vendor"]
+position = Vector2( 80.3924, 3.64958 )
+scale = Vector2( 0.449038, 0.449038 )
+texture = ExtResource( 38 )
 
 [node name="Miller" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
@@ -601,17 +594,49 @@ position = Vector2( 206, 149 )
 scale = Vector2( 3.03409, 3.03409 )
 texture = ExtResource( 32 )
 
-[node name="Sugar Juice" type="Sprite" parent="PageContainer/EncyPage/Pages"]
-visible = false
-position = Vector2( 205, 148 )
-scale = Vector2( 3.12955, 3.12954 )
-texture = ExtResource( 33 )
+[node name="smiller info" type="Sprite" parent="PageContainer/EncyPage/Pages/Miller"]
+position = Vector2( 79.7603, 8.56928 )
+scale = Vector2( 0.463227, 0.483849 )
+texture = ExtResource( 35 )
 
-[node name="Vendor" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+[node name="Stall" type="Sprite" parent="PageContainer/EncyPage/Pages"]
 visible = false
-position = Vector2( 207.813, 150.96 )
-scale = Vector2( 3.025, 3.025 )
-texture = ExtResource( 34 )
+position = Vector2( 208, 154 )
+scale = Vector2( 3.10455, 3.10454 )
+texture = ExtResource( 31 )
+
+[node name="s info" type="Sprite" parent="PageContainer/EncyPage/Pages/Stall"]
+position = Vector2( 76.3396, 0 )
+scale = Vector2( 0.424042, 0.424042 )
+texture = ExtResource( 40 )
+
+[node name="Sugarcane" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 151 )
+scale = Vector2( 3.09432, 3.09432 )
+texture = ExtResource( 30 )
+
+[node name="s info" type="Sprite" parent="PageContainer/EncyPage/Pages/Sugarcane"]
+position = Vector2( 77.8846, 7.1098 )
+scale = Vector2( 0.46772, 0.46772 )
+texture = ExtResource( 37 )
+
+[node name="BailesDeluces" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 209, 153 )
+scale = Vector2( 2.86591, 2.86591 )
+texture = ExtResource( 28 )
+
+[node name="Bailes info" type="Sprite" parent="PageContainer/EncyPage/Pages/BailesDeluces"]
+position = Vector2( 82.3473, 4.18715 )
+scale = Vector2( 0.622804, 0.622804 )
+texture = ExtResource( 36 )
+
+[node name="Dancer" type="Sprite" parent="PageContainer/EncyPage/Pages"]
+visible = false
+position = Vector2( 208, 166 )
+scale = Vector2( 3.10455, 3.10454 )
+texture = ExtResource( 29 )
 
 [node name="Left" type="TextureButton" parent="PageContainer/EncyPage"]
 margin_left = 122.0
@@ -630,10 +655,51 @@ rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 16 )
 flip_h = true
 
+[node name="Inventory" type="Control" parent="PageContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 15 )
+
+[node name="Pages" type="Control" parent="PageContainer/Inventory"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WrldMap" type="Sprite" parent="PageContainer/Inventory/Pages"]
+position = Vector2( 324, 165 )
+scale = Vector2( 2.60417, 2.60417 )
+texture = ExtResource( 7 )
+
+[node name="Forestmap" type="Sprite" parent="PageContainer/Inventory/Pages"]
+visible = false
+position = Vector2( 328, 167 )
+scale = Vector2( 2.51562, 2.51562 )
+texture = ExtResource( 5 )
+
+[node name="Left" type="TextureButton" parent="PageContainer/Inventory"]
+margin_left = 122.0
+margin_top = 252.0
+margin_right = 141.0
+margin_bottom = 268.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 16 )
+
+[node name="Right" type="TextureButton" parent="PageContainer/Inventory"]
+margin_left = 497.0
+margin_top = 253.0
+margin_right = 516.0
+margin_bottom = 269.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 16 )
+flip_h = true
+
 [connection signal="pressed" from="Quest" to="." method="_on_Quest_pressed"]
 [connection signal="pressed" from="Ency" to="." method="_on_Ency_pressed"]
+[connection signal="pressed" from="Inventory" to="." method="_on_Inventory_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="PageContainer/SettingsPage/VBoxContainer/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="PageContainer/SettingsPage/VBoxContainer/Exit Game" to="." method="_on_Exit_Game_pressed"]
 [connection signal="pressed" from="PageContainer/EncyPage/Left" to="PageContainer/EncyPage" method="_on_Left_pressed"]
 [connection signal="pressed" from="PageContainer/EncyPage/Right" to="PageContainer/EncyPage" method="_on_Right_pressed"]
+[connection signal="pressed" from="PageContainer/Inventory/Left" to="PageContainer/Inventory" method="_on_Left_pressed"]
+[connection signal="pressed" from="PageContainer/Inventory/Right" to="PageContainer/Inventory" method="_on_Right_pressed"]

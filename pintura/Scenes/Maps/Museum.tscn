@@ -136,7 +136,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 3, 2 ), PoolIntA
 outlines = [ PoolVector2Array( 339.122, -13.3828, 339.122, 46.3391, 336.937, 45.6108, 336.937, 55.8072, 339.122, 55.8072, 339.122, 53.6223, 397.388, 53.6223, 396.659, 22.3047, 394.474, 22.3047, 394.474, -13.3828, 394.474, -26.4925, 339.122, -26.4925 ) ]
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 38.0132
+radius = 13.9284
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 11.5, 16 )
@@ -196,7 +196,7 @@ path_to_player = NodePath("../../YSort/Player")
 visible = false
 
 [node name="Exclaim" parent="NPC" index="5"]
-frame = 0
+frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="NPC"]
 layer = 3
@@ -340,6 +340,9 @@ navpoly = SubResource( 4 )
 position = Vector2( 939, 851 )
 path_to_player = NodePath("../YSort/Player")
 camera_used = "player_camera"
+
+[node name="CutsceneTrigger" parent="CSCheckJournal" index="0"]
+position = Vector2( -19, -27 )
 
 [node name="CollisionShape2D" parent="CSCheckJournal/CutsceneTrigger" index="0"]
 position = Vector2( 59, -27 )
@@ -516,7 +519,7 @@ path_to_player = NodePath("../YSort/Player")
 camera_used = "player_camera"
 
 [node name="CollisionShape2D" parent="Notice Key/CutsceneTrigger" index="0"]
-position = Vector2( 59, -27 )
+position = Vector2( 5, -24 )
 shape = SubResource( 5 )
 
 [node name="Dialogue" parent="Notice Key" instance=ExtResource( 27 )]

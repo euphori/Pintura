@@ -27,6 +27,8 @@ func _ready():
 	Globals.set_location(location)
 	if Globals.museum_ending and location == "Museum":
 		global_position = get_parent().get_node("/root/Museum/PlayerSpawn").global_position
+		
+		
 	$MusicController.play_music()
 	if location == "WorldMap" and Globals.world_player_position != Vector2.ZERO:
 		update_position()

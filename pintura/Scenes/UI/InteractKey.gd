@@ -1,6 +1,5 @@
 extends Area2D
 
-
 export (bool) var ylang = false
 export (bool) var mosquito = false
 
@@ -37,10 +36,10 @@ func _input(event):
 		if mosquito:
 			for i in range(PlayerInventory.inventory.size()):
 				if PlayerInventory.inventory[i].has("YlangOilExtract"):
-					
 					get_node("/root/WorldMap/YSort/NPCs/Dancer/Dialogue").dialogue_file = "res://Dialogue/Json/dancers_after.json"
 					get_parent().queue_free()
 					Globals.set_helped_dancers(true)
+					
 			
 			
 

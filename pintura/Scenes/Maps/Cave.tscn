@@ -878,7 +878,7 @@ position = Vector2( 47, 93 )
 z_index = 1
 
 [node name="AnimatedSprite" parent="YSort/Player/Torch" index="1"]
-frame = 4
+frame = 5
 
 [node name="AnimationPlayer" parent="YSort/Player" index="4"]
 anims/RESET = SubResource( 2 )
@@ -886,9 +886,6 @@ anims/walk = SubResource( 3 )
 
 [node name="Inventory" parent="YSort/Player/UserInterface" index="0"]
 position = Vector2( 148, 184 )
-
-[node name="Exclamation" parent="YSort/Player/UserInterface/JournalIcon" index="1"]
-frame = 4
 
 [node name="vhs" type="Sprite" parent="YSort/Player/UserInterface" index="3"]
 material = SubResource( 56 )
@@ -1115,7 +1112,7 @@ margin_right = 640.0
 
 [node name="Doorportal" type="AnimatedSprite" parent="Door2"]
 frames = SubResource( 51 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Cutscene2" parent="." instance=ExtResource( 14 )]
@@ -1137,7 +1134,7 @@ path_to_player = NodePath("../../YSort/Player")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -2504, 24 )
-color = Color( 0.172549, 0.262745, 0.172549, 1 )
+color = Color( 0.458824, 0.631373, 0.458824, 1 )
 
 [node name="Icon" type="Sprite" parent="."]
 visible = false

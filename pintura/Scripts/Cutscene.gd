@@ -26,6 +26,8 @@ var timer_set = false
 var original_camera_position
 var player_camera
 
+
+
 func _ready():
 	if Globals.museum_ending and player.location == "Museum":
 		queue_free()
